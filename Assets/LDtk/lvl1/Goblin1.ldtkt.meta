@@ -1,0 +1,74 @@
+fileFormatVersion: 2
+guid: e14dff89f74a35b4a8877d52ed7a8795
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _sprites:
+  - name: Goblin1_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 1d9bda34965b1864798971dbcb76780f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Goblin1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 8cc9e75e25a49a644bb96df8afb2d1ca
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Goblin1_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 248bdb89055d7c74ca1f0c1ba708305f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Goblin1_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: e8238258ca7adab4b8679104fd8191e2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []

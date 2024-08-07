@@ -1,0 +1,59 @@
+fileFormatVersion: 2
+guid: 1b80db2d0654ac247830496170885e82
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _sprites:
+  - name: Moving_platform1_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 7db6ece322ed9654382b3b48ee04011a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Moving_platform1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 1901d60771afe8a4cb28ca8b9469a0da
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Moving_platform1_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 486d7020c5532dd4b831244ee11e5c3d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []

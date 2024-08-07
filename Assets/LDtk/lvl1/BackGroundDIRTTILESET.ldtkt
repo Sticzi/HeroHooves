@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "010000010000111111010011",
+      "averageColors": "f122f122f122000000000000f122f122f122f12200000000f112f102f112f212f112f112f212f112f212f212f112f112"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "BackGroundDIRTTILESET",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 96,
+    "relPath": "../Sprites/TileSets/BackGroundDIRTTILESET.PNG",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 31
+  }
+}

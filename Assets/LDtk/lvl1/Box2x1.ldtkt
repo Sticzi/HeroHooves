@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 1,
+    "__cWid": 2,
+    "cachedPixelData": {
+      "opaqueTiles": "11",
+      "averageColors": "f854f743"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Box2x1",
+    "padding": 0,
+    "pxHei": 16,
+    "pxWid": 32,
+    "relPath": "../Sprites/Boxes/box2x1.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 82
+  }
+}

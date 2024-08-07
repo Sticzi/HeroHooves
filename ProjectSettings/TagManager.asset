@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - GM
+  - Background
+  - Knight
+  - MovingPlatform
+  - Box
+  - Horse
+  - KnightCameraCollider
+  - VirtualCameraKnight
+  - VirtualCameraHorse
+  - PlayerWeaponCollider
+  - KillBox
+  - HorseCameraCollider
+  - VirtualCameraHorseDown
+  - Checkpoint
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - Enemies
+  - Ground
+  - Player
+  - Background
+  - Knight
+  - boxes
+  - PlayerCircle
+  - Platforms
+  - CameraBounds
+  - Ladder
+  - AttackTrigger
+  - KnightAttackCollider
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1797784051
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Tiles
+    uniqueID: 2379191101
+    locked: 0
+  - name: Player
+    uniqueID: 2830271745
+    locked: 0
+  - name: Enemies
+    uniqueID: 958396855
+    locked: 0
+  - name: UI
+    uniqueID: 630875683
+    locked: 0

@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: bc9492893801ccd4cb61d96b2bbf384d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _sprites:
+  - name: BackGroundDIRTTILESET_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 16
+      height: 16
+    spriteID: b1f2d9981f4548f47af027095a788b95
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 24344323b96018e4aa80c85bd4e87fcd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 8a5f383dac090de4b8897ed274f85a9a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 48
+      width: 16
+      height: 16
+    spriteID: c48b099c863f95544b6f1ac1601b76da
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 05dfb2c0377243a4ea881fe0368207bf
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 48
+      width: 16
+      height: 16
+    spriteID: ada1d7b8383a3bc4e81809771e5f2811
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 6f484de3804952f46ae399fc2a87b486
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 9d254a67278d8d240bce07e0ca52e3be
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 06d3465464e99d24a98356f9211d258f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 1a0242a196939744caaafa58308ab25b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 2967c981f24f7954dac73eda431ea522
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 489b649b0717c024f87e49d489d32eef
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 493967e73674ea2499966547bed2ef68
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: aa6e2f7598a386747a1aa6e568b445ab
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: dcb06854b477bf942bb38f3abb54b0cb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 907c16be58e00574599c11ddabb90b46
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 5e659c2579ac6f649be1311c8345a95e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 46f79508f659181419e66860f2919dc4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 01a5f8782f2e9e943a9e8896ab480f18
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: ab7131a0d0c70424da3a76090f17856f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 2b116d8945f040445898d5512a992c2a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 5777d918e9c5d4d4f8f08282337f5948
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 16
+      height: 16
+    spriteID: e23c6b9d31ccb8e4f8220bd9622b05dd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: BackGroundDIRTTILESET_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 0
+      width: 16
+      height: 16
+    spriteID: a3a1fd28a7733b743a62e570e61afb5a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []

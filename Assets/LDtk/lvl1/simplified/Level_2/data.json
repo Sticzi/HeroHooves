@@ -1,0 +1,69 @@
+{
+	"identifier": "Level_2",
+	"uniqueIdentifer": "b0fab200-fec0-11ee-b651-81b82e37ef14",
+	"x": 768,
+	"y": -128,
+	"width": 448,
+	"height": 304,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
+			"dir": "w"
+		},
+		{
+			"levelIid": "3bdf1460-fec0-11ee-a4cc-4102cbd6402e",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png",
+		"Tiles.png",
+		"Ladder.png"
+	],
+	"entities": {
+		"Platform2Left": [
+			{
+				"id": "Platform2Left",
+				"iid": "79d96cc0-fec0-11ee-b651-9fa0c9803410",
+				"layer": "Entities",
+				"x": 160,
+				"y": 144,
+				"width": 32,
+				"height": 16,
+				"color": 14120515,
+				"customFields" : {}
+			}
+		],
+		"Platform1Left": [
+			{
+				"id": "Platform1Left",
+				"iid": "83e6f8e0-fec0-11ee-b651-f3efbd229b65",
+				"layer": "Entities",
+				"x": 176,
+				"y": 96,
+				"width": 16,
+				"height": 16,
+				"color": 14120515,
+				"customFields" : {}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "1dbc3a70-fec0-11ee-b651-c9b128ce4d55",
+				"layer": "Entities",
+				"x": 16,
+				"y": 192,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		]
+	}
+}

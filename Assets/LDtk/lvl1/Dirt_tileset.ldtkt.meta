@@ -1,0 +1,4814 @@
+fileFormatVersion: 2
+guid: 6f3cd8cd87b279142a3759d1f2002817
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _sprites:
+  - name: Dirt_tileset_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 88c901ff94802a642b4554ad44a14f82
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 7cf25cc475feaa8499ad93da9467a61e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 240
+      width: 16
+      height: 16
+    spriteID: ea8194ca018996b4b9b557fa96c47456
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 845359af3338d7b40b016be9e8341cc9
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 5bc537140867c2046ae4d29dab35242f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 240
+      width: 16
+      height: 16
+    spriteID: c9ca043cc3aec2c45ba7d5ce4716201b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 240
+      width: 16
+      height: 16
+    spriteID: ae9b1ccaa9adbff42b61c7786c3af414
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 34d569f51e2f3174081901e31b2f9a02
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 31feccb10da7cc4489d0f463e6bd2f01
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 0e85f6f1c3c513e4a916f867bfdd275d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 114e2e161a8b8f649ae7dbf919953004
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 240
+      width: 16
+      height: 16
+    spriteID: c44d80dc2d9dffa44a4f3ab635df7e4a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 9c2e8fe2fdcba6f48961cf66f6ab6873
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 222c25720290b4547a9c2a90b07dcb15
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 699f14674872e3f428bff4c0b12bd308
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 240
+      width: 16
+      height: 16
+    spriteID: ce528bcadf767a647abbe4e5f46ea63f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 240
+      width: 16
+      height: 16
+    spriteID: c0c6032e6b154f049ae1a3d6767facba
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 215569f03bbe3d64ab3a18cf3873c02f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 240
+      width: 16
+      height: 16
+    spriteID: cc3844c5f45845e488d813ea29b064f2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 240
+      width: 16
+      height: 16
+    spriteID: 70754c52be27ef241af930e44507557e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 224
+      width: 16
+      height: 16
+    spriteID: ef75354ccc684134a8d655eb75e1cca1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 38319173f25c53a43824e60c73bcf01f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 7257304c016c78846a6c24985b6f2372
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 224
+      width: 16
+      height: 16
+    spriteID: e6813f9b3cee86d4fb4444fc82ad19f7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 6a26cc03fd91c17489ec787973acaa38
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 3f927c48f95737f41a46187f5eccd71f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 5171c8568c02c5841aa6e4e5641ece41
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 224
+      width: 16
+      height: 16
+    spriteID: dcfd08209538b1a46bcb3c298d9e037b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 3b20ac4aef7b7734e842c884938f2e3e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 669ba5b96d7f52a4399478a395609580
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 0def65363dece2f429095db49d6fd704
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 4b59a9d1d9e72414081a63ae52af04bd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 224
+      width: 16
+      height: 16
+    spriteID: a29d9510a2af3b24287d14499e61dc13
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 60c3c7ff10aa654448ad86188a168299
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 235d251e3a204e44da21c320c6ff9a67
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 224
+      width: 16
+      height: 16
+    spriteID: beaaf965ee947cc4b9b65a46a71d6d89
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 45a2a334c96aa024b84a5026c9f6927c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 224
+      width: 16
+      height: 16
+    spriteID: b09f5d4f5268ecf4eb0ea89940197382
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 224
+      width: 16
+      height: 16
+    spriteID: 737f19f03159a4d4a88bc1b9478df713
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 224
+      width: 16
+      height: 16
+    spriteID: c77821ac3d6f0e84d9e6f480cbd55997
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 220fc90c55397f94f868eace3662ced8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 73a12185f5dfd2e40947ffe93beaa8ee
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 208
+      width: 16
+      height: 16
+    spriteID: af838c6f8550b104692cdb4674371edb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 3b260ad5d1a93034dbfee812fcfc6fa2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 208
+      width: 16
+      height: 16
+    spriteID: a3f1a91aefcaccc4aaa7a0391e2514fa
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 3ad106ff8a98185429b8f4821514d170
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 208
+      width: 16
+      height: 16
+    spriteID: ea7dff2c4a5fbd542bb25ae7ecc97e86
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 208
+      width: 16
+      height: 16
+    spriteID: b10343a42a41dec4da2e758542fd42cb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 208
+      width: 16
+      height: 16
+    spriteID: df80e3becabc6c54b83036c964554c01
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 208
+      width: 16
+      height: 16
+    spriteID: fdae847119d745844980d037939e84d0
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 8eb4d6289e493da4c97098db2f01299c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 208
+      width: 16
+      height: 16
+    spriteID: ce609b6310b565748a0607b6b211bfec
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 3b4f92a6f85a72e4790deab9d0ee7b51
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 95c41e7266b0fdd42834892fb3f1f7e0
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 8dc52272b678a1947a6be639401d05e4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 208
+      width: 16
+      height: 16
+    spriteID: a0197b9fc5ea32d40ae560b79ef3a547
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 44826b88fe30c8848b2244ab0c862c64
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 646f59173c6598a4b8a6d8c0552da3d1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 3ff6b5aeef9b41f4b8ec5a1005066f33
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 208
+      width: 16
+      height: 16
+    spriteID: e12d2644d14ebd3478f192d6e3fba57c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 8dc65ab72fd92f843808f8d5c8301902
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 192
+      width: 16
+      height: 16
+    spriteID: e786e89b701d5d94488187507593199e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 189f3a47ac76bb940b9aa1c1cb12d264
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 192
+      width: 16
+      height: 16
+    spriteID: b8266fcbdae0aa3458f97b10a877ab30
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 192
+      width: 16
+      height: 16
+    spriteID: c4441aed38226804ab98d996134e839c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 192
+      width: 16
+      height: 16
+    spriteID: f97bb286743dd364094ecd719ccb5df2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 192
+      width: 16
+      height: 16
+    spriteID: de517d4a686417949a58e652ca41289c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 1c03d691b7b5c434a9741f30ba104963
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 192
+      width: 16
+      height: 16
+    spriteID: f1edcee6125301741b06e3a753673acd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 98acfea22390e2447b8a56e960300c72
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 5a6297e0f2b2ed54f88b246eacb37f4c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 1ad46a85ab29874469ec75a1560d283c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 7910f98e83cf2b64f9a161644acce78d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 0dad850245ada1a4f86ce91c6a11815d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 192
+      width: 16
+      height: 16
+    spriteID: d3d893783efddfe4db7ba49f890a0cbc
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 96abe37e3873d324ba3e2b3be05145f4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 422e73096cae7124a84a611664e39ab1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 18ea2df8f6430c94f9251333c4d88f1b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 192
+      width: 16
+      height: 16
+    spriteID: d9d1cc7525573e64db1d9dcf7835dd36
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 2031cadf1321e2d4fb7a7f70624677fc
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 6916e36a26e8e9c42b6b4f88515e02b4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 7976162a9e4938e41925402a376d8eba
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 6e030478a0c46a34ab61f4f41eed764b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 4865a4c76daa97d40a9914bd2121e010
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_84
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 176
+      width: 16
+      height: 16
+    spriteID: a3f02e3d2d7aada4191cf14971416aeb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_85
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 176
+      width: 16
+      height: 16
+    spriteID: a2bdaf6c4ed0ffd4fbed9325b889d8b8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_86
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 06096a231cce8d64db93a88d9ab3e5fe
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_87
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 176
+      width: 16
+      height: 16
+    spriteID: e752c14ef76740a4cb0ffe497b4c171e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_88
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 4e03492edd290b54985f19a518e92925
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_89
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 170fbc47d0c386b488d4ef7d4c320309
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_90
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 44a7148373d4a5447a36997b5c25cb34
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_91
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 6975e4aa901b6204eb315447d0d5c38f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_92
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 176
+      width: 16
+      height: 16
+    spriteID: d1baf5fc15687554182049bdac33fbcf
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_93
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 48f3eb9e1b9c6c14a950cd89f5321a09
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_94
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 176
+      width: 16
+      height: 16
+    spriteID: e2a75a2fdc18a2b4e8bddf8e310a849c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_95
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 176
+      width: 16
+      height: 16
+    spriteID: aeba554e91b5f004d8526bdab6facbac
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_96
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 176
+      width: 16
+      height: 16
+    spriteID: c58235e9190bf164e997dc0eba19b539
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_97
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 6bda539a1c4ae7d498b764a001741ba7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_98
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 6d36def97ef1db34db6c3a0dc51b4a14
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_99
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 9f798b6efb24b414e9ffab7f0c59dcb9
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_100
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 1c0ba656028661c49bc87e16a629b616
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_101
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 9f8730e56aafefe4b993da8935f600a3
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_102
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 74c57f963d082484c8ebd64235c43c7b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_103
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 174582607f9ed6c4d9d101d5ab00dc5a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_104
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 160
+      width: 16
+      height: 16
+    spriteID: b3a37894f2fa2c542909f161bdb762c3
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_105
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 160
+      width: 16
+      height: 16
+    spriteID: c3059cdca76629b4bb887ce4f874f7ce
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_106
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 7f10b99adc116e64aac2f1b439afec08
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_107
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 160
+      width: 16
+      height: 16
+    spriteID: b4d08f7d133b1f246b79134e5a929266
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_108
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 160
+      width: 16
+      height: 16
+    spriteID: a682d99de38775d499d923e191d99332
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_109
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 160
+      width: 16
+      height: 16
+    spriteID: c7a7d38f79cca374b8dc92304e0d6852
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_110
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 5bfe3387f66b0f644b8a342d80f37ff6
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_111
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 160
+      width: 16
+      height: 16
+    spriteID: b47dbc168af899244b3d0e8e856c7540
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_112
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 160
+      width: 16
+      height: 16
+    spriteID: e33c2e18c5561f24e8885485ab1f512c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_113
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 65e50fadcb15f4745845fceaa34be263
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_114
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 160
+      width: 16
+      height: 16
+    spriteID: ab4c1fa8928bd3740938744347b3094d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_115
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 82569fc01ad2cba4bab1cc9f6df67423
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_116
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 8e96d1282a8afe441b9a9fae86c09ea1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_117
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 160
+      width: 16
+      height: 16
+    spriteID: dc73634b59aa2674d9dd98bfaae65357
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_118
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 160
+      width: 16
+      height: 16
+    spriteID: cdf9c261fc1c6754399b1179e1fe6f5b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_119
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 6e3c4485349c61f4685006ea65637f6a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_120
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 446efa908b5c9ae43811f5a3dffe5175
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_121
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 127341f10815b4e4bab9867d20e336c9
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_122
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 71b6be89d9ab9474bbeb108e5597fed5
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_123
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 6347c4835912d8f48929a1d45f0d3ae2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_124
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 144
+      width: 16
+      height: 16
+    spriteID: e87518d2abf46e2489e1750315f5334f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_125
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 144
+      width: 16
+      height: 16
+    spriteID: f25bd54355ea0364cbff75d0d4ecd7d1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_126
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 7736a5b83e2b7b44eaa8e9bd32080484
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_127
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 48c4506033371da45b7f826172d6b395
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_128
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 144
+      width: 16
+      height: 16
+    spriteID: a04689fa86b4c574bb1988f3420e1123
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_129
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 9a0176584983a144f8f0893a42ec05c0
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_130
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 7f35eb7c52130ec4297ab580a3f24e41
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_131
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 52cf547508a32594cbd6851f1f9912cb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_132
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 7951c57cfe6b6be47a7c888b77485640
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_133
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 4bda2ad78c2886145803026cadbdfbae
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_134
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 05d89b5508c39804789596b377ea94b7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_135
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 92393bd48caa8144ea72509bb8db00e9
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_136
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 7393933fb672d144bb68449d14995c52
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_137
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 144
+      width: 16
+      height: 16
+    spriteID: ee11208f319778d4a837b0a7b9f69e4e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_138
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 5361f03dc4545dd40bbf63a1e45c956a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_139
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 8dcf41109247fc34eb98070756460b3d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_140
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 15102f0c762b2a94f8ed952c7f80224f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_141
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 685e4316ef1e55146931bff3202669a1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_142
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 6215621cc9678a447b9cf6a92695d4c0
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_143
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 61ea935f8e337b04784021a8f2c2f6bd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_144
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 0e6ed00dff753554db50b156a0fdd50a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_145
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 128
+      width: 16
+      height: 16
+    spriteID: dbb3136bf00d75642afd937d78aa2b67
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_146
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 128
+      width: 16
+      height: 16
+    spriteID: eb4894abe8f9e00448ad4734ce408e17
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_147
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 5ec855416292611499c7a7bc47937a21
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_148
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 128
+      width: 16
+      height: 16
+    spriteID: ba6bf68ec3c392b4abb901876d2ec39c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_149
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 84e70b4cbd06db34a8a2579634d18e93
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_150
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 465be948ccf725942a22462ff9e49afd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_151
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 737b9303fdf4ea246b011fd725ddf4e2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_152
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 7198f089a9a2326409d9ca70fe8ba361
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_153
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 3e1b9b8a8905eab48b5fbd7085eceeee
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_154
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 1fcc208f3f891ef4da71ad715e7ca070
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_155
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 128
+      width: 16
+      height: 16
+    spriteID: b5b3ce33ec0ffcc41bc541792c5b8d72
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_156
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 1725cd8cc92fc3a44b554e3de0412982
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_157
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 128
+      width: 16
+      height: 16
+    spriteID: fb4d7958841b1c4438f75649a7863993
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_158
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 88e99083330c17a4492172aa6eaa5b3c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_159
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 15518c5a3751bd242a8eb3197813e304
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_160
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 27f47d44ad8112d40b3e0cfb50d6f602
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_161
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 112
+      width: 16
+      height: 16
+    spriteID: f4990a4a6d26756498f4d6b4cc5888cc
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_162
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 112
+      width: 16
+      height: 16
+    spriteID: e7c0a5bbfaf532140b35127cde988bda
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_163
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 0d36afbeb256e604e8bef91d53d5bb3f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_164
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 44f4a6e217b44c54187cb0e5778031ad
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_165
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 112
+      width: 16
+      height: 16
+    spriteID: c79c8f3d34f2ff34bbb82e68622d1608
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_166
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 112
+      width: 16
+      height: 16
+    spriteID: afaef329928d19c4b95aafa62b14f83c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_167
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 112
+      width: 16
+      height: 16
+    spriteID: f48ead1b09af4cf40a4f64f0a4eb182d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_168
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 8eb649e129867ab4e8575c8c25080893
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_169
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 112
+      width: 16
+      height: 16
+    spriteID: c9e6f2de55d4c4d448c1dd57f0610993
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_170
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 25f9134b51772294385275dfd6e387ef
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_171
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 112
+      width: 16
+      height: 16
+    spriteID: e525faadd7c088b499e77b0c9502d1fe
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_172
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 07ddf9ee9fe43024e943a6d154602ca8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_173
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 112
+      width: 16
+      height: 16
+    spriteID: f2797577c46ff8c48894e1d8ae73422a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_174
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 01f7c063213020b4b803c436cb8a9e61
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_175
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 112
+      width: 16
+      height: 16
+    spriteID: d1a1fa20ac925974b90fd3d2133a00ab
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_176
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 112
+      width: 16
+      height: 16
+    spriteID: b57b212631d22d540970fc6a8aa82cc2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_177
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 8a7784b6298ade147a6354d0380b4bb2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_178
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 112
+      width: 16
+      height: 16
+    spriteID: c20ca69ef28962e4cbcbb97d97aca198
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_179
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 112
+      width: 16
+      height: 16
+    spriteID: de534c506f2ea62409ebe59c09ee7738
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_180
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 8696f95eda55f4e4d931fdb8c6902435
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_181
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 7bc18da8fda655a469209a419a1b5275
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_182
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 16
+      height: 16
+    spriteID: bdb7828d45027e9458b5675da67bfdef
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_183
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 96
+      width: 16
+      height: 16
+    spriteID: b73a17e3ad3e50445b2417e6f1f0bc82
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_184
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 16
+      height: 16
+    spriteID: a9b875fbee5903d47a1273d9214cad99
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_185
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 96
+      width: 16
+      height: 16
+    spriteID: a8e5154cd03539b43b19303faa1a950a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_186
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 5a92682cc8843e34887d5dd432dac28a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_187
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 96
+      width: 16
+      height: 16
+    spriteID: cdc6b74b7be466048b0fac58587c6b88
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_188
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 16
+      height: 16
+    spriteID: e4f6924d88102134baf9678aa68d4d5b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_189
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 72e87203fb3667b4c883ae054e263400
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_190
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 652b82022feba934b81172a7dac910c1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_191
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 24b5676fbea40a04384485e29fc186f7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_192
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 19ee1e7bd191bdc418c0d22955045a4d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_193
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 6c51bacaff9b38244b9978f99e7c1069
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_194
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 225ceda7ca9d74e4b8437294fdbe6524
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_195
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 3f8986fa22d951b4a8ec927ce7997e5c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_196
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 96
+      width: 16
+      height: 16
+    spriteID: df3982f5fffcba84da2fa6be3473631e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_197
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 1395cfd6de64f204bb62dd728116cfcf
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_198
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 564409d899c5e6b4c859dbdfe74ebb82
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_199
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 96
+      width: 16
+      height: 16
+    spriteID: d1372b03abcccc34890568d90b3df0bf
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_200
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 3f783d41fbc7b1a4c9f6a17ae9fa936e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_201
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 025c26afd8108c54193b79a349862d78
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_202
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 80
+      width: 16
+      height: 16
+    spriteID: a29b6ca128d131b48bde3a724de96efc
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_203
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 2f4a598bd7ab712428dd408da3e85655
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_204
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 25826c60bf389004284aa9198fa3eea8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_205
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 480d21a27127a1b48a584f8b849606ad
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_206
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 0b1bfd4b9aac86e4d826b272f19dd429
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_207
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 0aa71dad96fef5149a146d024bfb2473
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_208
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 801f153783f59b54ab5739327caf2009
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_209
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 38b679f01bd269145b905f800c78bc64
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_210
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 80
+      width: 16
+      height: 16
+    spriteID: e5ee7145c8cdcc94288625fb82c77d1b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_211
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 01ba33d71b252bd46a6f6fff8eabfce8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_212
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 1f603ca215143ac438ffe8ce68fa67f0
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_213
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 66d3affbb1c5ea34985150bd7e1552b1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_214
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 1e37f335f3dd82c4f82b54507c282c7b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_215
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 80
+      width: 16
+      height: 16
+    spriteID: b8acee5df4b176846b4d34875115b0ef
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_216
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 80
+      width: 16
+      height: 16
+    spriteID: c38733e1f99bdd3409a924931e12534b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_217
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 29f73495140097c4ab42855962b75bf4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_218
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 60757d5b14ba51841a1ffc01626aefc4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_219
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 304d88e246f65da459db64c8fdc2706d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_220
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 16
+      height: 16
+    spriteID: f467c934454a9024ab07d9d25a24010a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_221
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 826d0eb7de4fd024bb0b079c4a17767a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_222
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 10b29326c4c8b0c41967c6c4cb414276
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_223
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 64
+      width: 16
+      height: 16
+    spriteID: ffcc100b173c98448a370213d04609ea
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_224
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 16
+      height: 16
+    spriteID: ff9a3ea815f51dc46b46803fcaf69368
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_225
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 5085b2e7bad49f74795b66b2ef097b84
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_226
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 7ba342756fe763347b6d715b52ad225a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_227
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 649301a0c8fd4e743b13fe2c65b0e84d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_228
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 16
+      height: 16
+    spriteID: cd5b92eaa091afa428897034730d69ba
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_229
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 64
+      width: 16
+      height: 16
+    spriteID: bd3f76cee92922749a8e711d7f7af053
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_230
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 16
+      height: 16
+    spriteID: de35442f005325040b4a9301db9b5de3
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_231
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 99c7a15eb1210ea4aa272eb3bae91bec
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_232
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 6aa2aaa22f0cd344c999c3ae2e043340
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_233
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 6dfa8ef9a63e2e54c9ef1b89b04970b1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_234
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 64
+      width: 16
+      height: 16
+    spriteID: cfb591fb5d0556446ab522337b988cea
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_235
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 533273bd7d207cc4bab5937d41004a8c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_236
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 16
+      height: 16
+    spriteID: a89df3f9a70477c4899e9fe8eb5c88fe
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_237
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 64
+      width: 16
+      height: 16
+    spriteID: a05447f23a4ce2547b4267e193190095
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_238
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 25d850cd02e1d714a901e0fd7dc43cd2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_239
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 64
+      width: 16
+      height: 16
+    spriteID: d203e0f9e72ca844f9d066014e694cbf
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_240
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 889cd3515c6307141989367dd3eb96bb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_241
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 1c7480d51555de74d84818cea6e77eec
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_242
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 48
+      width: 16
+      height: 16
+    spriteID: c08b85f8400c07343949e5d52e137dd4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_243
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 8da54725175c5e944a1235a923297b78
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_244
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 48
+      width: 16
+      height: 16
+    spriteID: cd920e0dc132fcd4cbf14cf622c1a238
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_245
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 48
+      width: 16
+      height: 16
+    spriteID: a4c2df708ce1eb849bd89bacabd29669
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_246
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 44b41aad2d7ac8044ba4f3ba22c284e7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_247
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 7e378c6706494594dbb286d1a3dc1829
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_248
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 3cdc9be50f020c64687257fa7cc90d4c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_249
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 48d6c41d20ff47047bf36f38b573d8b2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_250
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 5902c6a3031cfda48917cc28828b3e81
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_251
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 48
+      width: 16
+      height: 16
+    spriteID: f1914ae0956e77141a4b6792eeb44373
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_252
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 144971fbebcdf0a45a0a9c58c2381549
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_253
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 66710f8219d5c1a459b4977f065489dc
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_254
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 267ed14baae46104180fcfe4a39d0b6b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_255
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 1e93d0676d195a64e914e184e4a14881
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_256
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 60693a489098ab241b2a327e2ab2427c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_257
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 48
+      width: 16
+      height: 16
+    spriteID: ef88efa1f78c68f4a8170e9b674a4604
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_258
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 64ded5741f709094e9080a2f0f4f0bbb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_259
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 48
+      width: 16
+      height: 16
+    spriteID: a6e5cb9d1039455409242656da6a3908
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_260
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 73f4cca8d553061428068d652072c8f6
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_261
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 399b505cff25e324582e329057fe1fca
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_262
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 0204a791a7118f645843a738c5970c11
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_263
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 9785f44b4e5db6547a5900de84fc105f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_264
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 0db93a0e0fdc21343b180a1be1dc2e9a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_265
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 32
+      width: 16
+      height: 16
+    spriteID: bcb4c2c8649161742bf5475f7a6309f8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_266
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 619712a4beaedc74c98dd7dd9f5b3cbb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_267
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 32
+      width: 16
+      height: 16
+    spriteID: b5f7d605e20e6434ba870dd8728cdd73
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_268
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 48c710a8d187e1245ad85fb153e5a37c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_269
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 983b5c148722b934fb051b72de3b1952
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_270
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 8aba6cbd6a6488040a7479fab4085e86
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_271
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 32
+      width: 16
+      height: 16
+    spriteID: a7b37011514869a44b13de43b9211439
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_272
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 16
+      height: 16
+    spriteID: e3e883630ed63564e80e55db2efa2a32
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_273
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 58d23ecf0a078e54289466b43b8d3625
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_274
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 32
+      width: 16
+      height: 16
+    spriteID: c6f5770e1af904047ac4910e1977be44
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_275
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 32
+      width: 16
+      height: 16
+    spriteID: a1e0899549066e84692a977b892ba28a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_276
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 632da8774b284bb41bc988efe1736413
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_277
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 32
+      width: 16
+      height: 16
+    spriteID: b6b1832d19e242a45bd063e3c821f3ba
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_278
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 2ffafd4720be36b4daba68a9f9e6780e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_279
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 32
+      width: 16
+      height: 16
+    spriteID: e49816fecd20a3d42a188a1fdd09416c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_280
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 9c00c826a75c53c479519353b61ae193
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_281
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: ba5eb0ac84e42384784a848aca273f13
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_282
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 8331c7a699b5d1742a68846aeb8e3b5b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_283
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 59a2b7f2ea6d5754397539a53ef3a1fb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_284
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 100c296d686b15a42860e6f21eb6743e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_285
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 16
+      width: 16
+      height: 16
+    spriteID: dd3872ac899a88143a63824987edffe8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_286
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 7bc4957cc77d648418dce54fadc4c5a2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_287
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 16
+      width: 16
+      height: 16
+    spriteID: c4355f56c8987244c8cf0065048c82a8
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_288
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 16
+      width: 16
+      height: 16
+    spriteID: c2500fc61204c03499db83168235b69e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_289
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 9322758254f01674e93720784a369ddf
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_290
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 16
+      width: 16
+      height: 16
+    spriteID: ff300231c0c616947bd1520036618eb1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_291
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 224db3c72329849439f708fab541cc9f
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_292
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 16
+      width: 16
+      height: 16
+    spriteID: f54189232b835344d8cee66144fb135b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_293
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 6a9f1dcebaca9554cab6009858701bed
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_294
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 8890c3d678e2eea4eb26a16b85ea1876
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_295
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 698235e9a2716644da5c15faf07de658
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_296
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 8090c2ff4643b144bb8cd40c5d22c39e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_297
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 16
+      width: 16
+      height: 16
+    spriteID: d97c1ec84ae9dd94683bec68f0b87b56
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_298
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 28272ca3dbb96c547b120a88f833b351
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_299
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 05f2bbb13252ae74fa270e484658d946
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_300
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 027f93da348b0ad47870d8ba7f84e75e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_301
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 2201af895039ca64fa2ae933c8b1a006
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_302
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 484dc1499521af54bbd5cad8e96ee36e
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_303
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: d331338825bdf1b40973d234079ff4c3
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_304
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 21c7b956d88b0d44fb6efb345b02387c
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_305
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9f0801612a5367c42b9e41acfb9d2743
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_306
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 086c7279769a6ce4a942a590d42f5017
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_307
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 23c417838f20e774caa715a5b5561d6a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_308
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 16
+      height: 16
+    spriteID: c9cc7939d502b66408ece9704a3a6c66
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_309
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 0
+      width: 16
+      height: 16
+    spriteID: fe68104ed8915c5489eb262a2f29b1a7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_310
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 16
+      height: 16
+    spriteID: b431a360f4218b544a16299d04ea74e1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_311
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 0
+      width: 16
+      height: 16
+    spriteID: e194d1d725773ab4b804d848c8eab9fd
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_312
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 299d79842e8e21b4885fbb4fa916faf0
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_313
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 03ebdbb792161f64eac46df7bf5013f2
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_314
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 16
+      height: 16
+    spriteID: d670d86509fda81459c626ce6c81d6e7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_315
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 4fb60a8c76f50d44e93b95d55779f58b
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_316
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 16
+      height: 16
+    spriteID: eb8f0eb24e6e0424bb2ed038584b0d4d
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_317
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 7fe98293a30866545b4437786b236007
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_318
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9fd0405211f3bbf42b8b6ae4d8196fb7
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Dirt_tileset_319
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 29134436651d170498bcae63413e96e4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []

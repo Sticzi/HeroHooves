@@ -1,0 +1,82 @@
+fileFormatVersion: 2
+guid: 59887f673c18ddb45bf30800f163970c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: aaa16bfc62c086f4fb45da87b6acf9b1, type: 3}
+  _reimportOnDependencyChange: 1
+  _jsonFile: {fileID: -164016180542632921, guid: 59887f673c18ddb45bf30800f163970c,
+    type: 3}
+  _pixelsPerUnit: 16
+  _customLevelPrefab: {instanceID: 0}
+  _intGridValueColorsVisible: 0
+  _useCompositeCollider: 1
+  _geometryType: 0
+  _createBackgroundColor: 1
+  _createLevelBoundsTrigger: 0
+  _useParallax: 1
+  _intGridValues:
+  - _key: Ladder_1
+    _asset: {fileID: 11400000, guid: 123cf22e7ecedb046a17369e29bb12ce, type: 2}
+  - _key: Spikes_1
+    _asset: {fileID: 11400000, guid: 02e225b34ccb23c4b878b9773c5f472a, type: 2}
+  - _key: Spikes_2
+    _asset: {fileID: 11400000, guid: ec4e4ec4669c7be4fa3f6170960a32b2, type: 2}
+  - _key: Foreground_Collision_1
+    _asset: {fileID: 11400000, guid: 4bb6fe06fd9408c47b9b739341898c48, type: 2}
+  - _key: Foreground_Collision_2
+    _asset: {fileID: 11400000, guid: 4bb6fe06fd9408c47b9b739341898c48, type: 2}
+  - _key: Background_1
+    _asset: {instanceID: 0}
+  - _key: CameraBound_1
+    _asset: {fileID: 11400000, guid: 48e054aa1c551834c9dac24c1220fed3, type: 2}
+  _entities:
+  - _key: Box2x2
+    _asset: {fileID: 4418238060043221495, guid: 53e831eaa534e344a8279e5270cf3658,
+      type: 3}
+  - _key: Goblin
+    _asset: {fileID: 4401994312279660487, guid: 1806c6e26b1222d49a649f59f6ebec75,
+      type: 3}
+  - _key: Falling_rocks
+    _asset: {fileID: 9034771307190257636, guid: 4c0b809e5ee8b1e42bb93d21721f7d04,
+      type: 3}
+  - _key: Spikes
+    _asset: {fileID: 6425888606101818611, guid: 010b899e0bbefda48b00c41881c0e86b,
+      type: 3}
+  - _key: Platform1Right
+    _asset: {fileID: 2593721765980111037, guid: 5c655b858c01b9d4c898936e630952a0,
+      type: 3}
+  - _key: Platform2Right
+    _asset: {fileID: 3146880460312783805, guid: 152127608e23dfc4c94064d03bf8c2ba,
+      type: 3}
+  - _key: Platform3Right
+    _asset: {fileID: 5977265038658534508, guid: 3bf1e9bdad194be4895dacf61c8c1248,
+      type: 3}
+  - _key: Platform1Left
+    _asset: {fileID: 8373116268138471963, guid: 605dd7301bedd0b499c95b95bc557938,
+      type: 3}
+  - _key: Platform2Left
+    _asset: {fileID: 6367911394090996527, guid: f806af773fe57b849baf131133c86a6f,
+      type: 3}
+  - _key: Platform3Left
+    _asset: {fileID: 8130948025750013595, guid: 6ac0b630ffe43d0498f02d7c3d8ad2d9,
+      type: 3}
+  - _key: Platform3Both
+    _asset: {fileID: 3959228893539333638, guid: a3f981c826db4634687ea0c9f9108e7f,
+      type: 3}
+  - _key: Platform4Both
+    _asset: {fileID: 4644537140394296217, guid: 960bca988f5fbc4448d40b3bb9bc2137,
+      type: 3}
+  - _key: Checkpoint
+    _asset: {fileID: 2769772668414780315, guid: 17c78dd91773f0f45bc0f268e672ce0d,
+      type: 3}
+  - _key: MovingPlatform
+    _asset: {fileID: 8786481445620111759, guid: e98610d13c6b1084cb47b3266eab5c3c,
+      type: 3}
+  _enumGenerate: 0
+  _enumPath: 
+  _enumNamespace: 
