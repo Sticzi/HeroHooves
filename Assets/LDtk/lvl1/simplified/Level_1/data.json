@@ -68,7 +68,7 @@
 				"id": "MovingPlatform",
 				"iid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
 				"layer": "Entities",
-				"x": 184,
+				"x": 136,
 				"y": 168,
 				"width": 48,
 				"height": 16,
@@ -76,14 +76,54 @@
 				"customFields": {
 					"Position": [
 						{
-							"cx": 20,
+							"cx": 8,
 							"cy": 10
 						},
 						{
 							"cx": 20,
-							"cy": 6
+							"cy": 10
 						}
 					]
+				}
+			}
+		],
+		"Lever": [
+			{
+				"id": "Lever",
+				"iid": "f667e660-4ce0-11ef-911e-61ea44063fcc",
+				"layer": "Entities",
+				"x": 136,
+				"y": 232,
+				"width": 16,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"MovingPlatform": {
+						"entityIid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
+						"layerIid": "4395c831-fec0-11ee-b651-ef314c1f27f7",
+						"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
+						"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
+					}
+				}
+			}
+		],
+		"PressurePlate": [
+			{
+				"id": "PressurePlate",
+				"iid": "26d20430-4ce0-11ef-9ecc-ebb7699d8d8a",
+				"layer": "Entities",
+				"x": 72,
+				"y": 120,
+				"width": 16,
+				"height": 16,
+				"color": 16705377,
+				"customFields": {
+					"MovingPlatform": {
+						"entityIid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
+						"layerIid": "4395c831-fec0-11ee-b651-ef314c1f27f7",
+						"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
+						"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
+					}
 				}
 			}
 		]

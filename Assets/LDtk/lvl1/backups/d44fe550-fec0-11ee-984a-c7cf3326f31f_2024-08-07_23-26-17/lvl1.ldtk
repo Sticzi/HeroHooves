@@ -4766,7 +4766,7 @@
 						},
 						{
 							"__identifier": "Lever",
-							"__grid": [8,14],
+							"__grid": [5,7],
 							"__pivot": [0.5,0.5],
 							"__tags": [],
 							"__tile": { "tilesetUid": 297, "x": 0, "y": 0, "w": 16, "h": 16 },
@@ -4775,18 +4775,10 @@
 							"width": 16,
 							"height": 16,
 							"defUid": 300,
-							"px": [136,232],
-							"fieldInstances": [{ "__identifier": "MovingPlatform", "__type": "EntityRef", "__value": {
-								"entityIid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
-								"layerIid": "4395c831-fec0-11ee-b651-ef314c1f27f7",
-								"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
-								"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
-							}, "__tile": null, "defUid": 302, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c"]
-							}] }],
-							"__worldX": 456,
-							"__worldY": 72
+							"px": [88,120],
+							"fieldInstances": [{ "__identifier": "MovingPlatform", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 302, "realEditorValues": [] }],
+							"__worldX": 408,
+							"__worldY": -40
 						},
 						{
 							"__identifier": "PressurePlate",
@@ -4795,20 +4787,12 @@
 							"__tags": [],
 							"__tile": { "tilesetUid": 298, "x": 0, "y": 0, "w": 16, "h": 16 },
 							"__smartColor": "#FEE761",
-							"iid": "26d20430-4ce0-11ef-9ecc-ebb7699d8d8a",
+							"iid": "bcb0db10-4ce0-11ef-911e-83d179efc454",
 							"width": 16,
 							"height": 16,
 							"defUid": 301,
 							"px": [72,120],
-							"fieldInstances": [{ "__identifier": "MovingPlatform", "__type": "EntityRef", "__value": {
-								"entityIid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
-								"layerIid": "4395c831-fec0-11ee-b651-ef314c1f27f7",
-								"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
-								"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
-							}, "__tile": null, "defUid": 303, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c"]
-							}] }],
+							"fieldInstances": [{ "__identifier": "MovingPlatform", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 303, "realEditorValues": [] }],
 							"__worldX": 392,
 							"__worldY": -40
 						}

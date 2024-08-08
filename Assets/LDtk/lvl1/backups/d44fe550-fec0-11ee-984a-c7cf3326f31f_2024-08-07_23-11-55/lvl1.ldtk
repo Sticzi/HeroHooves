@@ -11,7 +11,7 @@
 	"iid": "d44fe550-fec0-11ee-984a-c7cf3326f31f",
 	"jsonVersion": "1.5.3",
 	"appBuildId": 473703,
-	"nextUid": 304,
+	"nextUid": 302,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -3220,6 +3220,43 @@
 					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
+				},
+				{
+					"identifier": "Lever",
+					"doc": null,
+					"__type": "EntityRef",
+					"uid": 299,
+					"type": "F_EntityRef",
+					"isArray": false,
+					"canBeNull": true,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "RefLinkBetweenCenters",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "CurvedArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"exportToToc": false,
+					"searchable": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySpecificEntity",
+					"allowedRefsEntityUid": 300,
+					"allowedRefTags": [],
+					"tilesetUid": null
 				}
 			]
 		},
@@ -3256,45 +3293,7 @@
 			"limitBehavior": "MoveLastOne",
 			"pivotX": 0.5,
 			"pivotY": 0.5,
-			"fieldDefs": [
-				{
-					"identifier": "MovingPlatform",
-					"doc": null,
-					"__type": "EntityRef",
-					"uid": 302,
-					"type": "F_EntityRef",
-					"isArray": false,
-					"canBeNull": true,
-					"arrayMinLength": null,
-					"arrayMaxLength": null,
-					"editorDisplayMode": "RefLinkBetweenCenters",
-					"editorDisplayScale": 1,
-					"editorDisplayPos": "Above",
-					"editorLinkStyle": "CurvedArrow",
-					"editorDisplayColor": null,
-					"editorAlwaysShow": false,
-					"editorShowInWorld": true,
-					"editorCutLongValues": true,
-					"editorTextSuffix": null,
-					"editorTextPrefix": null,
-					"useForSmartColor": false,
-					"exportToToc": false,
-					"searchable": false,
-					"min": null,
-					"max": null,
-					"regex": null,
-					"acceptFileTypes": null,
-					"defaultOverride": null,
-					"textLanguageMode": null,
-					"symmetricalRef": false,
-					"autoChainRef": true,
-					"allowOutOfLevelRef": true,
-					"allowedRefs": "OnlySpecificEntity",
-					"allowedRefsEntityUid": 294,
-					"allowedRefTags": [],
-					"tilesetUid": null
-				}
-			]
+			"fieldDefs": []
 		},
 		{
 			"identifier": "PressurePlate",
@@ -3327,47 +3326,9 @@
 			"maxCount": 0,
 			"limitScope": "PerLevel",
 			"limitBehavior": "MoveLastOne",
-			"pivotX": 0.5,
-			"pivotY": 0.5,
-			"fieldDefs": [
-				{
-					"identifier": "MovingPlatform",
-					"doc": null,
-					"__type": "EntityRef",
-					"uid": 303,
-					"type": "F_EntityRef",
-					"isArray": false,
-					"canBeNull": true,
-					"arrayMinLength": null,
-					"arrayMaxLength": null,
-					"editorDisplayMode": "RefLinkBetweenCenters",
-					"editorDisplayScale": 1,
-					"editorDisplayPos": "Above",
-					"editorLinkStyle": "CurvedArrow",
-					"editorDisplayColor": null,
-					"editorAlwaysShow": false,
-					"editorShowInWorld": true,
-					"editorCutLongValues": true,
-					"editorTextSuffix": null,
-					"editorTextPrefix": null,
-					"useForSmartColor": false,
-					"exportToToc": false,
-					"searchable": false,
-					"min": null,
-					"max": null,
-					"regex": null,
-					"acceptFileTypes": null,
-					"defaultOverride": null,
-					"textLanguageMode": null,
-					"symmetricalRef": false,
-					"autoChainRef": true,
-					"allowOutOfLevelRef": true,
-					"allowedRefs": "OnlySpecificEntity",
-					"allowedRefsEntityUid": 294,
-					"allowedRefTags": [],
-					"tilesetUid": null
-				}
-			]
+			"pivotX": 0,
+			"pivotY": 0,
+			"fieldDefs": []
 		}
 	], "tilesets": [
 		{
@@ -4754,19 +4715,22 @@
 							"height": 16,
 							"defUid": 294,
 							"px": [136,168],
-							"fieldInstances": [{ "__identifier": "Position", "__type": "Array<Point>", "__value": [ { "cx": 8, "cy": 10 }, { "cx": 20, "cy": 10 } ], "__tile": null, "defUid": 296, "realEditorValues": [ {
-								"id": "V_String",
-								"params": ["8,10"]
-							}, {
-								"id": "V_String",
-								"params": ["20,10"]
-							} ] }],
+							"fieldInstances": [
+								{ "__identifier": "Position", "__type": "Array<Point>", "__value": [ { "cx": 8, "cy": 10 }, { "cx": 20, "cy": 10 } ], "__tile": null, "defUid": 296, "realEditorValues": [ {
+									"id": "V_String",
+									"params": ["8,10"]
+								}, {
+									"id": "V_String",
+									"params": ["20,10"]
+								} ] },
+								{ "__identifier": "Lever", "__type": "EntityRef", "__value": null, "__tile": null, "defUid": 299, "realEditorValues": [null] }
+							],
 							"__worldX": 456,
 							"__worldY": 8
 						},
 						{
 							"__identifier": "Lever",
-							"__grid": [8,14],
+							"__grid": [5,7],
 							"__pivot": [0.5,0.5],
 							"__tags": [],
 							"__tile": { "tilesetUid": 297, "x": 0, "y": 0, "w": 16, "h": 16 },
@@ -4775,41 +4739,9 @@
 							"width": 16,
 							"height": 16,
 							"defUid": 300,
-							"px": [136,232],
-							"fieldInstances": [{ "__identifier": "MovingPlatform", "__type": "EntityRef", "__value": {
-								"entityIid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
-								"layerIid": "4395c831-fec0-11ee-b651-ef314c1f27f7",
-								"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
-								"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
-							}, "__tile": null, "defUid": 302, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c"]
-							}] }],
-							"__worldX": 456,
-							"__worldY": 72
-						},
-						{
-							"__identifier": "PressurePlate",
-							"__grid": [4,7],
-							"__pivot": [0.5,0.5],
-							"__tags": [],
-							"__tile": { "tilesetUid": 298, "x": 0, "y": 0, "w": 16, "h": 16 },
-							"__smartColor": "#FEE761",
-							"iid": "26d20430-4ce0-11ef-9ecc-ebb7699d8d8a",
-							"width": 16,
-							"height": 16,
-							"defUid": 301,
-							"px": [72,120],
-							"fieldInstances": [{ "__identifier": "MovingPlatform", "__type": "EntityRef", "__value": {
-								"entityIid": "c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c",
-								"layerIid": "4395c831-fec0-11ee-b651-ef314c1f27f7",
-								"levelIid": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
-								"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
-							}, "__tile": null, "defUid": 303, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["c11ad9d0-4ce0-11ef-b3e2-0b0b00cca31c"]
-							}] }],
-							"__worldX": 392,
+							"px": [88,120],
+							"fieldInstances": [],
+							"__worldX": 408,
 							"__worldY": -40
 						}
 					]

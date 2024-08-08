@@ -77,6 +77,12 @@ ScriptedImporter:
   - _key: MovingPlatform
     _asset: {fileID: 8786481445620111759, guid: e98610d13c6b1084cb47b3266eab5c3c,
       type: 3}
+  - _key: Lever
+    _asset: {fileID: 8729832026787640679, guid: 0f615f8f3fbc4e048aeb96dd3b79cfda,
+      type: 3}
+  - _key: PressurePlate
+    _asset: {fileID: 8801689151735451706, guid: 286f0d5cd57587c4cab965bb0e0cbe13,
+      type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

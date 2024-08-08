@@ -9049,6 +9049,12 @@ Transform:
   m_Father: {fileID: 1052612968}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &443882574 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8055142071714621628, guid: 59887f673c18ddb45bf30800f163970c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847609329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!19719996 &458246052 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 5437498969495208321, guid: 59887f673c18ddb45bf30800f163970c,
@@ -30198,6 +30204,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1433068993}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1434146753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7400979097360981756, guid: 59887f673c18ddb45bf30800f163970c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847609329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1441854215
 GameObject:
   m_ObjectHideFlags: 0
@@ -42033,6 +42045,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[2].Y
       value: 160000000
+      objectReference: {fileID: 0}
+    - target: {fileID: -8055142071714621628, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -8055142071714621628, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7705785550683645574, guid: 59887f673c18ddb45bf30800f163970c,
         type: 3}
@@ -53959,6 +53981,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5675270474416731453, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: _fields.Array.data[0]._data.Array.data[0]._isNotNull
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5447097891209046388, guid: 59887f673c18ddb45bf30800f163970c,
         type: 3}
       propertyPath: m_ColliderPaths.Array.size
@@ -56796,8 +56823,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2997613263974226182, guid: 59887f673c18ddb45bf30800f163970c,
         type: 3}
+      propertyPath: pos1
+      value: 
+      objectReference: {fileID: 1434146753}
+    - target: {fileID: -2997613263974226182, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: pos2
+      value: 
+      objectReference: {fileID: 443882574}
+    - target: {fileID: -2997613263974226182, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: moving
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2997613263974226182, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 1434146753}
+    - target: {fileID: -2997613263974226182, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
       propertyPath: movePlatformSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2879250428742346876, guid: 59887f673c18ddb45bf30800f163970c,
         type: 3}
@@ -64604,6 +64651,11 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_Collider
       value: 
       objectReference: {fileID: 322654283}
+    - target: {fileID: 5392452947178813755, guid: 59887f673c18ddb45bf30800f163970c,
+        type: 3}
+      propertyPath: ContactFilterPlayer.useTriggers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5528713671085342302, guid: 59887f673c18ddb45bf30800f163970c,
         type: 3}
       propertyPath: m_ColliderPaths.Array.size
@@ -84136,11 +84188,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 557635230489375598, guid: 73d53684282e67b4b973cc5267e0dbd3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Horse
       objectReference: {fileID: 0}
     - target: {fileID: 557635230567986668, guid: 73d53684282e67b4b973cc5267e0dbd3,
         type: 3}

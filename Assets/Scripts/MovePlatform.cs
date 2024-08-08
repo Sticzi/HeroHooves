@@ -1,26 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class MovePlatform : MonoBehaviour
 {
-    public List<Vector2> waypoints = new List<Vector2>();
-    public float movePlatformSpeed = 3f;
-    public float waitTimeAtWaypoint = 1f; // Time to wait at each waypoint
+
+    public List<Vector2> waypoints = new List<Vector2>();   
+    public float speed;    
+
+    private Vector2 nextPos;
+    private int nextWaypointIndex = 0;
 
     public bool moving = true;
-
-    private int currentWaypointIndex = 0;
     private Animator anim;
-    private Vector2 startPosition;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
-        anim = GetComponent<Animator>();
-        startPosition = transform.position;
-
+        //asign the waypoint positions from the children of the gameobjects
         Transform parentTransform = transform.parent;
         if (parentTransform != null)
         {
@@ -32,74 +29,42 @@ public class MovePlatform : MonoBehaviour
                 }
             }
         }
+        
+        anim = GetComponent<Animator>();        
+    }    
 
-        if (waypoints.Count > 0)
+    
+
+    
+    void Update()
+    {
+        if (transform.position == new Vector3(waypoints[nextWaypointIndex].x, waypoints[nextWaypointIndex].y, transform.position.z))
         {
-            MoveToNextWaypoint();
+            if(waypoints.Count > nextWaypointIndex+1)
+            {
+                nextWaypointIndex++;
+            }
+            else
+            {
+                nextWaypointIndex = 0;
+            }
         }
-    }
+        
 
-    private void MoveToNextWaypoint()
-    {
-        if (!moving || waypoints.Count == 0)
-            return;
-
-        Vector2 targetWaypoint = waypoints[currentWaypointIndex];
-        anim.enabled = true;
-
-        transform.DOMove(targetWaypoint, movePlatformSpeed).SetSpeedBased(true).OnComplete(() =>
+        //if the moving bool is true, then move
+        if (moving)
         {
-            anim.enabled = false;
-            StartCoroutine(WaitAndMoveToNext());
-        });
-    }
-
-    private IEnumerator WaitAndMoveToNext()
-    {
-        yield return new WaitForSeconds(waitTimeAtWaypoint);
-
-        currentWaypointIndex++;
-        if (currentWaypointIndex >= waypoints.Count)
-        {
-            // If the platform has reached the last waypoint, move back to the starting position
-            currentWaypointIndex = 0;
-            MoveToStartPosition();
+            anim.enabled = true;
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[nextWaypointIndex], speed * Time.deltaTime);
         }
         else
         {
-            MoveToNextWaypoint();
-        }
-    }
-
-    private void MoveToStartPosition()
-    {
-        anim.enabled = true;
-
-        transform.DOMove(startPosition, movePlatformSpeed).SetSpeedBased(true).OnComplete(() =>
-        {
             anim.enabled = false;
-            StartCoroutine(WaitAndMoveToFirstWaypoint());
-        });
-    }
+        }
 
-    private IEnumerator WaitAndMoveToFirstWaypoint()
-    {
-        yield return new WaitForSeconds(waitTimeAtWaypoint);
-
-        MoveToNextWaypoint();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        SetParent(collision);
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        SetParentNull(collision);
-    }
-
-    private void SetParent(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Horse") || collision.gameObject.CompareTag("Knight") || collision.gameObject.CompareTag("Box"))
         {
@@ -107,7 +72,7 @@ public class MovePlatform : MonoBehaviour
         }
     }
 
-    private void SetParentNull(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Horse") || collision.gameObject.CompareTag("Knight") || collision.gameObject.CompareTag("Box"))
         {
