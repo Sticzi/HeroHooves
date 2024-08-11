@@ -20,7 +20,10 @@ public class JumpPad : MonoBehaviour
             collision.GetComponent<BetterJump>().isTossed = true;
 
             anim.SetTrigger("jump");
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+            //collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero; tak by³o przedtem i dzia³a³o git
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
+
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
         }
     }

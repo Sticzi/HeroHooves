@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 519438131734631097}
   - component: {fileID: 4720059955454503583}
   - component: {fileID: 3099530257380900927}
+  - component: {fileID: -5500012274544459426}
   m_Layer: 0
   m_Name: lever
   m_TagString: Untagged
@@ -69,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2140914169
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b1dbe3e5682211f40aeed2c621932eb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63ce676df31a24743b16e4df8c37ae71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,3 +96,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43927632fb3f6714ebc2446bbf77d7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leverRenderer: {fileID: 4720059955454503583}
+  leverLeftSprite: {fileID: 21300000, guid: 63ce676df31a24743b16e4df8c37ae71, type: 3}
+  leverRightSprite: {fileID: 21300000, guid: b1dbe3e5682211f40aeed2c621932eb6, type: 3}
+  isLeverRight: 0
+--- !u!61 &-5500012274544459426
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729832026787640679}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

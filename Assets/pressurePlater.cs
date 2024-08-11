@@ -8,8 +8,15 @@ public class pressurePlater : MonoBehaviour
 
     public ContactFilter2D ContactFilterPlayer;
     public Rigidbody2D rb;
-    public bool isPressed => rb.IsTouching(ContactFilterPlayer);
+    public bool IsPressed => rb.IsTouching(ContactFilterPlayer);
     private MovePlatform movingPlatform;
+    public SpriteRenderer spriteRenderer;
+    public Sprite clickedPlate;
+    public Sprite defaultPlate;
+    public AudioSource clickSound;
+    public AudioSource clickOffSound;
+
+    private bool wasPressed = false;
     
     void Start()
     {
@@ -20,13 +27,37 @@ public class pressurePlater : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(isPressed)
+        if(IsPressed)
         {
-            movingPlatform.moving = true;
+            Click();
         }
-        else
+        else 
         {
-            movingPlatform.moving = false;
+            if (wasPressed)
+                ClickOff();
         }
+    }
+
+    public void Click()
+    {
+        movingPlatform.moving = true;
+        spriteRenderer.sprite = clickedPlate;
+        if(wasPressed == false)
+        {
+            clickSound.Play();
+        }        
+        wasPressed = true;
+
+    }
+
+    public void ClickOff()
+    {
+        movingPlatform.moving = false;
+        spriteRenderer.sprite = defaultPlate;
+        if(wasPressed == true)
+        {
+            clickOffSound.Play();
+        }        
+        wasPressed = false;
     }
 }

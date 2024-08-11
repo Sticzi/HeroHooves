@@ -13,6 +13,7 @@ public class HorseController2D : MonoBehaviour
     
     //[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private AudioSource JumpSound;
+    [SerializeField] public float minPitch, maxPitch, minPitchDouble, maxPitchDouble;
 
     const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
     private Rigidbody2D rb;
@@ -66,6 +67,7 @@ public class HorseController2D : MonoBehaviour
 
     public ContactFilter2D groundContactFilter;    
     public bool IsGrounded => rb.IsTouching(groundContactFilter);  
+
 
     [Header("Events")]    
     [Space]
@@ -217,6 +219,7 @@ public class HorseController2D : MonoBehaviour
         if (movement.jumpBufferCounter >= 0 && hangCounter > 0f && !isJumping)
         {
             // Add a vertical force to the player.
+            JumpSound.pitch = Random.Range(minPitch, maxPitch);
             JumpSound.Play();                      
             isJumping = true;
             betterJump.jump = true;
@@ -238,6 +241,7 @@ public class HorseController2D : MonoBehaviour
         GameObject cloud = Instantiate(jumpCloud, new Vector2(transform.position.x, transform.position.y - jumpCloudOffset), transform.rotation);
         Destroy(cloud, 2f);
 
+        JumpSound.pitch = Random.Range(minPitchDouble, maxPitchDouble);
         JumpSound.Play();
         doubleJumpReady = false;
         m_AirControl = true;

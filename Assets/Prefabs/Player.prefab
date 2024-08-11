@@ -132,6 +132,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 20736
   JumpSound: {fileID: 557635230489375513}
+  minPitch: 1.2
+  maxPitch: 1.24
+  minPitchDouble: 1.34
+  maxPitchDouble: 1.38
   m_JumpForce: 10
   jumpCloudOffset: 1
   jumpCloud: {fileID: 6153084693915907904, guid: 1797c20ed4e71d04bb1edbd048705830,
@@ -150,27 +154,27 @@ MonoBehaviour:
   isLookingDown: 0
   isKnockedback: 0
   footstepSounds:
-  - {fileID: 8300000, guid: 7ef8cb2f95f672d4897f600122519bd4, type: 3}
   - {fileID: 8300000, guid: 41d6e83956246f74098ce6b880f36e72, type: 3}
-  - {fileID: 8300000, guid: 995e139bee8839d45a7c862d9e9b0ec7, type: 3}
+  - {fileID: 8300000, guid: 7ef8cb2f95f672d4897f600122519bd4, type: 3}
   - {fileID: 8300000, guid: 83ed93454e012d44c9c551eee8b533aa, type: 3}
-  stepInterval: 0.28
-  footstepSource: {fileID: 557635230489375513}
+  - {fileID: 8300000, guid: 995e139bee8839d45a7c862d9e9b0ec7, type: 3}
+  stepInterval: 0.24
+  footstepSource: {fileID: 5359108758186235936}
   equipKnight: {fileID: 8048343793890113730}
-  ContactFilter:
+  groundContactFilter:
     useTriggers: 0
     useLayerMask: 0
     useDepth: 0
     useOutsideDepth: 0
-    useNormalAngle: 1
+    useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 20736
+      m_Bits: 0
     minDepth: 0
     maxDepth: 0
-    minNormalAngle: 89
-    maxNormalAngle: 91
+    minNormalAngle: 0
+    maxNormalAngle: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -276,8 +280,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3b754522699ea0646a63e91653754b08, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.218
-  m_Pitch: 1.16
+  m_Volume: 0.24
+  m_Pitch: 1.2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -398,8 +402,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 83ed93454e012d44c9c551eee8b533aa, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2675
-  m_Pitch: 2.9
+  m_Volume: 0.45
+  m_Pitch: 2.1
   Loop: 0
   Mute: 0
   Spatialize: 0

@@ -20,6 +20,12 @@ public class KnightController2D : MonoBehaviour
       
     public bool IsInRangeOfHorse;
 
+    public AudioSource footstepSource;
+    public AudioClip[] footstepSounds; // Tablica dŸwiêków kroków
+    public float stepInterval = 0.5f; // Interwa³ pomiêdzy krokami
+    private float stepTimer = 0f;
+
+
 
     public Vector2 boxSize = new Vector2(1f, 0.2f);
     public float castDistance = 0.1f;    
@@ -97,6 +103,22 @@ public class KnightController2D : MonoBehaviour
         //only control the player if grounded or airControl is turned on
         if ((IsGrounded || m_AirControl) && !isKnockedback)
         {
+
+            if (move != 0 && IsGrounded)
+            {
+                stepTimer += Time.deltaTime;
+
+                // Jeœli up³yn¹³ odpowiedni interwa³
+                if (stepTimer >= stepInterval)
+                {
+                    // Odtwórz losowy dŸwiêk kroku
+                    PlayFootstepSound();
+
+                    // Zresetuj timer kroku
+                    stepTimer = 0f;
+                }
+            }
+
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
             // And then smoothing it out and applying it to the character
@@ -116,6 +138,12 @@ public class KnightController2D : MonoBehaviour
             }
         }
         
+    }
+
+    void PlayFootstepSound()
+    {
+        AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];
+        footstepSource.PlayOneShot(footstepSound);
     }
 
     public void Attack()
