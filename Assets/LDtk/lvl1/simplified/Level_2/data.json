@@ -2,9 +2,9 @@
 	"identifier": "Level_2",
 	"uniqueIdentifer": "b0fab200-fec0-11ee-b651-81b82e37ef14",
 	"x": 768,
-	"y": -128,
+	"y": -176,
 	"width": 448,
-	"height": 304,
+	"height": 352,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -22,7 +22,6 @@
 		"Background.png",
 		"Foreground_Collision.png",
 		"Spikes.png",
-		"Tiles.png",
 		"Ladder.png"
 	],
 	"entities": {
@@ -32,7 +31,7 @@
 				"iid": "79d96cc0-fec0-11ee-b651-9fa0c9803410",
 				"layer": "Entities",
 				"x": 160,
-				"y": 144,
+				"y": 192,
 				"width": 32,
 				"height": 16,
 				"color": 14120515,
@@ -45,7 +44,7 @@
 				"iid": "83e6f8e0-fec0-11ee-b651-f3efbd229b65",
 				"layer": "Entities",
 				"x": 176,
-				"y": 96,
+				"y": 144,
 				"width": 16,
 				"height": 16,
 				"color": 14120515,
@@ -58,7 +57,7 @@
 				"iid": "1dbc3a70-fec0-11ee-b651-c9b128ce4d55",
 				"layer": "Entities",
 				"x": 16,
-				"y": 192,
+				"y": 240,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,

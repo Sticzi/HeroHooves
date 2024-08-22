@@ -10,6 +10,10 @@
 		{
 			"levelIid": "904d25b0-fec0-11ee-ab44-fbf1c560df09",
 			"dir": "w"
+		},
+		{
+			"levelIid": "cdbde300-4ce0-11ef-b774-67b3d0eb110f",
+			"dir": "e"
 		}
 	],
 	"customFields" : {},
@@ -18,7 +22,6 @@
 		"Background.png",
 		"Foreground_Collision.png",
 		"Spikes.png",
-		"Tiles.png",
 		"Ladder.png"
 	],
 	"entities": {

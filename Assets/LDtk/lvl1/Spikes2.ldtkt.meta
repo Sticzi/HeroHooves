@@ -19,10 +19,130 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 32
       width: 16
       height: 16
     spriteID: 3e1fe73aa725c83469bcc79145860ca6
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 897fdad49377c5742a8d945c9cced9c4
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 6e851460b1d372345a2ed5b3fcfe2bec
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 427489d5ccb0fdd4e9c324563c35c379
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 28739e6b16a3ccc46bce380e9648085a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 41e57f19af98010408a5cc7deb05d983
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: ae205bd538a08d847a4098f6ca839365
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 26188f70f4ba50740ad297f4ad9307bb
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Spikes2_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 87875759ee88cab499b72105aa24d5be
     internalID: 0
     spriteOutline: []
     tessellationDetail: 0

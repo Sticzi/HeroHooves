@@ -22,10 +22,14 @@ ScriptedImporter:
   _intGridValues:
   - _key: Ladder_1
     _asset: {fileID: 11400000, guid: 123cf22e7ecedb046a17369e29bb12ce, type: 2}
+  - _key: Spikes_2
+    _asset: {fileID: 11400000, guid: 07b04b982b17b5341aff3a382b8d1305, type: 2}
   - _key: Spikes_1
     _asset: {fileID: 11400000, guid: 02e225b34ccb23c4b878b9773c5f472a, type: 2}
-  - _key: Spikes_2
+  - _key: Spikes_3
     _asset: {fileID: 11400000, guid: ec4e4ec4669c7be4fa3f6170960a32b2, type: 2}
+  - _key: Spikes_4
+    _asset: {fileID: 11400000, guid: 6b53513010c9c5d4aad8d5f0060a7d14, type: 2}
   - _key: Foreground_Collision_1
     _asset: {fileID: 11400000, guid: 4bb6fe06fd9408c47b9b739341898c48, type: 2}
   - _key: Foreground_Collision_2
@@ -38,14 +42,14 @@ ScriptedImporter:
   - _key: Box2x2
     _asset: {fileID: 4418238060043221495, guid: 53e831eaa534e344a8279e5270cf3658,
       type: 3}
+  - _key: Box2x1
+    _asset: {fileID: 6918044566338750193, guid: 00acdccff731a8e4ba918d8dc6b38015,
+      type: 3}
   - _key: Goblin
     _asset: {fileID: 4401994312279660487, guid: 1806c6e26b1222d49a649f59f6ebec75,
       type: 3}
   - _key: Falling_rocks
     _asset: {fileID: 9034771307190257636, guid: 4c0b809e5ee8b1e42bb93d21721f7d04,
-      type: 3}
-  - _key: Spikes
-    _asset: {fileID: 6425888606101818611, guid: 010b899e0bbefda48b00c41881c0e86b,
       type: 3}
   - _key: Platform1Right
     _asset: {fileID: 2593721765980111037, guid: 5c655b858c01b9d4c898936e630952a0,
@@ -82,6 +86,11 @@ ScriptedImporter:
       type: 3}
   - _key: PressurePlate
     _asset: {fileID: 8801689151735451706, guid: 286f0d5cd57587c4cab965bb0e0cbe13,
+      type: 3}
+  - _key: JumpPad
+    _asset: {fileID: 402164882756309540, guid: 1b6827d6dfcc9a647ab873c6bd7dcbc7, type: 3}
+  - _key: Ladder
+    _asset: {fileID: 4075101465065131265, guid: 9435df7065f0958479be7e50ad06dfc4,
       type: 3}
   _enumGenerate: 0
   _enumPath: 

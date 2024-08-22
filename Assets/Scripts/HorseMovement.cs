@@ -116,7 +116,13 @@ public class HorseMovement : MonoBehaviour
 			{
 				jumpBufferCounter -= Time.deltaTime;
 			}
-		}		
+		}
+
+		// in case the player slips on a corner of a tile
+		if (!isHorseControlled&& controller.IsGrounded&&rb.velocity.x != 0)
+		{
+			rb.velocity = new Vector2(rb.velocity.x / 10, rb.velocity.y);
+		}
 	}		
 
 	public void OnLanding()
@@ -124,6 +130,7 @@ public class HorseMovement : MonoBehaviour
 		controller.doubleJumpReady = true;
 		if(controller.IsGrounded&& rb.velocity.y <= 0f)
         {
+			
 			controller.isKnockedback = false;
 			animator.SetBool("IsJumping", false);			
 			//rb.velocity = Vector2.zero;

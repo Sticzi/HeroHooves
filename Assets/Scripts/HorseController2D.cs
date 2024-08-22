@@ -304,7 +304,7 @@ public class HorseController2D : MonoBehaviour
             horseVelocityContainer = GetComponent<Rigidbody2D>().velocity;
             GetComponent<Animator>().enabled = false;
             GetComponent<HorseMovement>().enabled = false;
-            GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             knight = GameObject.FindGameObjectWithTag("Knight");
 
@@ -312,7 +312,7 @@ public class HorseController2D : MonoBehaviour
             {
                 knightVelocityContainer = GetComponent<Rigidbody2D>().velocity;
                 knight.GetComponent<KnightMovement>().enabled = false;
-                knight.GetComponent<Rigidbody2D>().isKinematic = true;
+                knight.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 knight.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 knight.GetComponent<Animator>().enabled = false;
             }
@@ -331,7 +331,7 @@ public class HorseController2D : MonoBehaviour
         {            
             
             GetComponent<HorseMovement>().enabled = true;
-            GetComponent<Rigidbody2D>().isKinematic = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             GetComponent<Rigidbody2D>().velocity = horseVelocityContainer;
             GetComponent<Animator>().enabled = true;
 
@@ -339,7 +339,7 @@ public class HorseController2D : MonoBehaviour
             if (knight != null)
             {
                 knight.GetComponent<KnightMovement>().enabled = true;
-                knight.GetComponent<Rigidbody2D>().isKinematic = false;
+                knight.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 knight.GetComponent<Rigidbody2D>().velocity = knightVelocityContainer;
                 knight.GetComponent<Animator>().enabled = true;
             }

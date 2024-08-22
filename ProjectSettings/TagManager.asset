@@ -18,6 +18,7 @@ TagManager:
   - HorseCameraCollider
   - VirtualCameraHorseDown
   - Checkpoint
+  - World
   layers:
   - Default
   - TransparentFX

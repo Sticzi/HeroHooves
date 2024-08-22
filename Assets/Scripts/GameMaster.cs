@@ -6,8 +6,13 @@ public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
 
+    public GameObject player;
+
     public Vector2 savedKnightPosition;
     public Vector2 savedHorsePosition;
+
+    public int knightSavedRoom;
+    public int horseSavedRoom;
 
     //public Vector2 savedCameraPosition;
     public Vector2[] savedBackgroundPos;
@@ -15,6 +20,8 @@ public class GameMaster : MonoBehaviour
     public Transform playerPositionTesting;
     public Transform levelOfFirstSpawnPoint;
     private Transform firstSpawnPoint;
+
+
 
     private Transform FindChildWithTag(Transform parent, string tag)
     {
@@ -30,6 +37,8 @@ public class GameMaster : MonoBehaviour
 
     public void Awake()
     {
+        //all of this might not happen on every scene load so it's only needed for testing;
+
         //acces the urrent level gameobject and then from there acces the checkpoint entity
         firstSpawnPoint = FindChildWithTag(levelOfFirstSpawnPoint.Find("Entities"), "Checkpoint");
         //Debug.Log(firstSpawnPoint.position);
@@ -39,7 +48,6 @@ public class GameMaster : MonoBehaviour
             savedKnightPosition = playerPositionTesting.position;
             savedHorsePosition = playerPositionTesting.position;
         }
-
         else
         {
             savedKnightPosition = firstSpawnPoint.position;
@@ -53,8 +61,7 @@ public class GameMaster : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
-        }
-
+            //Destroy(gameObject);
+        }                
     }
 }

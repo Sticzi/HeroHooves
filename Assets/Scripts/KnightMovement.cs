@@ -46,9 +46,11 @@ public class KnightMovement : MonoBehaviour
         {
             if (ladderCollider != null)
             {
+                
 
                 if (climbedOnLadder)
                 {
+                    climbedOnLadder = ladderCollider.gameObject;
                     controller.ClimbLadder(climbDistance * direction);
                     lastCallTime = Time.time;
                 }
@@ -105,18 +107,20 @@ public class KnightMovement : MonoBehaviour
     public void StartClimbingLadder(GameObject ladder)
     {
         climbedOnLadder = ladder;
+        controller.anim.SetTrigger("Climb");
+        //controller.anim.SetTrigger("StartClimbing");
 
         rb.bodyType = RigidbodyType2D.Static;
 
-        CompositeCollider2D compositeCollider = climbedOnLadder.GetComponent<CompositeCollider2D>();
+        Collider2D ladderCollider = climbedOnLadder.GetComponent<Collider2D>();
 
-        if (compositeCollider != null)
+        if (ladderCollider != null)
         {
             // Get the center of the bounds of the composite collider
-            Vector3 centerOfCompositeCollider = compositeCollider.bounds.center;
+            Vector3 centerOfCollider2D = ladderCollider.bounds.center;
 
             // Move the object to the center of the composite collider while keeping the y and z positions the same
-            transform.position = new Vector3(centerOfCompositeCollider.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(centerOfCollider2D.x, transform.position.y, transform.position.z);
         }
     }
 
@@ -125,24 +129,39 @@ public class KnightMovement : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         controller.anim.SetTrigger("ClimbOff");
 
-        CompositeCollider2D compositeCollider = climbedOnLadder.GetComponent<CompositeCollider2D>();
+        Collider2D ladderCollider = climbedOnLadder.GetComponent<Collider2D>();
 
-        if (compositeCollider != null)
-        {            
-            if(direction > 0)
+        if (ladderCollider != null)
+        {
+            if (direction > 0)
             {
-                
-                transform.position = new Vector3(compositeCollider.bounds.center.x, compositeCollider.bounds.max.y + 1, transform.position.z);
+
+                transform.position = new Vector3(ladderCollider.bounds.center.x, ladderCollider.bounds.max.y + 1, transform.position.z);
             }
             else
             {
-                transform.position = new Vector3(compositeCollider.bounds.center.x, compositeCollider.bounds.min.y+1, transform.position.z);
+                transform.position = new Vector3(ladderCollider.bounds.center.x, ladderCollider.bounds.min.y + 1, transform.position.z);
             }
-
-
         }
 
-        climbedOnLadder = null;
+            //CompositeCollider2D compositeCollider = climbedOnLadder.GetComponent<CompositeCollider2D>();
+
+            //if (compositeCollider != null)
+            //{            
+            //    if(direction > 0)
+            //    {
+
+            //        transform.position = new Vector3(compositeCollider.bounds.center.x, compositeCollider.bounds.max.y + 1, transform.position.z);
+            //    }
+            //    else
+            //    {
+            //        transform.position = new Vector3(compositeCollider.bounds.center.x, compositeCollider.bounds.min.y+1, transform.position.z);
+            //    }
+
+
+            //}
+
+            climbedOnLadder = null;
     }
 
     private void OnDrawGizmos()

@@ -18,7 +18,6 @@
 		"Background.png",
 		"Foreground_Collision.png",
 		"Spikes.png",
-		"Tiles.png",
 		"Ladder.png"
 	],
 	"entities": {

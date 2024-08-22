@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 1491109269693420845}
   - component: {fileID: 5251844226373397652}
   - component: {fileID: 5315699476864629243}
+  - component: {fileID: 4404756666437947721}
   m_Layer: 11
   m_Name: Knight
   m_TagString: Knight
@@ -297,7 +298,7 @@ MonoBehaviour:
   isKnightControlled: 0
   isAttacking: 0
   whoIsControlled: horse
-  runSpeed: 13
+  runSpeed: 15
   currentSpeed: 0
   whatIsHorse:
     serializedVersion: 2
@@ -338,18 +339,18 @@ MonoBehaviour:
   castDistance: 0.91
   ContactFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
-    useNormalAngle: 0
+    useNormalAngle: 1
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 86272
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
-    maxNormalAngle: 0
+    maxNormalAngle: 90.84
   virtualCameraHorse: {fileID: 0}
   virtualCameraKnight: {fileID: 0}
   isKnockedback: 0
@@ -658,6 +659,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4404756666437947721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118010984519073365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca120b6c9300b94c96da83296587338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomLayerMask:
+    serializedVersion: 2
+    m_Bits: 32768
+  damping: 1
+  transitionDuration: 0.75
 --- !u!1 &7873167835010154559
 GameObject:
   m_ObjectHideFlags: 0

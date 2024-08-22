@@ -47,7 +47,7 @@ public class BoxFall : MonoBehaviour
 
         if (wasGrounded == false && IsGrounded == true)
         {
-            OnLandingEvent.Invoke();            
+            //OnLandingEvent.Invoke();            
         }
         wasGrounded = IsGrounded;
 

@@ -1,0 +1,98 @@
+{
+	"identifier": "Level_12",
+	"uniqueIdentifer": "bce643b0-4ce0-11ef-b774-d35c56c61b18",
+	"x": 5584,
+	"y": -208,
+	"width": 528,
+	"height": 352,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "17274de0-4ce0-11ef-b774-d15226be76ed",
+			"dir": "w"
+		},
+		{
+			"levelIid": "1a78a650-4ce0-11ef-b774-d930510cefd4",
+			"dir": "w"
+		},
+		{
+			"levelIid": "d2b128a0-4ce0-11ef-b774-d73a26dcb1e4",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png",
+		"Ladder.png"
+	],
+	"entities": {
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "f482a630-4ce0-11ef-b774-5913ece82896",
+				"layer": "Entities",
+				"x": 16,
+				"y": 208,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Falling_rocks": [
+			{
+				"id": "Falling_rocks",
+				"iid": "714a33d0-4ce0-11ef-b774-afc31258a38d",
+				"layer": "Entities",
+				"x": 104,
+				"y": 216,
+				"width": 16,
+				"height": 16,
+				"color": 3818598,
+				"customFields" : {}
+			}
+		],
+		"Goblin": [
+			{
+				"id": "Goblin",
+				"iid": "2302ead0-4ce0-11ef-b774-f1ffde390376",
+				"layer": "Entities",
+				"x": 480,
+				"y": 208,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields" : {}
+			}
+		],
+		"Platform1Right": [
+			{
+				"id": "Platform1Right",
+				"iid": "de6669f0-4ce0-11ef-b774-b1e0e07fc7e6",
+				"layer": "Entities",
+				"x": 336,
+				"y": 160,
+				"width": 16,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			}
+		],
+		"Box2x1": [
+			{
+				"id": "Box2x1",
+				"iid": "e6d3d010-4ce0-11ef-b774-87f9dd25d9d2",
+				"layer": "Box",
+				"x": 278,
+				"y": 128,
+				"width": 32,
+				"height": 16,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		]
+	}
+}
