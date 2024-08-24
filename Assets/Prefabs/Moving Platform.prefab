@@ -127,6 +127,9 @@ MonoBehaviour:
   minPitch: 0.7
   maxPitch: 0.7
   duration: 0.0065
+  camera: {fileID: 0}
+  maxDistance: 30
+  minVolume: 0.1
 --- !u!61 &8163278194185829814
 BoxCollider2D:
   m_ObjectHideFlags: 0

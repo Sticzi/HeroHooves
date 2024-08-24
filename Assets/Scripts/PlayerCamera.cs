@@ -15,7 +15,7 @@ public class PlayerCamera : MonoBehaviour
     private GameObject horse;
     private GameObject knight;
 
-    private Transform background;
+    //private Transform background;
     public LayerMask roomLayerMask;
     private float roomCheckRadius = 0.25f;
     public float damping = 1;
@@ -42,45 +42,53 @@ public class PlayerCamera : MonoBehaviour
         knightCameraConfinerComponent = GameObject.FindGameObjectWithTag("VirtualCameraKnight").GetComponent<CinemachineConfiner>();
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 
-        background = GameObject.FindGameObjectWithTag("Background").GetComponent<Transform>();
-    }
-    
-    void Start()
-    {        
-               
+        //background = GameObject.FindGameObjectWithTag("Background").GetComponent<Transform>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         
         if (collision.gameObject.layer == 15)
-        {                      
-            if (CompareTag("Knight"))
-            {
-                CheckPlayerRoom();
-            }
-            else
-            {
-                CheckPlayerRoom();
-            }
+        {
+            CheckPlayerRoom();
+            
         }        
     }
 
-    public void SavePlayerSpawnPoint()
+    public void SavePlayerSpawnPoint(GameObject room)
     {
-        if (CompareTag("Knight"))
+        Transform parentOfParent = room.transform.parent?.parent;
+        int levelNumber = 0;
+        
+
+        // Get the name of the parent of the parent GameObject
+        string parentName = parentOfParent.name;
+
+        // Extract the level number from the name (assuming the format is "Level_X" where X is the number)
+        if (parentName.StartsWith("Level_"))
         {
-            gameMaster.savedKnightPosition = nextSpawnPosition.position;
+            string levelString = parentName.Substring(6); // Extract the part after "Level_"
+            if (int.TryParse(levelString, out levelNumber))
+            {
+                //Debug.Log("Level number extracted: " + levelNumber +gameObject.name);
+            }
+        }
+    
+
+        if (CompareTag("Knight"))
+        {           
+            gameMaster.knightSavedRoom = levelNumber;
+            gameMaster.horseSavedRoom = levelNumber;
         }
         else
         {
-            gameMaster.savedHorsePosition = nextSpawnPosition.position;
+            //gameMaster.horseSavedRoom = levelNumber;
             if (GetComponent<HorseController2D>().KnightPickedUp)
             {
-                gameMaster.savedKnightPosition = nextSpawnPosition.position;
+                gameMaster.knightSavedRoom = levelNumber;
+                gameMaster.horseSavedRoom = levelNumber;
             }
-        }
-
+        }       
     }
 
     private void CheckPlayerRoom()
@@ -100,24 +108,24 @@ public class PlayerCamera : MonoBehaviour
 
         if (checkedRoomCameraBound != null && currentConfinerComponent.m_BoundingShape2D != checkedRoomCameraBound)
         {
-            SavePlayerSpawnPoint();
-            SaveBackgroundParalaxPos();
+            
+            
 
             // Player is in another room
             CameraTransition(checkedRoomCameraBound, currentConfinerComponent);
         }
     }
 
-    public void SaveBackgroundParalaxPos()
-    {
-        int childCount = background.childCount;
-        gameMaster.savedBackgroundPos = new Vector2[childCount];
+    //public void SaveBackgroundParalaxPos()
+    //{
+    //    int childCount = background.childCount;
+    //    gameMaster.savedBackgroundPos = new Vector2[childCount];
 
-        for (int i = 0; i < childCount; i++)
-        {
-            gameMaster.savedBackgroundPos[i] = background.GetChild(i).position;
-        }
-    }
+    //    for (int i = 0; i < childCount; i++)
+    //    {
+    //        gameMaster.savedBackgroundPos[i] = background.GetChild(i).position;
+    //    }
+    //}
 
     private void PlayerFreeze()
     {
@@ -156,6 +164,9 @@ public class PlayerCamera : MonoBehaviour
 
         }).AsyncWaitForCompletion();
         PlayerUnfreeze();
+
+        SavePlayerSpawnPoint(roomCameraBound.gameObject);
+        /*SaveBackgroundParalaxPos()*/;
 
         confiner.m_Damping = 0;
         await Task.Yield();

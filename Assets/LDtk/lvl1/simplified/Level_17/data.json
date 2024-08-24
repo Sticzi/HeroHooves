@@ -181,6 +181,17 @@
 				"height": 16,
 				"color": 7552569,
 				"customFields" : {}
+			},
+			{
+				"id": "JumpPad",
+				"iid": "54ae4030-4ce0-11ef-9fb9-c9b16099a0b6",
+				"layer": "Entities",
+				"x": 424,
+				"y": 312,
+				"width": 16,
+				"height": 16,
+				"color": 7552569,
+				"customFields" : {}
 			}
 		],
 		"Platform2Left": [
