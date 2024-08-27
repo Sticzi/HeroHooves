@@ -61,10 +61,7 @@ public class HorseMovement : MonoBehaviour
 					controller.KnightPickUp();
                 }
             }
-        }
-				
-
-		
+        }					
 
 
 		animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));

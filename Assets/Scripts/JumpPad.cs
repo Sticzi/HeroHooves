@@ -7,10 +7,12 @@ public class JumpPad : MonoBehaviour
     public float bounce = 20f;
 
     private Animator anim;
+    private AudioSource AudioSource;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        AudioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,6 +22,8 @@ public class JumpPad : MonoBehaviour
             collision.GetComponent<BetterJump>().isTossed = true;
 
             anim.SetTrigger("jump");
+
+            AudioSource.Play();
 
             //collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero; tak by³o przedtem i dzia³a³o git
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);

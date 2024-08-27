@@ -7,7 +7,7 @@ public class BoxFall : MonoBehaviour
 {
 
     bool wasGrounded;
-    bool wasMoved;
+    //bool wasMoved;
     public ContactFilter2D ContactFilter;
     public bool IsGrounded => rb.IsTouching(ContactFilter);
     private Rigidbody2D rb;
@@ -28,7 +28,7 @@ public class BoxFall : MonoBehaviour
         if (OnLandingEvent == null)
             OnLandingEvent = new UnityEvent();
         wasGrounded = true;
-        wasMoved = false;
+       // wasMoved = false;
     }
 
     IEnumerator Start()
@@ -47,7 +47,7 @@ public class BoxFall : MonoBehaviour
 
         if (wasGrounded == false && IsGrounded == true)
         {
-            //OnLandingEvent.Invoke();            
+            OnLandingEvent.Invoke();            
         }
         wasGrounded = IsGrounded;
 

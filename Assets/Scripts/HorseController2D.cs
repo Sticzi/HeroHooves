@@ -66,8 +66,9 @@ public class HorseController2D : MonoBehaviour
     bool wasGrounded;
 
     public ContactFilter2D groundContactFilter;    
-    public bool IsGrounded => rb.IsTouching(groundContactFilter);  
+    public bool IsGrounded => rb.IsTouching(groundContactFilter);
 
+    public GameObject horseControlIndicator;
 
     [Header("Events")]    
     [Space]
@@ -105,9 +106,7 @@ public class HorseController2D : MonoBehaviour
         {
             anim.SetBool("IsGrounded", false);
         }
-    }
-
-   
+    }   
     
     private void FixedUpdate()
     {

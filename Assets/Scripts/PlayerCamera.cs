@@ -104,7 +104,11 @@ public class PlayerCamera : MonoBehaviour
         }
 
         Collider2D checkedRoomCameraBound = Physics2D.OverlapCircle(transform.position, roomCheckRadius, roomLayerMask);
-        nextSpawnPosition = FindChildWithTag(checkedRoomCameraBound.transform.parent.parent.Find("Entities"), "Checkpoint");
+        if(checkedRoomCameraBound != null)
+        {
+            nextSpawnPosition = FindChildWithTag(checkedRoomCameraBound.transform.parent.parent.Find("Entities"), "Checkpoint");
+        }
+        
 
         if (checkedRoomCameraBound != null && currentConfinerComponent.m_BoundingShape2D != checkedRoomCameraBound)
         {

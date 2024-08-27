@@ -42,6 +42,7 @@ public class KnightController2D : MonoBehaviour
 
     public bool isKnockedback;
 
+    public GameObject controlIndicator;
 
     private void Awake()
     {
@@ -139,6 +140,12 @@ public class KnightController2D : MonoBehaviour
         }
         
     }
+    public void TurnOffIndicators()
+    {
+        horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
+        controlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
+
+    }
 
     void PlayFootstepSound()
     {
@@ -163,15 +170,23 @@ public class KnightController2D : MonoBehaviour
                 movement.isKnightControlled = true;
                 horse.GetComponent<HorseMovement>().isHorseControlled = false;
                 horse.GetComponent<Rigidbody2D>().velocity = new Vector2(0, horse.GetComponent<Rigidbody2D>().velocity.y);
-                //boundCollider = Physics2D.OverlapCircle(transform.position, 0.2f, boundLayerMask); // nie wiem co to tbh
+                
 
                 virtualCameraKnight.GetComponent<CinemachineVirtualCamera>().Priority = 20;
 
-                if(virtualCameraHorse.GetComponent<CinemachineConfiner>().m_BoundingShape2D != virtualCameraKnight.GetComponent<CinemachineConfiner>().m_BoundingShape2D)
+                //strza³ka pookazuj¹ca kto jest sterowany
+                //wypada³oby dodaæ zmiane  w layer prio
+
+
+                controlIndicator.GetComponent<Animator>().SetTrigger("ControlSwap");
+                horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
+                GetComponent<SpriteRenderer>().sortingOrder = 2;
+
+                if (virtualCameraHorse.GetComponent<CinemachineConfiner>().m_BoundingShape2D != virtualCameraKnight.GetComponent<CinemachineConfiner>().m_BoundingShape2D)
                 {
-                    horse.GetComponent<HorseController2D>().PlayerFreeze();
-                    await Task.Delay(750); // HARD CODE TIME next room duration lerp
-                    horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
+                    //horse.GetComponent<HorseController2D>().PlayerFreeze();
+                    //await Task.Delay(750); // HARD CODE TIME next room duration lerp
+                    //horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
                 }
                 
 
@@ -188,11 +203,16 @@ public class KnightController2D : MonoBehaviour
 
                 virtualCameraKnight.GetComponent<CinemachineVirtualCamera>().Priority = 0;
 
+
+                horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>().SetTrigger("ControlSwap");
+                controlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
+                GetComponent<SpriteRenderer>().sortingOrder = 0;
+
                 if (virtualCameraHorse.GetComponent<CinemachineConfiner>().m_BoundingShape2D != virtualCameraKnight.GetComponent<CinemachineConfiner>().m_BoundingShape2D)
                 {
-                    horse.GetComponent<HorseController2D>().PlayerFreeze();
-                    await Task.Delay(750); // HARD CODE TIME next room duration lerp
-                    horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
+                    //horse.GetComponent<HorseController2D>().PlayerFreeze();
+                    //await Task.Delay(750); // HARD CODE TIME next room duration lerp
+                    //horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
                 }
 
                 break;

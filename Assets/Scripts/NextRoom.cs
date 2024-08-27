@@ -8,11 +8,11 @@ public class NextRoom : MonoBehaviour
     private GameMaster gameMaster;    
     private CinemachineConfiner horseCameraConfinerComponent;
     private CinemachineConfiner knightCameraConfinerComponent;    
-    private Transform background;
-    private GameObject horse;
-    private GameObject knight;
+    //private Transform background;
+    //private GameObject horse;
+    //private GameObject knight;
     
-    private Transform playerSpawnPosition;   
+    //private Transform playerSpawnPosition;   
 
     public float tossForce;
     public float transitionDuration = 0.75f;
@@ -23,10 +23,10 @@ public class NextRoom : MonoBehaviour
     public bool isFrozen;
 
     public LayerMask roomLayerMask;
-    private float roomCheckRadius = 0.25f;
+    //private float roomCheckRadius = 0.25f;
 
-    private Vector2 horseVelocityContainer;
-    private Vector2 knightVelocityContainer;
+    //private Vector2 horseVelocityContainer;
+    //private Vector2 knightVelocityContainer;
 
     private Transform FindChildWithTag(Transform parent, string tag)
     {
@@ -53,13 +53,13 @@ public class NextRoom : MonoBehaviour
         }
 
         //acces the urrent level gameobject and then from there acces the checkpoint entity
-        playerSpawnPosition = FindChildWithTag(transform.parent.parent.Find("Entities"), "Checkpoint");
+        //playerSpawnPosition = FindChildWithTag(transform.parent.parent.Find("Entities"), "Checkpoint");
 
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();        
 
         horseCameraConfinerComponent = GameObject.FindGameObjectWithTag("VirtualCameraHorse").GetComponent<CinemachineConfiner>();        
         knightCameraConfinerComponent = GameObject.FindGameObjectWithTag("VirtualCameraKnight").GetComponent<CinemachineConfiner>();
-        background = GameObject.FindGameObjectWithTag("Background").GetComponent<Transform>(); //paralax              
+        //background = GameObject.FindGameObjectWithTag("Background").GetComponent<Transform>(); //paralax              
     }  
 
     //public void Start()
