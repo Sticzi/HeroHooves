@@ -21,8 +21,7 @@
 		"CameraBound.png",
 		"Background.png",
 		"Foreground_Collision.png",
-		"Spikes.png",
-		"Ladder.png"
+		"Spikes.png"
 	],
 	"entities": {
 		"Platform3Both": [
@@ -57,6 +56,14 @@
 						{
 							"cx": 15,
 							"cy": 4
+						},
+						{
+							"cx": 15,
+							"cy": 2
+						},
+						{
+							"cx": 6,
+							"cy": 2
 						}
 					],
 					"Active": true

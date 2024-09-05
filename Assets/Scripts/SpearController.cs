@@ -4,6 +4,7 @@ public class SpearController : MonoBehaviour
 {
     [SerializeField] [Range(1f, 20f)] private float knockbackForce = 10f;
     [SerializeField] [Range(1f, 20f)] private float upwardKnockbackForce = 5f;
+    [SerializeField] private bool isFacingLeft = true;
 
     private HorseController2D horseController;
     private HorseMovement horseMovement;
@@ -45,18 +46,17 @@ public class SpearController : MonoBehaviour
         // Calculate knockback direction (upwards)
         //Vector2 knockbackDirection = (collision.transform.position - transform.parent.position).normalized;
         Vector2 totalKnockback = Vector2.left * knockbackForce + Vector2.up * upwardKnockbackForce;
-        
-        collision.transform.position = new Vector3(transform.position.x-0.5f, transform.position.y+0.5f, collision.transform.position.y);
-        // Apply knockback to the player
         playerRb.velocity = Vector2.zero;
-        playerRb.velocity = totalKnockback;
-        Debug.Log(totalKnockback);
-        Debug.Log(playerRb.velocity);
-
-
-
-
-
+        if (isFacingLeft)
+        {
+            collision.transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.5f, collision.transform.position.z);
+            playerRb.velocity = totalKnockback;
+        }
+        else
+        {
+            collision.transform.position = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, collision.transform.position.z);
+            playerRb.velocity = new Vector2(-totalKnockback.x, totalKnockback.y);
+        }               
     }    
 }
 

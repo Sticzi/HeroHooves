@@ -1,0 +1,71 @@
+{
+	"identifier": "Level_21",
+	"uniqueIdentifer": "1f0fd050-4ce0-11ef-a59b-cbfb31be55f6",
+	"x": 9856,
+	"y": -448,
+	"width": 400,
+	"height": 656,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
+			"dir": "w"
+		},
+		{
+			"levelIid": "13c46b20-4ce0-11ef-9e3e-a91a652fcc4b",
+			"dir": "e"
+		},
+		{
+			"levelIid": "37f54000-4ce0-11ef-9e3e-271b33c78511",
+			"dir": "e"
+		},
+		{
+			"levelIid": "70dde250-4ce0-11ef-9e3e-9fd7ae308804",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Ladder": [
+			{
+				"id": "Ladder",
+				"iid": "d0487570-4ce0-11ef-9e3e-d5ea4dd1b485",
+				"layer": "Ladders",
+				"x": 344,
+				"y": 120,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "d0d2b410-4ce0-11ef-9e3e-c1abb09e5013",
+				"layer": "Ladders",
+				"x": 344,
+				"y": 104,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "d0fb4ab0-4ce0-11ef-9e3e-51ec2cbc1262",
+				"layer": "Ladders",
+				"x": 344,
+				"y": 88,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			}
+		]
+	}
+}

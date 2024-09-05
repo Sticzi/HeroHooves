@@ -127,9 +127,8 @@ MonoBehaviour:
   minPitch: 0.7
   maxPitch: 0.7
   duration: 0.0065
-  camera: {fileID: 0}
+  mainCamera: {fileID: 0}
   maxDistance: 30
-  minVolume: 0.1
 --- !u!61 &8163278194185829814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +186,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 16f6f0c55cf1c90448104321403f050b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.8
   m_Pitch: 2
   Loop: 0
   Mute: 0

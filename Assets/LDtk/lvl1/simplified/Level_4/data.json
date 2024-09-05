@@ -21,8 +21,7 @@
 		"CameraBound.png",
 		"Background.png",
 		"Foreground_Collision.png",
-		"Spikes.png",
-		"Ladder.png"
+		"Spikes.png"
 	],
 	"entities": {
 		"Platform2Right": [
@@ -44,17 +43,6 @@
 				"iid": "3b804c60-fec0-11ee-99e7-1507112bbff1",
 				"layer": "Entities",
 				"x": 272,
-				"y": 192,
-				"width": 16,
-				"height": 16,
-				"color": 14120515,
-				"customFields" : {}
-			},
-			{
-				"id": "Platform1Left",
-				"iid": "40b35d20-fec0-11ee-99e7-0d28ff8c3721",
-				"layer": "Entities",
-				"x": 352,
 				"y": 192,
 				"width": 16,
 				"height": 16,

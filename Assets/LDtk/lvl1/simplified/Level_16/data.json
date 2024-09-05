@@ -2,9 +2,9 @@
 	"identifier": "Level_16",
 	"uniqueIdentifer": "1b079fd0-4ce0-11ef-9823-1bca13fd97ff",
 	"x": 7504,
-	"y": -272,
+	"y": -336,
 	"width": 448,
-	"height": 320,
+	"height": 384,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -21,8 +21,7 @@
 		"CameraBound.png",
 		"Background.png",
 		"Foreground_Collision.png",
-		"Spikes.png",
-		"Ladder.png"
+		"Spikes.png"
 	],
 	"entities": {
 		"JumpPad": [
@@ -31,7 +30,7 @@
 				"iid": "8aa1e030-4ce0-11ef-9823-27a6f8af9ce3",
 				"layer": "Entities",
 				"x": 184,
-				"y": 104,
+				"y": 168,
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
@@ -42,7 +41,7 @@
 				"iid": "9f28b290-4ce0-11ef-9823-a5d3579418c4",
 				"layer": "Entities",
 				"x": 264,
-				"y": 136,
+				"y": 200,
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
@@ -53,7 +52,7 @@
 				"iid": "ac4d1ba0-4ce0-11ef-9823-e1c5960c0d44",
 				"layer": "Entities",
 				"x": 120,
-				"y": 168,
+				"y": 232,
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
@@ -66,7 +65,7 @@
 				"iid": "96000830-4ce0-11ef-9823-1d8c26b051a2",
 				"layer": "Entities",
 				"x": 344,
-				"y": 120,
+				"y": 184,
 				"width": 16,
 				"height": 16,
 				"color": 3818598,
@@ -79,7 +78,7 @@
 				"iid": "c500ced0-4ce0-11ef-9823-c115d7775da4",
 				"layer": "Entities",
 				"x": 16,
-				"y": 176,
+				"y": 240,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,

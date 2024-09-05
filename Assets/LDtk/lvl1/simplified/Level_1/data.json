@@ -21,8 +21,7 @@
 		"CameraBound.png",
 		"Background.png",
 		"Foreground_Collision.png",
-		"Spikes.png",
-		"Ladder.png"
+		"Spikes.png"
 	],
 	"entities": {
 		"Checkpoint": [

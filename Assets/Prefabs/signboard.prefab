@@ -236,7 +236,7 @@ MonoBehaviour:
   objectToActivate: {fileID: 5147267707596625911}
   ContactFilter:
     useTriggers: 1
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
@@ -405,7 +405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5147267707596625910
 RectTransform:
   m_ObjectHideFlags: 0

@@ -175,8 +175,8 @@ MonoBehaviour:
       m_Bits: 86400
     minDepth: 0
     maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 90.84
+    minNormalAngle: 89
+    maxNormalAngle: 91
   horseControlIndicator: {fileID: 2924510281333110086}
   OnLandEvent:
     m_PersistentCalls:

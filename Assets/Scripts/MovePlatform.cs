@@ -105,7 +105,7 @@ public class MovePlatform : MonoBehaviour
         float distance = Vector2.Distance(transform.position, mainCamera.position);
 
         // Map the distance to a volume level
-        float volume = Mathf.Clamp01(1 - (distance / maxDistance));
+        float volume = Mathf.Clamp01(0.55f - (distance / maxDistance));
 
         // Set the audio source's volume
         audioSource.volume = volume;

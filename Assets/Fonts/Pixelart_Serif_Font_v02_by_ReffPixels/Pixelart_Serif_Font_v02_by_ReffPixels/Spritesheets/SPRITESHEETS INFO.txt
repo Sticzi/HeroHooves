@@ -1,0 +1,7 @@
+This folder is for those who want to mess with the original spritesheets. These files are not necessary for the font to function.
+
+Tile size: 16x16 px
+Padding X: 1 px
+Padding Y: 1 px
+Offset X: 0 px
+Offset Y: 0 px

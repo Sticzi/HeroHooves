@@ -350,8 +350,8 @@ MonoBehaviour:
       m_Bits: 86272
     minDepth: 0
     maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 90.84
+    minNormalAngle: 89
+    maxNormalAngle: 91
   virtualCameraHorse: {fileID: 0}
   virtualCameraKnight: {fileID: 0}
   isKnockedback: 0

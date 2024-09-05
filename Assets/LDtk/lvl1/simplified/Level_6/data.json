@@ -2,9 +2,9 @@
 	"identifier": "Level_6",
 	"uniqueIdentifer": "868630b0-fec0-11ee-86aa-43980f23a119",
 	"x": 2640,
-	"y": -112,
+	"y": -256,
 	"width": 544,
-	"height": 304,
+	"height": 448,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -21,8 +21,7 @@
 		"CameraBound.png",
 		"Background.png",
 		"Foreground_Collision.png",
-		"Spikes.png",
-		"Ladder.png"
+		"Spikes.png"
 	],
 	"entities": {
 		"Checkpoint": [
@@ -31,7 +30,7 @@
 				"iid": "868630b2-fec0-11ee-86aa-b3904d5bc5c9",
 				"layer": "Entities",
 				"x": 16,
-				"y": 112,
+				"y": 256,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,
@@ -44,7 +43,7 @@
 				"iid": "868630b4-fec0-11ee-86aa-937e1fa78cf7",
 				"layer": "Box",
 				"x": 296,
-				"y": 56,
+				"y": 200,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,
@@ -55,7 +54,7 @@
 				"iid": "868630b5-fec0-11ee-86aa-7f77d0e02a59",
 				"layer": "Box",
 				"x": 376,
-				"y": 56,
+				"y": 200,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,

@@ -116,7 +116,7 @@ public class HorseMovement : MonoBehaviour
 		}
 
 		// in case the player slips on a corner of a tile
-		if (!isHorseControlled&& controller.IsGrounded&&rb.velocity.x != 0)
+		if (!isHorseControlled && controller.IsGrounded && rb.velocity.x != 0 && !controller.isKnockedback)
 		{
 			rb.velocity = new Vector2(rb.velocity.x / 10, rb.velocity.y);
 		}
