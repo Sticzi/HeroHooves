@@ -10,6 +10,11 @@ public class StartDialogue : MonoBehaviour
 
     private void Start()
     {
+        //StartPrefabDialogue();
+    }
+
+    public void StartPrefabDialogue()
+    {
         dialogBehaviour.StartDialog(dialogGraph);
     }
 }

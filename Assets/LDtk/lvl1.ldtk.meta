@@ -20,8 +20,6 @@ ScriptedImporter:
   _createLevelBoundsTrigger: 0
   _useParallax: 1
   _intGridValues:
-  - _key: Ladder_1
-    _asset: {fileID: 11400000, guid: 123cf22e7ecedb046a17369e29bb12ce, type: 2}
   - _key: Spikes_2
     _asset: {fileID: 11400000, guid: 07b04b982b17b5341aff3a382b8d1305, type: 2}
   - _key: Spikes_1
@@ -35,7 +33,7 @@ ScriptedImporter:
   - _key: Foreground_Collision_2
     _asset: {fileID: 11400000, guid: 4bb6fe06fd9408c47b9b739341898c48, type: 2}
   - _key: Background_1
-    _asset: {instanceID: 0}
+    _asset: {fileID: 11400000, guid: 93c015ef7a71369478f325624b82aa6f, type: 2}
   - _key: CameraBound_1
     _asset: {fileID: 11400000, guid: 48e054aa1c551834c9dac24c1220fed3, type: 2}
   _entities:

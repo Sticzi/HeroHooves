@@ -5,8 +5,7 @@ public class FallingPlatform : MonoBehaviour
     public ContactFilter2D contactFilter;
     public Animator animator;
 
-    private Rigidbody2D rb;
-    private AudioSource audioSource;
+    private Rigidbody2D rb;    
     private bool isFalling;
 
     // Public property to check if the player is on the platform
@@ -26,15 +25,14 @@ public class FallingPlatform : MonoBehaviour
                 // Play the audio only when the platform starts falling
                 if (isFalling)
                 {
-                    audioSource.Play();
+                    FindObjectOfType<AudioManager>().Play("FallingPlatform");
                 }
             }
         }
     }
 
     void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
+    {        
         rb = GetComponent<Rigidbody2D>();
         IsFalling = false;
     }

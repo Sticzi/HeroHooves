@@ -164,9 +164,7 @@ public class HorseController2D : MonoBehaviour
     }
 
     public void Move(float move)
-    {
-
-        
+    {       
 
         //only control the player if grounded or airControl is turned on
         if ((IsGrounded || m_AirControl) && !isKnockedback)
@@ -218,8 +216,7 @@ public class HorseController2D : MonoBehaviour
         if (movement.jumpBufferCounter >= 0 && hangCounter > 0f && !isJumping)
         {
             // Add a vertical force to the player.
-            JumpSound.pitch = Random.Range(minPitch, maxPitch);
-            JumpSound.Play();                      
+            FindObjectOfType<AudioManager>().Play("Jump");
             isJumping = true;
             betterJump.jump = true;
             betterJump.isTossed = false;
@@ -240,8 +237,7 @@ public class HorseController2D : MonoBehaviour
         GameObject cloud = Instantiate(jumpCloud, new Vector2(transform.position.x, transform.position.y - jumpCloudOffset), transform.rotation);
         Destroy(cloud, 2f);
 
-        JumpSound.pitch = Random.Range(minPitchDouble, maxPitchDouble);
-        JumpSound.Play();
+        FindObjectOfType<AudioManager>().Play("DoubleJump");
         doubleJumpReady = false;
         m_AirControl = true;
         isKnockedback = false;
@@ -319,7 +315,7 @@ public class HorseController2D : MonoBehaviour
         }
     }
 
-    public void KnightAndHorseFreeze()
+    public void PlayerUnfreeze()
     {
         for (int i = 0; i < 5; i++)
         {

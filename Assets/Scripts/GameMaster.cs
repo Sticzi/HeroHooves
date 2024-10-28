@@ -35,9 +35,10 @@ public class GameMaster : MonoBehaviour
         //all of this might not happen on every scene load so it's only needed for testing;
 
         //acces the urrent level gameobject and then from there acces the checkpoint entity
-        firstSpawnPoint = FindChildWithTag(levelOfFirstSpawnPoint.Find("Entities"), "Checkpoint");
-        //Debug.Log(firstSpawnPoint.position);
-        
+
+        //firstSpawnPoint = FindChildWithTag(levelOfFirstSpawnPoint.Find("Entities"), "Checkpoint");
+
+        //Debug.Log(firstSpawnPoint.position);        
 
         if (instance == null)
         {

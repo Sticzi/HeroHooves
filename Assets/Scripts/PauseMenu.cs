@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public static bool isPaused;
 
     // Update is called once per frame
     void Update()
@@ -21,14 +22,14 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        // Optionally unfreeze other gameplay elements
+        isPaused = false;
     }
 
     void PauseGame()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        // Optionally freeze any relevant gameplay elements
+        isPaused = true;
     }
 
     public bool IsGamePaused()
@@ -39,6 +40,16 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f; // Ensure time scale is set back to normal
-        SceneManager.LoadScene("MainMenu1"); // Replace "MainMenu" with the name of your main menu scene
+        SceneManager.LoadScene("MainMenu 1"); // Replace "MainMenu" with the name of your main menu scene
     }
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                    Application.Quit();
+        #endif
+    }
+
+
 }

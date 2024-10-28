@@ -6,27 +6,17 @@ using UnityEngine.Events;
 public class BoxFall : MonoBehaviour
 {
 
-    bool wasGrounded;
+    public bool wasGrounded;
     //bool wasMoved;
     public ContactFilter2D ContactFilter;
     public bool IsGrounded => rb.IsTouching(ContactFilter);
     private Rigidbody2D rb;
-
-    public AudioSource fallSound;
-    public float delay = 1f;
-
-    //[SerializeField] private AudioSource LandSound;    
-    [SerializeField] private UnityEvent OnLandingEvent;
-    
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> { }
+    private bool audioEnabled = false;
+    public float delay = 1f;       
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        if (OnLandingEvent == null)
-            OnLandingEvent = new UnityEvent();
         wasGrounded = true;
        // wasMoved = false;
     }
@@ -34,7 +24,8 @@ public class BoxFall : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForSeconds(delay);
-        fallSound.enabled = true;
+        audioEnabled = true;
+        
     }
 
     void FixedUpdate()
@@ -47,7 +38,9 @@ public class BoxFall : MonoBehaviour
 
         if (wasGrounded == false && IsGrounded == true)
         {
-            OnLandingEvent.Invoke();            
+            if(audioEnabled)
+            FindObjectOfType<AudioManager>().Play("Hit");
+                        
         }
         wasGrounded = IsGrounded;
 

@@ -137,7 +137,7 @@ public class PlayerCamera : MonoBehaviour
     }
     private void PlayerUnfreeze()
     {
-        horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
+        horse.GetComponent<HorseController2D>().PlayerUnfreeze();
     }
 
     public async void CameraTransition(Collider2D roomCameraBound, CinemachineConfiner confiner)

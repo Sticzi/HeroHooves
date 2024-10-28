@@ -33,16 +33,17 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 32
-    y: 140
+    x: 201
+    y: 70
     width: 190
     height: 135
   isDragging: 0
-  isSelected: 1
+  isSelected: 0
   sentence:
-    characterName: Horse
-    text: Mountless behaviour.
-    characterSprite: {fileID: 21300000, guid: e1336f4b232122a4fa3d6fc7961c91b9, type: 3}
+    characterName: Goblin
+    text: WE ARE GETTING OUTTA HERE BOYS.
+    characterSprite: {fileID: 5454093011663068174, guid: e14dff89f74a35b4a8877d52ed7a8795,
+      type: 3}
   parentNode: {fileID: 0}
   childNode: {fileID: 2499221764970609640}
   isExternalFunc: 0
@@ -63,16 +64,16 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 261
-    y: 152
+    x: 483
+    y: 69
     width: 190
     height: 135
   isDragging: 0
   isSelected: 1
   sentence:
-    characterName: Horse
-    text: Absolutely cringeworthy.
-    characterSprite: {fileID: 21300000, guid: 18db14d2c48b5384a818b06089d58f49, type: 3}
+    characterName: Knight
+    text: Get back here wankers!
+    characterSprite: {fileID: 21300000, guid: 5308200e57222f343991e858e1cbd607, type: 3}
   parentNode: {fileID: 747944198314683022}
   childNode: {fileID: 0}
   isExternalFunc: 0
