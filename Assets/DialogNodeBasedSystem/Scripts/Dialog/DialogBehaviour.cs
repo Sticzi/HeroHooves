@@ -155,6 +155,12 @@ namespace cherrydev
             }
         }
 
+        public void ShowSpecialMessage()
+        {
+            Debug.Log("This is a special message during the dialog!");
+            // Mo¿esz tutaj dodaæ kod do aktualizacji UI, animacji, itp.
+        }
+
         /// <summary>
         /// Processing sentence node
         /// </summary>
