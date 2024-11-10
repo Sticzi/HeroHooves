@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using cherrydev;
 using UnityEngine.U2D;
@@ -10,53 +8,54 @@ using Cinemachine;
 public class StartDialogue : MonoBehaviour
 {
     [SerializeField] private DialogBehaviour dialogBehaviour;
-    [SerializeField] private DialogNodeGraph dialogGraph;
-
-    
+    [SerializeField] private DialogNodeGraph dialogGraph;   
+    [SerializeField] private DoorFlyOff doors;
 
     [Header("Camera Settings")]
     public PixelPerfectCamera pixelPerfectCamera;
-    public CinemachineVirtualCamera virtualCamera;
+    public CinemachineBrain cinemachineBrain;
+    public CinemachineVirtualCamera MaineMenuVirtualCamera;
 
-    [Space]
-    public float zoomedOrthographicSize = 5f;    
-    private float originalOrthographicSize;    
-    public float zoomDuration = 1f;
-    
+    public void IntroCutscene()
+    {
+        MaineMenuVirtualCamera.Priority = 0;
+        DOVirtual.DelayedCall(2f, () =>
+        {
+            doors.Kick(); // Call the Kick method after the delay            
+            StartPrefabDialogue();
+        });
+
+    }
+
+
     public void StartPrefabDialogue()
     {
         dialogBehaviour.StartDialog(dialogGraph);
 
-        dialogBehaviour.BindExternalFunction("zoomIn", ZoomIn);
+        dialogBehaviour.BindExternalFunction("CameraOnPlayer", CameraOnPlayer);
         dialogBehaviour.BindExternalFunction("zoomOut", ZoomOut);
     }
 
 
-    void Start()
-    {
-        // Store the initial orthographic size
-        originalOrthographicSize = virtualCamera.m_Lens.OrthographicSize;
-    }
 
-    public void ZoomIn()
+    public void CameraOnPlayer()
     {
-        // Smoothly change the orthographic size
-        DOTween.To(() => virtualCamera.m_Lens.OrthographicSize, x => virtualCamera.m_Lens.OrthographicSize = x, zoomedOrthographicSize, zoomDuration)
-            .SetEase(Ease.InOutSine)
-            .OnComplete(() =>
-            {
-                // Enable Pixel Perfect Camera after zooming in
-                if (pixelPerfectCamera != null) pixelPerfectCamera.enabled = true;
-            });
+        MaineMenuVirtualCamera.Priority = 0;
+
+        if (pixelPerfectCamera != null)
+        {
+            pixelPerfectCamera.enabled = true;
+        }
     }
 
     public void ZoomOut()
     {
         // Disable Pixel Perfect Camera before starting to zoom out
-        if (pixelPerfectCamera != null) pixelPerfectCamera.enabled = false;
+        if (pixelPerfectCamera != null)
+        {
+            pixelPerfectCamera.enabled = false;
+        }
 
-        // Smoothly reset to the original orthographic size
-        DOTween.To(() => virtualCamera.m_Lens.OrthographicSize, x => virtualCamera.m_Lens.OrthographicSize = x, originalOrthographicSize, zoomDuration)
-            .SetEase(Ease.InOutSine);
+
     }
 }
