@@ -906,7 +906,6 @@ GameObject:
   - component: {fileID: 6220960676607746020}
   - component: {fileID: 6220960676607746022}
   - component: {fileID: 6220960676607746023}
-  - component: {fileID: 586363279772422623}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1022,20 +1021,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &586363279772422623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6220960676607746040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324e179bb54cb62448803946cd1d8d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogBehaviour: {fileID: 0}
-  dialogGraph: {fileID: 11400000, guid: 2ef99eb7d303d5b48b1af7397162e77d, type: 2}
 --- !u!1 &6320010467005793316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,15 +3526,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f6b0709a6ad12847884e69bff305aae, type: 3}
---- !u!224 &6220960675003425229 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1573077200802435064, guid: 3f6b0709a6ad12847884e69bff305aae,
-    type: 3}
-  m_PrefabInstance: {fileID: 4864445768109960757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6220960675003425228 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1573077200802435065, guid: 3f6b0709a6ad12847884e69bff305aae,
+    type: 3}
+  m_PrefabInstance: {fileID: 4864445768109960757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6220960675003425229 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1573077200802435064, guid: 3f6b0709a6ad12847884e69bff305aae,
     type: 3}
   m_PrefabInstance: {fileID: 4864445768109960757}
   m_PrefabAsset: {fileID: 0}

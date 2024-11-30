@@ -16,10 +16,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 28
-    y: 20.20021
+    x: 240
+    y: -95.79979
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -46,10 +46,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 1536
-    y: 532.2002
+    x: 1748
+    y: 416.2002
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -76,10 +76,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 262
-    y: 23.20021
+    x: 474
+    y: -92.79979
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -106,10 +106,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 261
-    y: 294.20026
+    x: 473
+    y: 178.20026
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -136,10 +136,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 30
-    y: 156.20021
+    x: 242
+    y: 40.20021
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -166,8 +166,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -454
-    y: 201.20024
+    x: -242
+    y: 85.20024
     width: 190
     height: 155
   isDragging: 0
@@ -224,10 +224,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 268
-    y: 439.19928
+    x: 480
+    y: 323.19928
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -254,10 +254,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 699
-    y: 231.20024
+    x: 911
+    y: 115.20024
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -284,10 +284,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 32
-    y: 446.19928
+    x: 244
+    y: 330.19928
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -314,8 +314,8 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 493
-    y: 234.20023
+    x: 705
+    y: 118.200226
     width: 190
     height: 115
   isDragging: 0
@@ -341,10 +341,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -229
-    y: 194.20021
+    x: -17
+    y: 78.20021
     width: 190
-    height: 175
+    height: 115
   isDragging: 0
   isSelected: 0
   answers:
@@ -374,10 +374,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 264
-    y: 156.20021
+    x: 476
+    y: 40.20021
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:
@@ -404,10 +404,10 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: 29
-    y: 288.20026
+    x: 241
+    y: 172.20026
     width: 190
-    height: 135
+    height: 0
   isDragging: 0
   isSelected: 0
   sentence:

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using DG.Tweening;
 
 public class KnightController2D : MonoBehaviour
 {
@@ -113,7 +114,7 @@ public class KnightController2D : MonoBehaviour
                 if (stepTimer >= stepInterval)
                 {
                     // Odtwórz losowy dŸwiêk kroku
-                    PlayFootstepSound();
+                    //PlayFootstepSound();
 
                     // Zresetuj timer kroku
                     stepTimer = 0f;
@@ -155,9 +156,13 @@ public class KnightController2D : MonoBehaviour
 
     public void Attack()
     {
-        FindObjectOfType<AudioManager>().Play("Attack");
+        
         anim.SetTrigger("attack");
         rb.velocity = new Vector2(0, rb.velocity.y);
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            FindObjectOfType<AudioManager>().Play("Attack");
+        });
     }
     
     public async void SwapCharacter(string whoIsControlled)

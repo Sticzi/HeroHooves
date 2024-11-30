@@ -279,7 +279,8 @@ namespace cherrydev
                 }
 
                 OnDialogTextCharWrote?.Invoke();
-
+                //plays the char sound                
+                FindObjectOfType<AudioManager>().Play("charSound");
                 yield return new WaitForSeconds(dialogCharDelay);
             }
 
