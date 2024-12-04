@@ -11,6 +11,7 @@ public class KnightMovement : MonoBehaviour
     
     public bool isKnightControlled;
     public bool isAttacking;
+    public bool CanSwap;
 
 
     public string whoIsControlled = "horse";
@@ -97,7 +98,7 @@ public class KnightMovement : MonoBehaviour
                       
         }
 
-        if (Input.GetButtonDown("swap"))
+        if (Input.GetButtonDown("swap") && CanSwap)
         {
             controller.SwapCharacter(whoIsControlled);
         }

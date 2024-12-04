@@ -1,35 +1,32 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour
-{
-    [SerializeField] private GameObject objectToActivate; // Reference to the object to activate        
+{           
     [SerializeField] private ContactFilter2D ContactFilter;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Animator cloudTextAnimator;
     public bool IsPlayerInsideTriggerCollider => rb.IsTouching(ContactFilter);
+    public UnityEvent OnProximityEnable;
+    public UnityEvent OnProximityDisable;
+    public UnityEvent OnActivate;
+
 
     void Update()
     {       
         // If the player is close enough, activate the object
         if (IsPlayerInsideTriggerCollider)
         {
-            Appear();
+            OnProximityEnable.Invoke();
         }
         else
         {
-            Disappear();
+            OnProximityDisable.Invoke();
         }
     }
 
-    public void Appear()
+    public void Activate()
     {
-        cloudTextAnimator.SetBool("IsHidden", false);
+        OnActivate.Invoke();
     }
-
-    public void Disappear()
-    {
-        cloudTextAnimator.SetBool("IsHidden", true);
-    }
-
 }
 

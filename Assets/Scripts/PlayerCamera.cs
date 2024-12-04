@@ -107,14 +107,10 @@ public class PlayerCamera : MonoBehaviour
         if(checkedRoomCameraBound != null)
         {
             nextSpawnPosition = FindChildWithTag(checkedRoomCameraBound.transform.parent.parent.Find("Entities"), "Checkpoint");
-        }
-        
+        }        
 
         if (checkedRoomCameraBound != null && currentConfinerComponent.m_BoundingShape2D != checkedRoomCameraBound)
-        {
-            
-            
-
+        {                      
             // Player is in another room
             CameraTransition(checkedRoomCameraBound, currentConfinerComponent);
         }
@@ -143,7 +139,35 @@ public class PlayerCamera : MonoBehaviour
     public async void CameraTransition(Collider2D roomCameraBound, CinemachineConfiner confiner)
     {
         //freeze the player in place for the duration of camera transition. Might need some updating Knight-wise, not sure have to check
-        PlayerFreeze();
+
+        //switch (knight.GetComponent<KnightMovement>().whoIsControlled)
+        //{
+        //    case "knight":
+
+        //        break;
+
+        //    case "horse":
+
+        //        break;
+        //}
+
+        if(knight != null)
+        {
+            if (!knight.GetComponent<KnightMovement>().isKnightControlled)
+            {
+                if (CompareTag("Horse"))
+                {
+                    PlayerFreeze();
+                }
+
+            }
+        }
+        else
+        {
+            PlayerFreeze();
+        }
+
+        
 
         //tu by³o przedtem save paralaxy ale chyba niepotrzebnie
         //je¿eli wchodzi od do³u

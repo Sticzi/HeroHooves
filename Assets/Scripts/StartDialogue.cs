@@ -31,17 +31,42 @@ public class StartDialogue : MonoBehaviour
     public PixelPerfectCamera pixelPerfectCamera;
     public CinemachineBrain cinemachineBrain;
     public CinemachineVirtualCamera MaineMenuVirtualCamera;
-
+    public CinemachineVirtualCamera DialogueVirtualCamera;
+   
 
     public void IntroCutscene()
     {
-        MaineMenuVirtualCamera.Priority = 12;
-        DOVirtual.DelayedCall(2f, () =>
+        actualKnight = GameObject.FindGameObjectWithTag("Knight");
+
+        var impulseSource = GetComponent<CinemachineImpulseSource>();
+        MaineMenuVirtualCamera.Priority = 0;
+        DOVirtual.DelayedCall(10f, () =>
         {
-            doors.Kick(); // Call the Kick method after the delay            
-            StartPrefabDialogue();
+            FindObjectOfType<AudioManager>().Play("Hit");
+            impulseSource.GenerateImpulse();            
+            //DialogueVirtualCamera.Priority = 15;
+            DOVirtual.DelayedCall(1.5f, () =>
+            {
+                FindObjectOfType<AudioManager>().Play("Hit");
+                impulseSource.GenerateImpulse();
+                DOVirtual.DelayedCall(1.5f, () =>
+                {
+                    FindObjectOfType<AudioManager>().Play("Attack");
+                    impulseSource.GenerateImpulse();
+                    doors.Kick(); // Call the Kick method after the delay
+                    DOVirtual.DelayedCall(1.5f, () =>
+                    {
+
+                        StartPrefabDialogue();
+                    });
+                });
+
+            });
+            
         });
     }
+
+
 
     // aight for some reason nie dzia³a function w pierwszym nodzie aleee to mo¿na daæ do tego dziadostwa on dialogue start
     public void StartPrefabDialogue()
@@ -79,14 +104,18 @@ public class StartDialogue : MonoBehaviour
 
             // Wait for the jump key to be pressed
             await WaitForJumpInputAsync();
+            Vector3 tempPos = knight.transform.position;
+            Destroy(knight);
+            actualKnight.transform.position = tempPos;
+            actualKnight.GetComponent<KnightMovement>().enabled = true;
 
             // Enable the player's HorseMovement component immediately
             player.GetComponent<HorseMovement>().enabled = true;
             player.GetComponent<HorseController2D>().Jump(false);
 
-            // Play the delete animation
+            // Play the delete animation    
             protip.GetComponent<Animator>().SetTrigger("Delete");
-
+            DialogueVirtualCamera.Priority = 0;
             // Destroy the tooltip after 2 seconds
             Destroy(protip, 2f);
         }
@@ -202,6 +231,8 @@ public class StartDialogue : MonoBehaviour
                 if(siema == false)
                 {
                     FindObjectOfType<AudioManager>().Play("bump");
+                    knight.GetComponent<Animator>().enabled = false;
+                    knight.GetComponent<SpriteRenderer>().sprite = KnightIdle;
                     siema = true;
                 }
                 
@@ -260,7 +291,7 @@ public class StartDialogue : MonoBehaviour
 
     public void CameraOnPlayer()
     {
-        MaineMenuVirtualCamera.Priority = 12;
+        //MaineMenuVirtualCamera.Priority = 12;
         if (pixelPerfectCamera != null)
         {
             pixelPerfectCamera.enabled = true;

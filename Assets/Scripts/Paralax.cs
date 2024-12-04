@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Paralax : MonoBehaviour
 {
@@ -23,44 +24,67 @@ public class Paralax : MonoBehaviour
 
     void Update()
     {
-        if(cameraLerp == true)
+        if (cameraLerp)
         {
-            float temp = (cam.transform.position.x * (1 - parallaxEffect));
             Vector2 dist = new Vector2(camPos.position.x * parallaxEffect, camPos.position.y * parallaxEffectY);
+            Vector3 targetPosition = new Vector3(startPos.x + dist.x, startPos.y + dist.y, transform.position.z);
 
-            transform.position = new Vector3(startPos.x + dist.x, startPos.y + dist.y, transform.position.z);
+            // Smoothly move the object to the target position
+            transform.DOMove(targetPosition, 0.1f).SetEase(Ease.Linear);
 
+            float temp = cam.transform.position.x * (1 - parallaxEffect);
+
+            // Adjust starting position for seamless looping
             if (temp > startPos.x + length)
             {
                 startPos.x += length;
             }
-
-
             else if (temp < startPos.x - length)
             {
                 startPos.x -= length;
             }
         }
 
-        if (cameraLerp == false)
+        if (!cameraLerp)
         {
-            float temp = (cam.transform.position.x * (1 - parallaxEffect));
             Vector2 dist = new Vector2(camPos.position.x * parallaxEffect, camPos.position.y * parallaxEffectY);
+            Vector3 targetPosition = new Vector3(startPos.x + dist.x, startPos.y + dist.y, transform.position.z);
 
-            transform.position = new Vector3(startPos.x + dist.x, startPos.y + dist.y, transform.position.z);
+            // Smoothly move the object to the target position
+            transform.DOMove(targetPosition, 0.1f).SetEase(Ease.Linear);
 
+            float temp = cam.transform.position.x * (1 - parallaxEffect);
+
+            // Adjust starting position for seamless looping
             if (temp > startPos.x + length)
             {
                 startPos.x += length;
             }
-
-
             else if (temp < startPos.x - length)
             {
                 startPos.x -= length;
             }
+        }
+
+        //    if (cameraLerp == false)
+        //    {
+        //        float temp = (cam.transform.position.x * (1 - parallaxEffect));
+        //        Vector2 dist = new Vector2(camPos.position.x * parallaxEffect, camPos.position.y * parallaxEffectY);
+
+        //        transform.position = new Vector3(startPos.x + dist.x, startPos.y + dist.y, transform.position.z);
+
+        //        if (temp > startPos.x + length)
+        //        {
+        //            startPos.x += length;
+        //        }
+
+
+        //        else if (temp < startPos.x - length)
+        //        {
+        //            startPos.x -= length;
+        //        }
+        //    }
+
         }
 
     }
-
-}

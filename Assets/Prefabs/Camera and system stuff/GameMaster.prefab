@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6033189527466410154}
   - component: {fileID: 6033189527466410153}
   - component: {fileID: 4527284004094821671}
+  - component: {fileID: 3456719483789286954}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GM
@@ -69,6 +70,8 @@ MonoBehaviour:
   doors: {fileID: 0}
   goblin: {fileID: 0}
   knight: {fileID: 0}
+  actualKnight: {fileID: 0}
+  player: {fileID: 0}
   WallFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -97,10 +100,12 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 89
     maxNormalAngle: 91
+  KnightIdle: {fileID: 0}
   protip: {fileID: 0}
   pixelPerfectCamera: {fileID: 0}
   cinemachineBrain: {fileID: 0}
   MaineMenuVirtualCamera: {fileID: 0}
+  DialogueVirtualCamera: {fileID: 0}
   initialRunDistance: 12
   initialRunSpeed: 4
   firstJumpHeight: 6
@@ -111,3 +116,45 @@ MonoBehaviour:
   secondJumpHeight: 6
   secondJumpDistance: 3.3
   secondJumpDuration: 0.75
+--- !u!114 &3456719483789286954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033189527466410155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 343
