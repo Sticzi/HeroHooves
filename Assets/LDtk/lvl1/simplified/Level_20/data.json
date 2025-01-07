@@ -1,0 +1,218 @@
+{
+	"identifier": "Level_20",
+	"uniqueIdentifer": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
+	"x": 9408,
+	"y": -448,
+	"width": 448,
+	"height": 352,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "94b43730-4ce0-11ef-9823-b7fb0d6e8573",
+			"dir": "w"
+		},
+		{
+			"levelIid": "1f0fd050-4ce0-11ef-a59b-cbfb31be55f6",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Ladder": [
+			{
+				"id": "Ladder",
+				"iid": "40bc60c0-4ce0-11ef-a59b-e90b66894af8",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 56,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "40f65c80-4ce0-11ef-a59b-6370589a86ef",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 72,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "4120eef0-4ce0-11ef-a59b-a39e720f15be",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 88,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "415a0050-4ce0-11ef-a59b-5dd908edf8c2",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 104,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "41809b20-4ce0-11ef-a59b-bd04cfee55cf",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 136,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "41c1c2d0-4ce0-11ef-a59b-013b559d1f30",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 120,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "41f8d860-4ce0-11ef-a59b-176c40a23d55",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 152,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "43ef7840-4ce0-11ef-a59b-85bb1939e406",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 184,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "451ab1d0-4ce0-11ef-a59b-df4c14089ab6",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 200,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "455bd980-4ce0-11ef-a59b-8f495f6b1ade",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 168,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "d6d33ac0-4ce0-11ef-a59b-d511911a29ab",
+				"layer": "Ladders",
+				"x": 296,
+				"y": 40,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			}
+		],
+		"MovingPlatform": [
+			{
+				"id": "MovingPlatform",
+				"iid": "afe250f0-4ce0-11ef-a59b-9fdd20a174f3",
+				"layer": "Entities",
+				"x": 72,
+				"y": 248,
+				"width": 48,
+				"height": 16,
+				"color": 4098376,
+				"customFields": {
+					"Position": [
+						{
+							"cx": 13,
+							"cy": 15
+						}
+					],
+					"Active": false
+				}
+			}
+		],
+		"PressurePlate": [
+			{
+				"id": "PressurePlate",
+				"iid": "f0eaeac0-4ce0-11ef-a59b-035e67c05049",
+				"layer": "Entities",
+				"x": 216,
+				"y": 104,
+				"width": 16,
+				"height": 16,
+				"color": 16705377,
+				"customFields": {
+					"MovingPlatform": {
+						"entityIid": "afe250f0-4ce0-11ef-a59b-9fdd20a174f3",
+						"layerIid": "1e27f0a2-4ce0-11ef-9823-c1a8f27ff287",
+						"levelIid": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
+						"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
+					}
+				}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "0a373470-4ce0-11ef-a59b-cfcb5e50f2e1",
+				"layer": "Entities",
+				"x": 16,
+				"y": 224,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "4f6239b0-4ce0-11ef-a59b-691aba12e93e",
+				"layer": "Box",
+				"x": 344,
+				"y": 24,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields" : {}
+			}
+		]
+	}
+}

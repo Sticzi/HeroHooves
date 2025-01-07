@@ -1,0 +1,155 @@
+{
+	"identifier": "Level_13",
+	"uniqueIdentifer": "d2b128a0-4ce0-11ef-b774-d73a26dcb1e4",
+	"x": 6112,
+	"y": -288,
+	"width": 464,
+	"height": 400,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "bce643b0-4ce0-11ef-b774-d35c56c61b18",
+			"dir": "w"
+		},
+		{
+			"levelIid": "9dc02550-4ce0-11ef-b774-db724ddefb7b",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "4efe27b0-4ce0-11ef-b774-67cf0611db58",
+				"layer": "Entities",
+				"x": 32,
+				"y": 288,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Ladder": [
+			{
+				"id": "Ladder",
+				"iid": "932a9670-4ce0-11ef-a1f4-a7cdf7f82269",
+				"layer": "Entities",
+				"x": 88,
+				"y": 168,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "935d6640-4ce0-11ef-a1f4-f72575ce58a5",
+				"layer": "Entities",
+				"x": 88,
+				"y": 184,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "93969eb0-4ce0-11ef-a1f4-d1b8232b6814",
+				"layer": "Entities",
+				"x": 88,
+				"y": 200,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "93e1b170-4ce0-11ef-a1f4-8dbedc5951fe",
+				"layer": "Entities",
+				"x": 88,
+				"y": 216,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "940eb4e0-4ce0-11ef-a1f4-911d7a57e13f",
+				"layer": "Entities",
+				"x": 88,
+				"y": 232,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "943f61d0-4ce0-11ef-a1f4-5f50d45fa054",
+				"layer": "Entities",
+				"x": 88,
+				"y": 248,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "94745480-4ce0-11ef-a1f4-2bdc7b746a47",
+				"layer": "Entities",
+				"x": 88,
+				"y": 264,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "94a77270-4ce0-11ef-a1f4-bf3cc779503b",
+				"layer": "Entities",
+				"x": 88,
+				"y": 280,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "94f2ac40-4ce0-11ef-a1f4-9d78f91cad0b",
+				"layer": "Entities",
+				"x": 88,
+				"y": 296,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "de3dc160-4ce0-11ef-b774-935015c0c4bc",
+				"layer": "Box",
+				"x": 248,
+				"y": 200,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields" : {}
+			}
+		]
+	}
+}
