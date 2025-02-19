@@ -15,10 +15,12 @@ public class BetterJump : MonoBehaviour
     
     Rigidbody2D rb;
     //public float velocityCut;
-        
+    private HorseMovement horseMovement; // Dodaj referencję do HorseMovement
+
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();        
+        rb = GetComponent<Rigidbody2D>();
+        horseMovement = GetComponent<HorseMovement>(); // Pobierz komponent
     }
 
     void FixedUpdate()
@@ -40,7 +42,7 @@ public class BetterJump : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;            
         }
 
-        else if(rb.velocity.y > 0 && !Input.GetButton("Jump") && minimalJumpCounter <= 0 && !isTossed)
+        else if(rb.velocity.y > 0 && !horseMovement.jump.IsPressed() && minimalJumpCounter <= 0 && !isTossed)
         {            
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }

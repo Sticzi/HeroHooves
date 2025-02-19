@@ -75,20 +75,23 @@ public class PlayerCamera : MonoBehaviour
         }
     
 
-        if (CompareTag("Knight"))
-        {           
-            gameMaster.knightSavedRoom = levelNumber;
-            gameMaster.horseSavedRoom = levelNumber;
-        }
-        else
+        if(this!= null)
         {
-            //gameMaster.horseSavedRoom = levelNumber;
-            if (GetComponent<HorseController2D>().KnightPickedUp)
+            if (CompareTag("Knight"))
             {
                 gameMaster.knightSavedRoom = levelNumber;
                 gameMaster.horseSavedRoom = levelNumber;
             }
-        }       
+            else
+            {
+                //gameMaster.horseSavedRoom = levelNumber;
+                if (GetComponent<HorseController2D>().KnightPickedUp)
+                {
+                    gameMaster.knightSavedRoom = levelNumber;
+                    gameMaster.horseSavedRoom = levelNumber;
+                }
+            }
+        }
     }
 
     private void CheckPlayerRoom()

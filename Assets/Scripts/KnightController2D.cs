@@ -1,238 +1,210 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
 
 public class KnightController2D : MonoBehaviour
 {
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
+    [Header("Movement Settings")]
+    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = 0.05f;
     public bool m_AirControl = false;
 
-    private Vector3 m_Velocity = Vector3.zero;
-    private bool m_FacingRight = true; 
+    [Header("References")]
+    public GameObject horse;
+    public GameObject virtualCameraKnight;
+    public GameObject controlIndicator;
+    public ContactFilter2D groundContactFilter;
 
-    private KnightMovement movement;
+    [Header("Audio")]
+    public AudioSource footstepSource;
+    public AudioClip[] footstepSounds;
+    public float stepInterval = 0.5f;
+
+    // Component references
     private Rigidbody2D rb;
     public Animator anim;
+    private KnightMovement movement;
 
-    public GameObject horse;    
-      
-    public bool IsInRangeOfHorse;
+    // State variables
+    [HideInInspector] public bool IsGrounded => rb.IsTouching(groundContactFilter);
+    public bool IsInRangeOfHorse { get; set; }
+    public bool isKnockedback { get; set; }
+    public bool isClimbing { get; set; }
 
-    public AudioSource footstepSource;
-    public AudioClip[] footstepSounds; // Tablica dŸwiêków kroków
-    public float stepInterval = 0.5f; // Interwa³ pomiêdzy krokami
+    private bool m_FacingRight = true;
+    private Vector3 m_Velocity = Vector3.zero;
     private float stepTimer = 0f;
-
-
-
-    public Vector2 boxSize = new Vector2(1f, 0.2f);
-    public float castDistance = 0.1f;    
-
-    public ContactFilter2D ContactFilter;   
-    public bool IsGrounded => rb.IsTouching(ContactFilter);
-
-    //Collider2D boundCollider;
-
-    public GameObject virtualCameraHorse;
-    public GameObject virtualCameraKnight;
-
-    bool wasGrounded;
-
-    public bool isKnockedback;
-
-    public GameObject controlIndicator;
+    private bool wasGrounded;
 
     private void Awake()
     {
-        virtualCameraHorse = GameObject.FindGameObjectWithTag("VirtualCameraHorse");
-        virtualCameraKnight = GameObject.FindGameObjectWithTag("VirtualCameraKnight");
-        movement = GetComponent<KnightMovement>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        movement = GetComponent<KnightMovement>();
+
+        virtualCameraKnight = GameObject.FindGameObjectWithTag("VirtualCameraKnight");
+        if (controlIndicator != null) controlIndicator.SetActive(false);
     }
 
-    void FixedUpdate()  
+    private void FixedUpdate()
     {
+        HandleGroundCheck();
+        UpdateAnimator();
+    }
 
-        //this is a mess, if i'll be making a "landing" mechanic or anything like that for the knight this needs changing
+    #region Movement
+    public void Move(float move)
+    {
+        if ((IsGrounded || m_AirControl) && !isKnockedback)
+        {
+            HandleFootsteps(move);
+            ApplyMovement(move);
+            HandleFlipping(move); // Naprawione: metoda jest teraz zdefiniowana
+        }
+    }
 
-        if (wasGrounded == false && IsGrounded == true)
+    private void ApplyMovement(float move)
+    {
+        Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
+        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+    }
+    #endregion
+
+    #region Animations and Sounds
+    private void UpdateAnimator()
+    {
+        anim.SetBool("IsGrounded", IsGrounded);
+        anim.SetFloat("velocity.y", rb.velocity.y);
+        anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
+    }
+
+    private void HandleFootsteps(float move)
+    {
+        if (move != 0 && IsGrounded)
+        {
+            stepTimer += Time.deltaTime;
+            if (stepTimer >= stepInterval)
+            {
+                PlayFootstepSound();
+                stepTimer = 0f;
+            }
+        }
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (footstepSounds.Length > 0)
+        {
+            AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
+            footstepSource.PlayOneShot(clip);
+        }
+    }
+    #endregion
+
+    #region Character Control
+    public async void SwapCharacter(string whoIsControlled)
+    {
+        CinemachineVirtualCamera knightCamera = virtualCameraKnight.GetComponent<CinemachineVirtualCamera>();
+        CinemachineVirtualCamera horseCamera = GameObject.FindGameObjectWithTag("VirtualCameraHorse").GetComponent<CinemachineVirtualCamera>();
+
+        switch (whoIsControlled)
+        {
+            case "horse":
+                SetControlState(true, 20, knightCamera);
+                horse.GetComponent<HorseMovement>().isHorseControlled = false;
+                ToggleControlIndicator(true);
+                break;
+
+            case "knight":
+                SetControlState(false, 0, knightCamera);
+                horse.GetComponent<HorseMovement>().isHorseControlled = true;
+                ToggleControlIndicator(false);
+                break;
+        }
+
+        await HandleCameraTransition(horseCamera, knightCamera);
+    }
+
+    private void SetControlState(bool isKnightControlled, int priority, CinemachineVirtualCamera camera)
+    {
+        movement.isKnightControlled = isKnightControlled;
+        movement.whoIsControlled = isKnightControlled ? "knight" : "horse";
+        camera.Priority = priority;
+        anim.SetBool("isControlled", isKnightControlled);
+    }
+
+    private async Task HandleCameraTransition(CinemachineVirtualCamera horseCam, CinemachineVirtualCamera knightCam)
+    {
+        // Naprawione: Pobieramy komponenty CinemachineConfiner
+        var horseConfiner = horseCam.GetComponent<CinemachineConfiner>();
+        var knightConfiner = knightCam.GetComponent<CinemachineConfiner>();
+
+        if (horseConfiner?.m_BoundingShape2D != knightConfiner?.m_BoundingShape2D)
+        {
+            horse.GetComponent<HorseController2D>().PlayerFreeze();
+            await Task.Delay(750);
+            horse.GetComponent<HorseController2D>().PlayerUnfreeze();
+        }
+    }
+    #endregion
+
+    #region Combat
+    public void Attack()
+    {
+        anim.SetTrigger("attack");
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        DOVirtual.DelayedCall(0.35f, () => FindObjectOfType<AudioManager>().Play("Attack"));
+    }
+    #endregion
+
+    #region Utilities
+    private void HandleGroundCheck()
+    {
+        if (!wasGrounded && IsGrounded)
         {
             isKnockedback = false;
         }
         wasGrounded = IsGrounded;
+    }
 
-        // Check if the knight is grounded
-        if (IsGrounded)
+    private void ToggleControlIndicator(bool showKnightControl)
+    {
+        if (controlIndicator != null)
         {
-            
-            anim.SetBool("IsGrounded", true);
+            controlIndicator.GetComponent<Animator>().SetTrigger(showKnightControl ? "ControlSwap" : "ControlOff");
+            horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>()
+                .SetTrigger(showKnightControl ? "ControlOff" : "ControlSwap");
         }
-        else
+    }
+
+    // Naprawione: Nowa implementacja metody HandleFlipping
+    private void HandleFlipping(float moveDirection)
+    {
+        if ((moveDirection > 0 && !m_FacingRight) || (moveDirection < 0 && m_FacingRight))
         {
-            anim.SetBool("IsGrounded", false);
-            anim.SetFloat("velocity.y", rb.velocity.y);            
+            Flip();
         }
-        anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
-
     }
 
-    public void ClimbLadder(float climbDistanceAndDirection)
-    {
-        transform.position += Vector3.up * climbDistanceAndDirection;
-        anim.SetTrigger("Climb");
-    }
-
-    public void GoUpTheLadder()
-    {
-        transform.position += Vector3.up;
-        anim.SetTrigger("Climb");
-    }
-
-    public void GoDownTheLadder()
-    {
-        transform.position += Vector3.down;
-        anim.SetTrigger("Climb");
-    }
-
-
-    public void Move(float move)
-    {
-
-        //only control the player if grounded or airControl is turned on
-        if ((IsGrounded || m_AirControl) && !isKnockedback)
-        {
-
-            if (move != 0 && IsGrounded)
-            {
-                stepTimer += Time.deltaTime;
-
-                // Jeœli up³yn¹³ odpowiedni interwa³
-                if (stepTimer >= stepInterval)
-                {
-                    // Odtwórz losowy dŸwiêk kroku
-                    //PlayFootstepSound();
-
-                    // Zresetuj timer kroku
-                    stepTimer = 0f;
-                }
-            }
-
-            // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
-            // And then smoothing it out and applying it to the character
-            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-            // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
-            // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
-        }
-        
-    }
-    public void TurnOffIndicators()
-    {
-        horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
-        controlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
-
-    }
-
-    void PlayFootstepSound()
-    {
-        AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];
-        footstepSource.PlayOneShot(footstepSound);
-    }
-
-    public void Attack()
-    {
-        
-        anim.SetTrigger("attack");
-        rb.velocity = new Vector2(0, rb.velocity.y);
-        DOVirtual.DelayedCall(0.5f, () =>
-        {
-            FindObjectOfType<AudioManager>().Play("Attack");
-        });
-    }
-    
-    public async void SwapCharacter(string whoIsControlled)
-    {
-        switch (whoIsControlled)
-        {
-            case "horse":
-                movement.whoIsControlled = "knight";
-                virtualCameraKnight.GetComponent<CinemachineVirtualCamera>().Follow = this.transform;
-                anim.SetBool("isControlled", true);
-                movement.isKnightControlled = true;
-                horse.GetComponent<HorseMovement>().isHorseControlled = false;
-                horse.GetComponent<Rigidbody2D>().velocity = new Vector2(0, horse.GetComponent<Rigidbody2D>().velocity.y);
-                
-
-                virtualCameraKnight.GetComponent<CinemachineVirtualCamera>().Priority = 20;
-
-                //strza³ka pookazuj¹ca kto jest sterowany
-                //wypada³oby dodaæ zmiane  w layer prio
-
-
-                controlIndicator.GetComponent<Animator>().SetTrigger("ControlSwap");
-                horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
-                GetComponent<SpriteRenderer>().sortingOrder = 2;
-
-                if (virtualCameraHorse.GetComponent<CinemachineConfiner>().m_BoundingShape2D != virtualCameraKnight.GetComponent<CinemachineConfiner>().m_BoundingShape2D)
-                {
-                    //horse.GetComponent<HorseController2D>().PlayerFreeze();
-                    //await Task.Delay(750); // HARD CODE TIME next room duration lerp
-                    //horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
-                }
-                
-
-                //freeze
-                
-                break;
-
-            case "knight":
-                movement.whoIsControlled = "horse";
-                anim.SetBool("isControlled", false);
-                movement.isKnightControlled = false;
-                horse.GetComponent<HorseMovement>().isHorseControlled = true;
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-
-                virtualCameraKnight.GetComponent<CinemachineVirtualCamera>().Priority = 0;
-
-
-                horse.GetComponent<HorseController2D>().horseControlIndicator.GetComponent<Animator>().SetTrigger("ControlSwap");
-                controlIndicator.GetComponent<Animator>().SetTrigger("ControlOff");
-                GetComponent<SpriteRenderer>().sortingOrder = 0;
-
-                if (virtualCameraHorse.GetComponent<CinemachineConfiner>().m_BoundingShape2D != virtualCameraKnight.GetComponent<CinemachineConfiner>().m_BoundingShape2D)
-                {
-                    //horse.GetComponent<HorseController2D>().PlayerFreeze();
-                    //await Task.Delay(750); // HARD CODE TIME next room duration lerp
-                    //horse.GetComponent<HorseController2D>().KnightAndHorseFreeze();
-                }
-
-                break;
-
-        }              
-        await Task.Yield();
-    }    
-
+    // Naprawione: Lepsza implementacja odwracania postaci
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
-
-        transform.Rotate(0f, 180f, 0f);
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
+    #endregion
 
+    #region Ladder System
+    public void ClimbLadder(float distance)
+    {
+        if (!isClimbing)
+        {
+            isClimbing = true;
+            anim.SetTrigger("Climb");
+        }
+        transform.Translate(Vector3.up * distance);
+    }
+    #endregion
 }

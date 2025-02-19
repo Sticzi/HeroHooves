@@ -1,142 +1,228 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HorseMovement : MonoBehaviour
 {
+    [Header("References")]
+    public HorseController2D controller;
+    private Animator animator;
+    private Rigidbody2D rb;
 
-	private HorseController2D controller;
-	private Animator animator;
+    [Header("Movement Settings")]
+    public float runSpeed = 36f;
+    public float walkSpeed = 24f;
+    [HideInInspector] public float currentSpeed;
 
-    public float currentSpeed;	
-	public float runSpeed = 36;
-	public float walkSpeed = 24;
+    [Header("Jump Settings")]
+    public float jumpBufferTime = 0.2f;
+    public float coyoteTime = 0.15f;
 
-	public float jumpBufferTime;
-	[HideInInspector] public float jumpBufferCounter;	
+    public float jumpBufferCounter;
+    public float hangCounter;
 
-	private Rigidbody2D rb;
+    [Header("Detection Settings")]
+    public float Radius;
+    [SerializeField] private LayerMask whatIsKnight;
+    [SerializeField] private Vector2 offset;
 
-	float horizontalMove = 0f;
-	bool jump = false;
-	public bool isHorseControlled = true;
+    [Header("Other Settings")]
+    [SerializeField] private float holdTime = 1f;
+    private float timer = 0f;
+    public bool isHorseControlled = true;
 
-	public float Radius;
-	[SerializeField] private LayerMask whatIsKnight;
-	[SerializeField] private Vector2 offset;
-	
-	[SerializeField] private float holdTime = 1.0f; // Czas przytrzymania w sekundach
-	private float timer = 0.0f;
+    // Input System
+    public HorseInputActions HorseInput;
+    private InputAction move;
+    public InputAction jump;
+    private InputAction lookDown;
+    private InputAction pickDropKnight;
 
-	public void Awake()
+    private void Awake()
     {
-		controller = GetComponent<HorseController2D>();
-		animator = GetComponent<Animator>();
-		rb = GetComponent<Rigidbody2D>();
-		currentSpeed = runSpeed;
-	}	
+        controller = GetComponent<HorseController2D>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        currentSpeed = runSpeed;
+        HorseInput = new HorseInputActions();
+    }
 
-	void Update() 
-	{
-		Collider2D collider = Physics2D.OverlapCircle(new Vector2(transform.position.x - offset.x, transform.position.y - offset.y), Radius, whatIsKnight);
-		if (collider != null)
-		{
-			controller.InRangeOfKnight();
-		}
-		else
-		{
-			controller.OutOfRangeOfKnight();
-		}
+    private void OnEnable()
+    {
+        // Konfiguracja akcji
+        move = HorseInput.Player.Move;
+        jump = HorseInput.Player.Jump;
+        lookDown = HorseInput.Player.LookDown;
+        pickDropKnight = HorseInput.Player.PickDropKnight;
 
-		if (Input.GetButtonDown("Pick/Drop Knight"))
+        move.Enable();
+        jump.Enable();
+        lookDown.Enable();
+        pickDropKnight.Enable();
+
+        // Subskrypcje zdarzeñ
+        jump.performed += OnJumpPerformed;
+        jump.canceled += OnJumpCanceled;
+        pickDropKnight.performed += OnPickDropPerformed;
+    }
+
+    private void OnDisable()
+    {
+        move.Disable();
+        jump.Disable();
+        lookDown.Disable();
+        pickDropKnight.Disable();
+
+        // Anulowanie subskrypcji
+        jump.performed -= OnJumpPerformed;
+        jump.canceled -= OnJumpCanceled;
+        pickDropKnight.performed -= OnPickDropPerformed;
+    }
+
+    private void Update()
+    {
+        HandleKnightDetection();
+        UpdateAnimations();
+        HandleMovement();
+        HandleJumpBuffer();
+        HandleCoyoteTime();
+        HandleLookDown();
+        HandleSliding();
+    }
+
+    #region Input Handlers
+    private void OnJumpPerformed(InputAction.CallbackContext context)
+    {
+        jumpBufferCounter = jumpBufferTime;
+        controller.Jump(true);
+    }
+
+    private void OnJumpCanceled(InputAction.CallbackContext context)
+    {
+        controller.isJumpButtonHeld = false;
+    }
+
+    private void OnPickDropPerformed(InputAction.CallbackContext context)
+    {
+        HandlePickDropKnight();
+    }
+    #endregion
+
+    #region Core Logic
+    private void HandleMovement()
+    {
+        if (!isHorseControlled) return;
+
+        float moveInput = move.ReadValue<float>();
+        float horizontalMove = moveInput * currentSpeed;
+        controller.Move(horizontalMove * Time.fixedDeltaTime);
+    }
+
+    private void HandleJumpBuffer()
+    {
+        if (jumpBufferCounter > 0)
         {
-			if(controller.KnightPickedUp)
+            jumpBufferCounter -= Time.deltaTime;
+        }
+    }
+
+    private void HandleCoyoteTime()
+    {
+        if (controller.IsGrounded)
+        {
+            hangCounter = coyoteTime;
+        }
+        else
+        {
+            hangCounter -= Time.deltaTime;
+        }
+    }
+    #endregion
+
+    #region Additional Systems
+    private void HandleKnightDetection()
+    {
+        Collider2D collider = Physics2D.OverlapCircle(
+            new Vector2(transform.position.x - offset.x, transform.position.y - offset.y),
+            Radius,
+            whatIsKnight
+        );
+
+        if (collider != null) controller.InRangeOfKnight();
+        else controller.OutOfRangeOfKnight();
+    }
+
+    private void HandleLookDown()
+    {
+        if (!isHorseControlled) return;
+
+        float lookDownInput = lookDown.ReadValue<float>();
+        if (lookDownInput < 0)
+        {
+            timer += Time.deltaTime;
+            if (timer >= holdTime && !controller.isLookingDown)
             {
-				controller.KnightDropOfF();
+                controller.isLookingDown = true;
             }
-			else
-            {			
-				if(controller.IsInRangeOfKnight)
-                {
-					controller.KnightPickUp();
-                }
+        }
+        else
+        {
+            timer = 0f;
+            if (controller.isLookingDown)
+            {
+                controller.isLookingDown = false;
+                controller.StopLookingDown();
             }
-        }					
+        }
+    }
 
-
-		animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-		animator.SetFloat("Velocity.y", rb.velocity.y);
-
-		if (isHorseControlled)
+    private void HandlePickDropKnight()
+    {
+        if (controller.KnightPickedUp)
         {
-
-			if (Input.GetButton("Down"))
-			{
-				timer += Time.deltaTime;
-
-				// Sprawdzamy, czy czas przytrzymania przekroczy³ 1 sekundê
-				if (timer >= holdTime && !controller.isLookingDown)
-				{
-					controller.isLookingDown = true;
-					Debug.Log("Klawisz strza³ki w dó³ jest przytrzymany przez co najmniej 1 sekundê.");
-					// Tutaj mo¿esz wykonaæ dodatkowe akcje, jeœli chcesz
-				}
-			}
-			else
-			{
-				// Jeœli klawisz zosta³ zwolniony, resetujemy timer i ustawiamy lookingDown na false
-				timer = 0.0f;
-				if (controller.isLookingDown)
-				{
-					controller.isLookingDown = false;
-					controller.StopLookingDown();
-					Debug.Log("Przesta³eœ przytrzymywaæ klawisz strza³ki w dó³.");
-					// Tutaj mo¿esz wykonaæ dodatkowe akcje, jeœli chcesz
-				}
-			}
-
-			//usuñ Raw ¿eby uzyskaæ p³ynny ruch
-			horizontalMove = Input.GetAxisRaw("Horizontal") * currentSpeed;			
-
-			controller.Move(horizontalMove * Time.fixedDeltaTime);
-
-			if (Input.GetButtonDown("Jump"))
-			{
-				jump = true;
-				animator.SetBool("IsJumping", true);
-				jumpBufferCounter = jumpBufferTime;
-
-				controller.Jump(jump);
-				jump = false;
-			}
-			else
-			{
-				jumpBufferCounter -= Time.deltaTime;
-			}
-		}
-
-		// in case the player slips on a corner of a tile
-		if (!isHorseControlled && controller.IsGrounded && rb.velocity.x != 0 && !controller.isKnockedback)
-		{
-			rb.velocity = new Vector2(rb.velocity.x / 10, rb.velocity.y);
-		}
-	}		
-
-	public void OnLanding()
-	{
-		controller.doubleJumpReady = true;
-		if(controller.IsGrounded&& rb.velocity.y <= 0f)
+            controller.KnightDropOfF();
+        }
+        else if (controller.IsInRangeOfKnight)
         {
-			
-			controller.isKnockedback = false;
-			animator.SetBool("IsJumping", false);			
-			//rb.velocity = Vector2.zero;
-			controller.m_AirControl = true;
-		}
-	}
+            controller.KnightPickUp();
+        }
+    }
+    #endregion
 
-	private void OnDrawGizmosSelected()
-	{
-		//Gizmos.DrawWireSphere(new Vector2(transform.position.x - offset.x, transform.position.y - offset.y), Radius);
-	}
+    #region Utilities
+    private void UpdateAnimations()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("Velocity.y", rb.velocity.y);
+    }
+
+    private void HandleSliding()
+    {
+        if (!isHorseControlled && controller.IsGrounded &&
+            rb.velocity.x != 0 && !controller.isKnockedback)
+        {
+            rb.velocity = new Vector2(rb.velocity.x / 10, rb.velocity.y);
+        }
+    }
+
+    public void OnLanding()
+    {
+        controller.doubleJumpReady = true;
+            controller.canJump = true;
+        if (controller.IsGrounded && rb.velocity.y <= 0f)
+        {
+            controller.isKnockedback = false;
+            animator.SetBool("IsJumping", false);
+            controller.m_AirControl = true;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(
+            new Vector2(transform.position.x - offset.x, transform.position.y - offset.y),
+            Radius
+        );
+    }
+    #endregion
 }

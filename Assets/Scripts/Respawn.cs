@@ -69,7 +69,10 @@ public class Respawn : MonoBehaviour
             GameObject newKnight = Instantiate(knightPrefab, checkpoint.position, Quaternion.identity);
             newKnight.GetComponent<KnightController2D>().horse = gameObject;
             horseController.KnightPickedUp = false;
-            horseController.spawnedKnight = newKnight;
+            if (horseController.spawnedKnight != null)
+            {
+                Destroy(horseController.spawnedKnight);
+            }
         }
         Collider2D cameraConfiner = (FindLevel(gameMaster.horseSavedRoom).Find("CameraBound").GetChild(0)).GetComponent<Collider2D>();
 
