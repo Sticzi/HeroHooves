@@ -1,0 +1,69 @@
+{
+	"identifier": "Level_24World",
+	"uniqueIdentifer": "59b295e0-e920-11ef-915b-c1e8aea81fc9",
+	"x": 2096,
+	"y": -400,
+	"width": 448,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "31c1d400-fec0-11ee-b8ab-419a816aebef",
+			"dir": "s"
+		},
+		{
+			"levelIid": "de816ca0-fec0-11ee-99e7-95831e23d2e5",
+			"dir": "s"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "ef69eac0-e920-11ef-915b-075d0ae241e4",
+				"layer": "Entities",
+				"x": 112,
+				"y": 144,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Platform1Right": [
+			{
+				"id": "Platform1Right",
+				"iid": "2f2eaf60-e920-11ef-915b-61cee5d60d1e",
+				"layer": "Entities",
+				"x": 256,
+				"y": 64,
+				"width": 16,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "209e0c20-e920-11ef-915b-3fb18d9f2a7f",
+				"layer": "Box",
+				"x": 184,
+				"y": 40,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"canMoveInAir": false
+				}
+			}
+		]
+	}
+}

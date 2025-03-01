@@ -20,7 +20,7 @@ public class HorseController2D : MonoBehaviour
     public float jumpCloudOffset;
     public GameObject knightPrefab;
     public ContactFilter2D groundContactFilter;
-    public HorseMovement movement;
+    private HorseMovement movement;
 
     [Header("Audio")]
     public AudioClip[] footstepSounds;
@@ -59,15 +59,18 @@ public class HorseController2D : MonoBehaviour
 
     private void Awake()
     {
+        movement = GetComponent<HorseMovement>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         betterJump = GetComponent<BetterJump>();
         background = GameObject.FindGameObjectWithTag("Background").transform;
 
-        horseCameraConfiner = GameObject.FindGameObjectWithTag("VirtualCameraHorse")
-            .GetComponent<CinemachineConfiner>();
-        horseDownCameraConfiner = GameObject.FindGameObjectWithTag("VirtualCameraHorseDown")
-            .GetComponent<CinemachineConfiner>();
+        horseCameraConfiner = GameObject.FindGameObjectWithTag("VirtualCameraHorse").GetComponent<CinemachineConfiner>();
+        if(GameObject.FindGameObjectWithTag("VirtualCameraHorseDown") != null)
+        {
+            horseDownCameraConfiner = GameObject.FindGameObjectWithTag("VirtualCameraHorseDown").GetComponent<CinemachineConfiner>();
+        }
+        
     }
 
     private void Update()
@@ -148,27 +151,30 @@ public class HorseController2D : MonoBehaviour
 
     public void Jump(bool jumpInput)
     {       
-        if (jumpInput && doubleJumpReady && !KnightPickedUp && (movement.hangCounter <= 0 || canJump == false))
+        if (movement.CanDoubleJump && jumpInput && doubleJumpReady && !KnightPickedUp && (movement.hangCounter <= 0 || canJump == false))
             DoubleJump();
     }
 
-    private void ExecuteJump()
+    public void ExecuteJump()
     {
         betterJump.jump = true;
         anim.SetBool("IsJumping", true);
         rb.velocity = new Vector2(rb.velocity.x, m_JumpForce);
         movement.hangCounter = 0;
-        movement.jumpBufferCounter = 0;        
+        movement.jumpBufferCounter = 0;
+        FindObjectOfType<AudioManager>().Play("Jump");
     }
 
     public void DoubleJump()
     {
-        Instantiate(jumpCloud, transform.position + Vector3.down * jumpCloudOffset, Quaternion.identity);
+        GameObject cloud = Instantiate(jumpCloud, transform.position + Vector3.down * jumpCloudOffset, Quaternion.identity);
+        Destroy(cloud, 1);
         doubleJumpReady = false;
         m_AirControl = true;
         isKnockedback = false;
         betterJump.jump = true;
         rb.velocity = new Vector2(rb.velocity.x, m_JumpForce);
+        FindObjectOfType<AudioManager>().Play("DoubleJump");
     }
     #endregion
 
@@ -202,16 +208,31 @@ public class HorseController2D : MonoBehaviour
     }
     #endregion
 
-      #region Knight Interaction
+    #region Knight Interaction
+
+    public void DropAndSwapKnight()
+    {
+        KnightDropOfF();
+        spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
+    }
+
     public void KnightPickUp()
     {
         KnightPickedUp = true;
         movement.currentSpeed = movement.walkSpeed;
         anim.SetBool("CaryingKnight", true);
-        equipKnight.Play();
-        
-        // [Zmiana w linii 72 Respawn.cs]
-        if (spawnedKnight != null) Destroy(spawnedKnight);
+        FindObjectOfType<AudioManager>().Play("Equip");
+
+        //tu gdzieœ by wypada³oby tego knighta pierwszego usun¹æ
+        if (spawnedKnight != null)
+        {
+            if(!movement.IsHorseControlled)
+            {
+                spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("knight");
+            }            
+
+            Destroy(spawnedKnight);
+        }
     }
 
     public void KnightDropOfF()
@@ -221,6 +242,9 @@ public class HorseController2D : MonoBehaviour
         anim.SetBool("CaryingKnight", false);
         spawnedKnight = Instantiate(knightPrefab, transform.position, Quaternion.identity);
         spawnedKnight.GetComponent<KnightController2D>().horse = this.gameObject;
+        spawnedKnight.GetComponent<KnightMovement>().CanSwap = movement.canSpawnedKnightSwap;
+        spawnedKnight.GetComponent<KnightMovement>().CanAttack = movement.canSpawnedKnightAttack;
+        FindObjectOfType<AudioManager>().Play("Equip");
     }
     #endregion
 
@@ -229,8 +253,8 @@ public class HorseController2D : MonoBehaviour
     {
         if (isFrozen) return;
 
-        foreach (Transform child in background)
-            child.GetComponent<Paralax>().cameraLerp = true;
+        //foreach (Transform child in background)
+        //    child.GetComponent<Paralax>().cameraLerp = true;
 
         rb.bodyType = RigidbodyType2D.Static;
         ToggleComponents(false);
@@ -241,8 +265,8 @@ public class HorseController2D : MonoBehaviour
     {
         if (!isFrozen) return;
 
-        foreach (Transform child in background)
-            child.GetComponent<Paralax>().cameraLerp = false;
+        //foreach (Transform child in background)
+        //    child.GetComponent<Paralax>().cameraLerp = false;
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         ToggleComponents(true);

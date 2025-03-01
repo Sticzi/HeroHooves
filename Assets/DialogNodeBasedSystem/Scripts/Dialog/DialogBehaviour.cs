@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace cherrydev
 {
     public class DialogBehaviour : MonoBehaviour
     {
         [SerializeField] private float dialogCharDelay;
-        [SerializeField] private List<KeyCode> nextSentenceKeyCodes;
+        [SerializeField] private InputActionReference nextSentenceAction;
         [SerializeField] private bool isCanSkippingText = true;
 
         [Space(10)]
@@ -26,14 +27,8 @@ namespace cherrydev
 
         public bool IsCanSkippingText
         {
-            get
-            {
-                return isCanSkippingText;
-            }
-            set
-            {
-                isCanSkippingText = value;
-            }
+            get => isCanSkippingText;
+            set => isCanSkippingText = value;
         }
 
         public event Action OnSentenceNodeActive;
@@ -59,6 +54,19 @@ namespace cherrydev
         private void Awake()
         {
             ExternalFunctionsHandler = new DialogExternalFunctionsHandler();
+
+            if (nextSentenceAction != null)
+            {
+                nextSentenceAction.action.Enable();
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (nextSentenceAction != null)
+            {
+                nextSentenceAction.action.Disable();
+            }
         }
 
         private void Update()
@@ -73,15 +81,6 @@ namespace cherrydev
         public void SetCharDelay(float value)
         {
             dialogCharDelay = value;
-        }
-
-        /// <summary>
-        /// Setting nextSentenceKeyCodes
-        /// </summary>
-        /// <param name="keyCodes"></param>
-        public void SetNextSentenceKeyCodes(List<KeyCode> keyCodes)
-        {
-            nextSentenceKeyCodes = keyCodes;
         }
 
         /// <summary>
@@ -279,12 +278,11 @@ namespace cherrydev
                 }
 
                 OnDialogTextCharWrote?.Invoke();
-                //plays the char sound                
                 FindObjectOfType<AudioManager>().Play("charSound");
                 yield return new WaitForSeconds(dialogCharDelay);
             }
 
-            yield return new WaitUntil(CheckNextSentenceKeyCodes);
+            yield return new WaitUntil(CheckNextSentenceActionTriggered);
 
             CheckForDialogNextNode();
         }
@@ -333,9 +331,6 @@ namespace cherrydev
             OnMaxAmountOfAnswerButtonsCalculated?.Invoke(maxAmountOfAnswerButtons);
         }
 
-        /// <summary>
-        /// Handles text skipping mechanics
-        /// </summary>
         private void HandleSentenceSkipping()
         {
             if (!isDialogStarted || !isCanSkippingText)
@@ -343,27 +338,23 @@ namespace cherrydev
                 return;
             }
 
-            if (CheckNextSentenceKeyCodes() && !isCurrentSentenceSkipped)
+            if (CheckNextSentenceActionTriggered() && !isCurrentSentenceSkipped)
             {
                 isCurrentSentenceSkipped = true;
             }
         }
 
-        /// <summary>
-        /// Checking whether at least one key from the nextSentenceKeyCodes was pressed
-        /// </summary>
-        /// <returns></returns>
-        private bool CheckNextSentenceKeyCodes()
+        private bool CheckNextSentenceActionTriggered()
         {
-            for (int i = 0; i < nextSentenceKeyCodes.Count; i++)
-            { 
-                if (Input.GetKeyDown(nextSentenceKeyCodes[i]))
-                {
-                    return true;
-                }
+            if (nextSentenceAction == null)
+            {
+                Debug.LogWarning("Next sentence action is not assigned!");
+                return false;
             }
 
-            return false;
+            return nextSentenceAction.action.triggered;
         }
+
+
     }
 }

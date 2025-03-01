@@ -1,0 +1,86 @@
+{
+	"identifier": "Level_3World",
+	"uniqueIdentifer": "31c1d400-fec0-11ee-b8ab-419a816aebef",
+	"x": 1664,
+	"y": -144,
+	"width": 448,
+	"height": 336,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "3bdf1460-fec0-11ee-a4cc-4102cbd6402e",
+			"dir": "w"
+		},
+		{
+			"levelIid": "de816ca0-fec0-11ee-99e7-95831e23d2e5",
+			"dir": "e"
+		},
+		{
+			"levelIid": "59b295e0-e920-11ef-915b-c1e8aea81fc9",
+			"dir": "n"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Platform2Right": [
+			{
+				"id": "Platform2Right",
+				"iid": "327e63e0-fec0-11ee-99e7-cf341892bc81",
+				"layer": "Entities",
+				"x": 272,
+				"y": 128,
+				"width": 32,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "c55c0be0-fec0-11ee-99e7-5935812f0f77",
+				"layer": "Entities",
+				"x": 16,
+				"y": 176,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Goblin": [
+			{
+				"id": "Goblin",
+				"iid": "421d2fb0-e920-11ef-9767-653331385f70",
+				"layer": "Entities",
+				"x": 416,
+				"y": 176,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "1cf71170-fec0-11ee-99e7-bf332693c66d",
+				"layer": "Box",
+				"x": 136,
+				"y": 88,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"canMoveInAir": false
+				}
+			}
+		]
+	}
+}

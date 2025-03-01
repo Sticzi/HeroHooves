@@ -19,6 +19,7 @@ TagManager:
   - VirtualCameraHorseDown
   - Checkpoint
   - World
+  - MainMenu
   layers:
   - Default
   - TransparentFX

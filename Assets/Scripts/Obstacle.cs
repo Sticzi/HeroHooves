@@ -21,6 +21,7 @@ public class Obstacle : MonoBehaviour
     {
         audioSource.time = 0.4f;
         anim.SetTrigger("Death");
+        GetComponent<BoxCollider2D>().enabled = false;
 
         audioSource.pitch = Random.Range(1, 1.3f);       
         audioSource.Play();

@@ -42,14 +42,14 @@ public class KnightController2D : MonoBehaviour
         anim = GetComponent<Animator>();
         movement = GetComponent<KnightMovement>();
 
-        virtualCameraKnight = GameObject.FindGameObjectWithTag("VirtualCameraKnight");
-        if (controlIndicator != null) controlIndicator.SetActive(false);
+        virtualCameraKnight = GameObject.FindGameObjectWithTag("VirtualCameraKnight");       
     }
 
     private void FixedUpdate()
     {
         HandleGroundCheck();
         UpdateAnimator();
+        HandleSliding();
     }
 
     #region Movement
@@ -90,6 +90,13 @@ public class KnightController2D : MonoBehaviour
             }
         }
     }
+    private void HandleSliding()
+    {
+        if ((!movement.isKnightControlled || movement.isAttacking) && IsGrounded && rb.velocity.x != 0 && !isKnockedback)
+        {
+            rb.velocity = new Vector2(rb.velocity.x / 10, rb.velocity.y);
+        }
+    }
 
     private void PlayFootstepSound()
     {
@@ -110,14 +117,17 @@ public class KnightController2D : MonoBehaviour
         switch (whoIsControlled)
         {
             case "horse":
+                knightCamera.Follow = this.gameObject.transform;
                 SetControlState(true, 20, knightCamera);
-                horse.GetComponent<HorseMovement>().isHorseControlled = false;
-                ToggleControlIndicator(true);
+                horse.GetComponent<HorseMovement>().IsHorseControlled = false;
+                GetComponent<SpriteRenderer>().sortingOrder = 2;
+                ToggleControlIndicator(true);                
                 break;
 
             case "knight":
                 SetControlState(false, 0, knightCamera);
-                horse.GetComponent<HorseMovement>().isHorseControlled = true;
+                horse.GetComponent<HorseMovement>().IsHorseControlled = true;
+                GetComponent<SpriteRenderer>().sortingOrder = 0;
                 ToggleControlIndicator(false);
                 break;
         }
@@ -163,6 +173,11 @@ public class KnightController2D : MonoBehaviour
         if (!wasGrounded && IsGrounded)
         {
             isKnockedback = false;
+            if (GetComponent<BetterJump>() != null)
+            {
+                GetComponent<BetterJump>().isTossed = false;
+            }
+            
         }
         wasGrounded = IsGrounded;
     }
@@ -205,6 +220,7 @@ public class KnightController2D : MonoBehaviour
             anim.SetTrigger("Climb");
         }
         transform.Translate(Vector3.up * distance);
+        anim.SetTrigger("Climb");
     }
     #endregion
 }

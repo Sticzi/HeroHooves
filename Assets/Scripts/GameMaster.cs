@@ -10,12 +10,15 @@ public class GameMaster : MonoBehaviour
 
     public int knightSavedRoom;
     public int horseSavedRoom;
+    public string savedWorldName;
 
     //public Vector2 savedCameraPosition;
     public Vector2[] savedBackgroundPos;
 
     public Transform playerPositionTesting;
+
     public Transform levelOfFirstSpawnPoint;
+
     private Transform firstSpawnPoint;
 
     private Transform FindChildWithTag(Transform parent, string tag)

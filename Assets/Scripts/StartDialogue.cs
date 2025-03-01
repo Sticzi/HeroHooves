@@ -4,7 +4,7 @@ using UnityEngine.U2D;
 using DG.Tweening;  // Make sure DOTween is installed
 using Cinemachine;
 using System.Threading.Tasks;
-
+using UnityEngine.InputSystem;
 
 public class StartDialogue : MonoBehaviour
 {
@@ -13,12 +13,14 @@ public class StartDialogue : MonoBehaviour
     [SerializeField] private DialogNodeGraph dialogGraphKnightBump;
     [SerializeField] private DoorFlyOff doors;
     [SerializeField] private GameObject goblin;
-    [SerializeField] private GameObject knight;
-    [SerializeField] private GameObject actualKnight;
+    [SerializeField] private GameObject runningKnight;
+    private GameObject actualKnight;
     [SerializeField] private GameObject player;
     [SerializeField] private ContactFilter2D WallFilter;
     [SerializeField] private ContactFilter2D GroundFilter;
     [SerializeField] private Sprite KnightIdle;
+
+    [SerializeField] private PlayerInputActions playerInput;
 
     [SerializeField] private GameObject protip;
 
@@ -100,18 +102,21 @@ public class StartDialogue : MonoBehaviour
     {
         if (canActivateToolTip)
         {
-            protip.SetActive(true);
 
-            // Wait for the jump key to be pressed
-            await WaitForJumpInputAsync();
-            Vector3 tempPos = knight.transform.position;
-            Destroy(knight);
-            actualKnight.transform.position = tempPos;
+
+            //z powodu jak dzia³a ten skrypt na dialogi to trzeba najpierw
+            //poczekaæ a¿ skipniemy dialog i wy³¹czymy dialogue boxa zanim skoczymy bo takto oba sie naraz odpal¹ w sumie to nie wiem
+            //czy to prawda bo tam jakies dziwne rzeczy sie dzialy al
+            //e juz zostaw tak jak jest
+            //await WaitForSkipInputAsync();
+            protip.GetComponent<InteractableObject>().canBeTriggered = true;
+            //await Task.Delay(1000);
+            await WaitForJumpInputAsync();            
             actualKnight.GetComponent<KnightMovement>().enabled = true;
 
             // Enable the player's HorseMovement component immediately
             player.GetComponent<HorseMovement>().enabled = true;
-            player.GetComponent<HorseController2D>().Jump(false);
+            player.GetComponent<HorseController2D>().ExecuteJump();
 
             // Play the delete animation    
             protip.GetComponent<Animator>().SetTrigger("Delete");
@@ -121,11 +126,38 @@ public class StartDialogue : MonoBehaviour
         }
     }
 
+    private async Task WaitForSkipInputAsync()
+    {
+        // SprawdŸ, czy mamy PlayerInput, jeœli u¿ywasz tej opcji
+        if (playerInput != null)
+        {
+            InputAction skipAction;
+            skipAction = playerInput.UI.SkipDialogue;
+
+            // Aktywuj akcjê, jeœli nie jest aktywna
+            playerInput.Enable();
+
+            // Czekaj, a¿ akcja zostanie wykonana
+            while (!skipAction.WasPressedThisFrame())
+            {
+                await Task.Yield(); // Czekaj na kolejn¹ klatkê
+            }
+        }
+    }
+
     private async Task WaitForJumpInputAsync()
     {
-        while (!Input.GetButtonDown("Jump"))
+        playerInput = new PlayerInputActions();
+        InputAction jumpAction;
+        jumpAction = playerInput.HorseActionMap.Jump;
+
+        // Aktywuj akcjê, jeœli nie jest aktywna
+        playerInput.Enable();
+
+        // Czekaj, a¿ akcja zostanie wykonana
+        while (!jumpAction.WasPressedThisFrame())
         {
-            await Task.Yield(); // Wait for the next frame
+            await Task.Yield(); // Czekaj na kolejn¹ klatkê
         }
     }
 
@@ -212,7 +244,7 @@ public class StartDialogue : MonoBehaviour
     public void KnightStartRun()
     {
         StartKnightMovement(5);
-        knight.GetComponent<Animator>().SetBool("isControlled", true);
+        runningKnight.GetComponent<Animator>().SetBool("isControlled", true);
     }
 
     private void StartKnightMovement(float duration)
@@ -221,23 +253,26 @@ public class StartDialogue : MonoBehaviour
         // Use a dummy tween as a timer
         landTween = DOVirtual.Float(0, 1, duration, _ =>
         {
-            knight.GetComponent<Animator>().SetFloat("speed", Mathf.Abs(knight.GetComponent<Rigidbody2D>().velocity.x));
-            knight.GetComponent<KnightController2D>().Move(15 * Time.fixedDeltaTime); // Call knightMove() every frame
+            runningKnight.GetComponent<Animator>().SetFloat("speed", Mathf.Abs(runningKnight.GetComponent<Rigidbody2D>().velocity.x));
+            runningKnight.GetComponent<KnightController2D>().Move(15); // Call knightMove() every frame
 
-            if (knight.GetComponent<Rigidbody2D>().IsTouching(WallFilter))
+            if (runningKnight.GetComponent<Rigidbody2D>().IsTouching(WallFilter))
             {
-                knight.GetComponent<Animator>().SetBool("isControlled", false);
+                runningKnight.GetComponent<Animator>().SetBool("isControlled", false);
                 
                 if(siema == false)
                 {
                     FindObjectOfType<AudioManager>().Play("bump");
-                    knight.GetComponent<Animator>().enabled = false;
-                    knight.GetComponent<SpriteRenderer>().sprite = KnightIdle;
+                    runningKnight.GetComponent<Animator>().enabled = false;
+                    runningKnight.GetComponent<SpriteRenderer>().sprite = KnightIdle;
                     siema = true;
                 }
                 
 
                 StartKnightBumpDialogue();
+                Vector3 tempPos = runningKnight.transform.position;
+                Destroy(runningKnight);
+                actualKnight.transform.position = tempPos;
                 landTween.Kill(); // Stop the tween
             }
         })

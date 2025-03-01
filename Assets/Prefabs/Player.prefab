@@ -226,7 +226,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 89
     maxNormalAngle: 91
-  movement: {fileID: 557635230489375509}
   footstepSounds:
   - {fileID: 8300000, guid: 41d6e83956246f74098ce6b880f36e72, type: 3}
   - {fileID: 8300000, guid: 7ef8cb2f95f672d4897f600122519bd4, type: 3}
@@ -236,6 +235,7 @@ MonoBehaviour:
   footstepSource: {fileID: 5359108758186235936}
   equipKnight: {fileID: 8048343793890113730}
   isJumpButtonHeld: 0
+  canJump: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -263,21 +263,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efa3382b9ad3004883ee1cc6d62c90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
   runSpeed: 30
   walkSpeed: 20
   currentSpeed: 0
-  jumpBufferTime: 2
-  coyoteTime: 0.2
+  jumpBufferTime: 0.1
+  coyoteTime: 0.1
   jumpBufferCounter: 0
   hangCounter: 0
-  Radius: 0.65
+  Radius: 0.7
   whatIsKnight:
     serializedVersion: 2
     m_Bits: 2048
-  offset: {x: 0, y: 0}
-  holdTime: 1
-  isHorseControlled: 1
+  offset: {x: 0, y: 0.5}
+  lookDownHoldTime: 1
+  canDrop: 1
+  canJump: 1
+  canDoubleJump: 1
+  canPickUp: 1
+  canSpawnedKnightSwap: 1
+  canSpawnedKnightAttack: 1
   jump:
     m_Name: 
     m_Type: 0

@@ -1,0 +1,93 @@
+{
+	"identifier": "Level_14World",
+	"uniqueIdentifer": "b1489d40-4ce0-11ef-a82e-3d044494009d",
+	"x": 7056,
+	"y": -336,
+	"width": 448,
+	"height": 448,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "9dc02550-4ce0-11ef-b774-db724ddefb7b",
+			"dir": "w"
+		},
+		{
+			"levelIid": "1b079fd0-4ce0-11ef-9823-1bca13fd97ff",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"JumpPad": [
+			{
+				"id": "JumpPad",
+				"iid": "61eed600-4ce0-11ef-a82e-4bd925eb722d",
+				"layer": "Entities",
+				"x": 104,
+				"y": 184,
+				"width": 16,
+				"height": 16,
+				"color": 7552569,
+				"customFields" : {}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "656c4680-4ce0-11ef-bea7-3bd39527c184",
+				"layer": "Entities",
+				"x": 32,
+				"y": 176,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Falling_rocks": [
+			{
+				"id": "Falling_rocks",
+				"iid": "c3e59bd0-4ce0-11ef-bea7-b17e0b532df7",
+				"layer": "Entities",
+				"x": 184,
+				"y": 216,
+				"width": 16,
+				"height": 16,
+				"color": 3818598,
+				"customFields" : {}
+			},
+			{
+				"id": "Falling_rocks",
+				"iid": "c5e870b0-4ce0-11ef-bea7-9f8c5ffeea4f",
+				"layer": "Entities",
+				"x": 168,
+				"y": 120,
+				"width": 16,
+				"height": 16,
+				"color": 3818598,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "6aeca960-4ce0-11ef-bea7-657fbd2ad63c",
+				"layer": "Box",
+				"x": 280,
+				"y": 88,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"canMoveInAir": false
+				}
+			}
+		]
+	}
+}

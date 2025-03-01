@@ -10,7 +10,20 @@ public class KnightMovement : MonoBehaviour
 
     public bool isKnightControlled;
     public bool isAttacking;
-    public bool CanSwap;
+
+    [SerializeField] private bool canSwap;
+    [SerializeField] private bool canAttack;
+
+    public bool CanSwap // Property używa pola
+    {
+        get { return canSwap; }
+        set { canSwap = value; }
+    }
+    public bool CanAttack // Property używa pola
+    {
+        get { return canAttack; }
+        set { canAttack = value; }
+    }
 
     public string whoIsControlled = "horse";
     public float runSpeed;
@@ -25,11 +38,11 @@ public class KnightMovement : MonoBehaviour
     [SerializeField] private float climbDistance;
 
     private float lastCallTime;
-    private Vector2 moveInput;
 
     // New Input System
-    public KnightInputActions knightInput;
+    public PlayerInputActions knightInput;
     private InputAction move;
+    private InputAction moveY;
     private InputAction attack;
     private InputAction swap;
 
@@ -39,16 +52,18 @@ public class KnightMovement : MonoBehaviour
         controller = GetComponent<KnightController2D>();
         rb = GetComponent<Rigidbody2D>();
 
-        knightInput = new KnightInputActions();
+        knightInput = new PlayerInputActions();
     }
 
     private void OnEnable()
     {
-        move = knightInput.Player.Move;
-        attack = knightInput.Player.Attack;
-        swap = knightInput.Player.Swap;
+        move = knightInput.KnightActionMap.Move;
+        moveY = knightInput.KnightActionMap.MoveY;
+        attack = knightInput.KnightActionMap.Attack;
+        swap = knightInput.KnightActionMap.Swap;
 
         move.Enable();
+        moveY.Enable();
         attack.Enable();
         swap.Enable();
 
@@ -59,6 +74,7 @@ public class KnightMovement : MonoBehaviour
     private void OnDisable()
     {
         move.Disable();
+        moveY.Disable();
         attack.Disable();
         swap.Disable();
 
@@ -78,34 +94,59 @@ public class KnightMovement : MonoBehaviour
     #region Input Handlers
     private void OnAttackPerformed(InputAction.CallbackContext context)
     {
-        if (isKnightControlled && !isAttacking)
+        if (isKnightControlled && !isAttacking && canAttack)
             controller.Attack();
     }
 
     private void OnSwapPerformed(InputAction.CallbackContext context)
     {
-        controller.SwapCharacter(whoIsControlled);
+        if(canSwap)
+        {
+            controller.SwapCharacter(whoIsControlled);
+        }
+        
     }
     #endregion
 
     #region Movement Logic
     private void HandleMovement()
     {
-        moveInput = move.ReadValue<Vector2>();
-        float horizontalMove = moveInput.x * currentSpeed;
+        float moveInput = move.ReadValue<float>();
 
-        if (!climbedOnLadder)
+        // Force input to either -1, 0, or 1 based on threshold
+        // DEADZONE
+        if (Mathf.Abs(moveInput) < 0.2f)
         {
-            controller.Move(horizontalMove * Time.fixedDeltaTime);
+            moveInput = 0f;  // No movement if the input is too small
         }
+        else
+        {
+            moveInput = Mathf.Sign(moveInput);  // Use sign to get -1 or 1
+        }
+
+        if (climbedOnLadder == null)
+        {
+            float horizontalMove = moveInput * currentSpeed;
+            controller.Move(horizontalMove * Time.fixedDeltaTime);
+        }           
     }
 
     private void HandleLadderClimbing()
     {
-        float verticalDirection = moveInput.y;
-        if (verticalDirection != 0)
+        float moveInput = moveY.ReadValue<float>();
+
+        if (Mathf.Abs(moveInput) < 0.4f)
         {
-            DetectLadder(verticalDirection);
+            moveInput = 0f;  // No movement if the input is too small
+        }
+        else
+        {
+            moveInput = Mathf.Sign(moveInput);  // Use sign to get -1 or 1
+        }
+
+        if (moveInput != 0)
+        {
+            DetectLadder(moveInput);
         }
     }
     #endregion
@@ -114,7 +155,8 @@ public class KnightMovement : MonoBehaviour
     public void DetectLadder(float direction)
     {
         Collider2D ladderCollider = Physics2D.OverlapCircle(
-            new Vector2(
+            new Vector2
+            (
                 transform.position.x,
                 transform.position.y - verticalLadderDetectionOffset + direction * opossiteVerticalLadderDetectionOffset
             ),

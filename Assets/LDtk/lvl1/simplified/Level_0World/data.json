@@ -1,0 +1,37 @@
+{
+	"identifier": "Level_0World",
+	"uniqueIdentifer": "4395c830-fec0-11ee-b651-4dabc9a8ea3c",
+	"x": 320,
+	"y": -288,
+	"width": 448,
+	"height": 464,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "b0fab200-fec0-11ee-b651-81b82e37ef14",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "199eda00-fec0-11ee-b8ab-679922e83ab5",
+				"layer": "Entities",
+				"x": 96,
+				"y": 352,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		]
+	}
+}

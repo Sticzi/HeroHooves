@@ -67,7 +67,7 @@ public class PlayerCamera : MonoBehaviour
         // Extract the level number from the name (assuming the format is "Level_X" where X is the number)
         if (parentName.StartsWith("Level_"))
         {
-            string levelString = parentName.Substring(6); // Extract the part after "Level_"
+            string levelString = parentName.Substring(6, parentName.Length - 11); // Extract the part after "Level_"
             if (int.TryParse(levelString, out levelNumber))
             {
                 //Debug.Log("Level number extracted: " + levelNumber +gameObject.name);

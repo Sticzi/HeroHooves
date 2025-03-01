@@ -6,17 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WorkInProgress/Level0 1.unity
-    guid: 77ae5ccb3080e5b4194b0ba61f558983
-  - enabled: 0
-    path: Assets/Scenes/WorkInProgress/MainMenu 1.unity
-    guid: 6026f386db4c6054d90c28554b43c062
-  - enabled: 0
-    path: Assets/Scenes/WorkInProgress/Level0.unity
-    guid: 4cfa4161fdf38eb4494349837bedab44
-  - enabled: 0
-    path: Assets/Scenes/WorkInProgress/MainMenu.unity
-    guid: cc58981270a55af43be2891e5236fa7f
+    path: Assets/Scenes/Finished Levels/actuall main menu chyba 1.unity
+    guid: 6b8f2eed36510a64da41bdba8e40f665
+  - enabled: 1
+    path: Assets/Scenes/WorkInProgress/faktyczne levelki.unity
+    guid: 6ef06c6ba394fa243a25747cae77c27f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 084844a35f936fa438cb61e44b3c320e,
       type: 2}

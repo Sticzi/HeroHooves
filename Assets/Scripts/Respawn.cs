@@ -11,7 +11,8 @@ public class Respawn : MonoBehaviour
     public GameMaster gameMaster;
     private CinemachineConfiner horseCameraConfinerComponent;
     private CinemachineConfiner knightCameraConfinerComponent;
-    private Transform world;
+    private HorseMovement movement;
+    
         
     public void Awake()
     {
@@ -19,18 +20,22 @@ public class Respawn : MonoBehaviour
         knightCameraConfinerComponent = GameObject.FindGameObjectWithTag("VirtualCameraKnight").GetComponent<CinemachineConfiner>();
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         horseController = GetComponent<HorseController2D>();
+        movement = GetComponent<HorseMovement>();
         knightPrefab = horseController.knightPrefab;
 
-        world = GameObject.FindGameObjectWithTag("World").transform;             
+
+                  
     }
 
     private Transform FindLevel(int levelNumber)
     {
-        foreach (Transform child in world)
+        
+        Transform world = GameObject.FindGameObjectWithTag(gameMaster.savedWorldName).transform;
+        foreach (Transform level in world)
         {
-            if (child.name == ("Level_" + levelNumber))
+            if (level.name == ("Level_" + levelNumber + world.name))
             {
-                return child;
+                return level;
             }
         }
         return null;
@@ -52,8 +57,30 @@ public class Respawn : MonoBehaviour
         return FindChildWithTag(FindLevel(levelNumber).Find("Entities"), "Checkpoint");
     }
 
-    public void spawning()
+    public void Spawning()
     {
+        if (gameMaster.savedWorldName == "MainMenu")
+        {
+            movement.CanDoubleJump = false;
+            movement.CanDrop = false;
+            movement.CanJump = false;
+            movement.CanPickUp = false;
+            movement.CanSpawnedKnightAttack = false;
+            movement.CanSpawnedKnightSwap = false;
+        }
+        if (gameMaster.horseSavedRoom < 5 && gameMaster.savedWorldName == "World")
+        {
+            movement.CanDoubleJump = false;
+            if(gameMaster.horseSavedRoom< 4)
+            {
+                movement.CanDrop = false;
+                movement.CanSpawnedKnightSwap = false;
+                movement.canSpawnedKnightAttack = false;
+            }
+        }
+
+
+
         if (gameMaster.horseSavedRoom == gameMaster.knightSavedRoom)
         {            
             Transform checkpoint = FindCheckpoint(gameMaster.horseSavedRoom);
@@ -68,22 +95,23 @@ public class Respawn : MonoBehaviour
             checkpoint = FindCheckpoint(gameMaster.knightSavedRoom);
             GameObject newKnight = Instantiate(knightPrefab, checkpoint.position, Quaternion.identity);
             newKnight.GetComponent<KnightController2D>().horse = gameObject;
+            horseController.spawnedKnight = newKnight;
             horseController.KnightPickedUp = false;
-            if (horseController.spawnedKnight != null)
-            {
-                Destroy(horseController.spawnedKnight);
-            }
+            //if (horseController.spawnedKnight != null)
+            //{
+            //    Destroy(horseController.spawnedKnight);
+            //}
         }
-        Collider2D cameraConfiner = (FindLevel(gameMaster.horseSavedRoom).Find("CameraBound").GetChild(0)).GetComponent<Collider2D>();
+        Collider2D cameraConfiner = FindLevel(gameMaster.horseSavedRoom).Find("CameraBound").GetChild(0).GetComponent<Collider2D>();
 
         horseCameraConfinerComponent.m_BoundingShape2D = cameraConfiner;
-        cameraConfiner = (FindLevel(gameMaster.knightSavedRoom).Find("CameraBound").GetChild(0)).GetComponent<Collider2D>();
+        cameraConfiner = FindLevel(gameMaster.knightSavedRoom).Find("CameraBound").GetChild(0).GetComponent<Collider2D>();
         knightCameraConfinerComponent.m_BoundingShape2D = cameraConfiner;
     }
 
     public void Start()
     {
-        spawning();
+        Spawning();
     }    
 
     public void Death()

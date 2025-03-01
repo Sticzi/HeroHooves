@@ -1,0 +1,27 @@
+{
+	"identifier": "Level_23World",
+	"uniqueIdentifer": "70dde250-4ce0-11ef-9e3e-9fd7ae308804",
+	"x": 10256,
+	"y": -512,
+	"width": 448,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "1f0fd050-4ce0-11ef-a59b-cbfb31be55f6",
+			"dir": "w"
+		},
+		{
+			"levelIid": "37f54000-4ce0-11ef-9e3e-271b33c78511",
+			"dir": "s"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities" : {}
+}
