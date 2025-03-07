@@ -82640,8 +82640,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3118010984519073365, guid: 71a110a786ef90249bf3d01ceefe0768,
         type: 3}
-    - target: {fileID: 5359108758186235936, guid: 73d53684282e67b4b973cc5267e0dbd3,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: 1d66f10ad9ec29246bbf15b334692043,
@@ -84116,8 +84115,44 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
         type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 0.213
+      propertyPath: sounds.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 995e139bee8839d45a7c862d9e9b0ec7, type: 3}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].name
+      value: horseStep
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].pitch
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].volume
+      value: 0.442
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].mixerGroup
+      value: 
+      objectReference: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+        type: 2}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].pitchVariance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593031293794804028, guid: 3a2374c50859b9640b2d5b7411fb417c,
+        type: 3}
+      propertyPath: sounds.Array.data[13].volumeVariance
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4593031293794804029, guid: 3a2374c50859b9640b2d5b7411fb417c,
         type: 3}
@@ -84909,7 +84944,7 @@ PrefabInstance:
     - target: {fileID: 6033189527466410153, guid: 446890932059e5540a66ba9ebf9ca99d,
         type: 3}
       propertyPath: horseSavedRoom
-      value: 6
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6033189527466410153, guid: 446890932059e5540a66ba9ebf9ca99d,
         type: 3}
@@ -84919,7 +84954,7 @@ PrefabInstance:
     - target: {fileID: 6033189527466410153, guid: 446890932059e5540a66ba9ebf9ca99d,
         type: 3}
       propertyPath: knightSavedRoom
-      value: 6
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6033189527466410153, guid: 446890932059e5540a66ba9ebf9ca99d,
         type: 3}

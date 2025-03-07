@@ -34,7 +34,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 6539085,
-				"customFields" : {}
+				"customFields": {
+					"turnedRight": false
+				}
 			},
 			{
 				"id": "Goblin",
@@ -45,7 +47,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 6539085,
-				"customFields" : {}
+				"customFields": {
+					"turnedRight": false
+				}
 			}
 		],
 		"Platform3Both": [

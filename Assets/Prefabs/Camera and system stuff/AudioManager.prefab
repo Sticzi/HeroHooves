@@ -59,7 +59,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SpringJump
     clip: {fileID: 8300000, guid: c953d5aea4523f74c8586951c79f60e0, type: 3}
-    volume: 1
+    volume: 0.39
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Equip
     clip: {fileID: 8300000, guid: 2acdb0b1e896ee84690c62d9a23bde3a, type: 3}
-    volume: 0.5
+    volume: 0.213
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0.1
@@ -158,6 +158,16 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: OUCHY
     clip: {fileID: 8300000, guid: 66e8bfdce5eb44c40ad2039f107c7d9e, type: 3}
+    volume: 0.442
+    volumeVariance: 0.07
+    pitch: 0.69
+    pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
+    source: {fileID: 0}
+  - name: knightStep4
+    clip: {fileID: 8300000, guid: d2279956907f2174b8d7329e379105cd, type: 3}
     volume: 0.442
     volumeVariance: 0.07
     pitch: 0.69

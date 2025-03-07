@@ -17,7 +17,7 @@ public class HorseMovement : MonoBehaviour
     public float coyoteTime = 0.15f;
 
     [HideInInspector] public float jumpBufferCounter;
-    [HideInInspector] public float hangCounter;
+    public float hangCounter;
 
     [Header("Detection Settings")]
     public float Radius;
@@ -149,16 +149,18 @@ public class HorseMovement : MonoBehaviour
 
     public void DropSwap()
     {
-        HandlePickDropKnight();
-        controller.spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
+        if (CanSpawnedKnightSwap)
+        {            
+            HandlePickDropKnight();
+            controller.spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
+        }
     }
 
     private void OnSwapPerformed(InputAction.CallbackContext context)
     {
-        if (IsHorseControlled&&controller.spawnedKnight == null)
+        if (CanSpawnedKnightSwap && IsHorseControlled&&controller.spawnedKnight == null)
         {
-            HandlePickDropKnight();
-            controller.spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
+            DropSwap();
         }
     }
 
@@ -283,6 +285,7 @@ public class HorseMovement : MonoBehaviour
 
     public void OnLanding()
     {
+        Debug.Log("siema");
         controller.doubleJumpReady = true;
         controller.canJump = true;
         //if (controller.IsGrounded && rb.velocity.y <= 0f)

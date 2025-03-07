@@ -38,7 +38,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 6539085,
-				"customFields" : {}
+				"customFields": {
+					"turnedRight": false
+				}
 			}
 		],
 		"Falling_rocks": [

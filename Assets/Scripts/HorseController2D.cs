@@ -23,10 +23,7 @@ public class HorseController2D : MonoBehaviour
     private HorseMovement movement;
 
     [Header("Audio")]
-    public AudioClip[] footstepSounds;
     public float stepInterval = 0.5f;
-    public AudioSource footstepSource;
-    public AudioSource equipKnight;
 
     // State
     [HideInInspector] public bool isJumpButtonHeld;
@@ -133,8 +130,7 @@ public class HorseController2D : MonoBehaviour
 
     private void PlayFootstepSound()
     {
-        AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
-        footstepSource.PlayOneShot(clip);
+        FindObjectOfType<AudioManager>().Play("horseStep");
     }
     #endregion
 

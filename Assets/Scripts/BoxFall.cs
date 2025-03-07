@@ -65,13 +65,16 @@ public class BoxFall : MonoBehaviour
         }
         wasGrounded = isGrounded;
 
-        //if (!isGrounded && !GetComponent<LDtkFields>().GetBool("canMoveInAir"))
         if (!isGrounded)
         {
-
-
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
+            // Snap position.x to the nearest whole number
+            Vector2 newPosition = rb.position;
+            newPosition.x = Mathf.Round(newPosition.x); // Rounds down to the nearest whole number
+            rb.position = newPosition;
         }
+
         else
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;

@@ -42,15 +42,11 @@ public class BetterJump : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;            
         }
 
-        if(horseMovement == null)
+        if(horseMovement == null && rb.velocity.y > 0 && !isTossed)
         {
-            if(!isTossed)
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-            }
-            
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-        else if(rb.velocity.y > 0 && !horseMovement.jump.IsPressed() && minimalJumpCounter <= 0 && !isTossed)
+        else if(horseMovement!= null && rb.velocity.y > 0 && !horseMovement.jump.IsPressed() && minimalJumpCounter <= 0 && !isTossed)
         {            
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }

@@ -15,9 +15,7 @@ public class KnightController2D : MonoBehaviour
     public GameObject controlIndicator;
     public ContactFilter2D groundContactFilter;
 
-    [Header("Audio")]
-    public AudioSource footstepSource;
-    public AudioClip[] footstepSounds;
+    [Header("Audio")]    
     public float stepInterval = 0.5f;
 
     // Component references
@@ -100,11 +98,7 @@ public class KnightController2D : MonoBehaviour
 
     private void PlayFootstepSound()
     {
-        if (footstepSounds.Length > 0)
-        {
-            AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
-            footstepSource.PlayOneShot(clip);
-        }
+        FindObjectOfType<AudioManager>().Play("knightStep4");
     }
     #endregion
 
