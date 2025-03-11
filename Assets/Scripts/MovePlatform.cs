@@ -14,9 +14,6 @@ public class MovePlatform : MonoBehaviour
 
     public bool moving = false;
 
-    public AudioSource audioSource; // Reference to the AudioSource component
-    public float minPitch = 1.8f;   // Minimum pitch value
-    public float maxPitch = 2.7f;   // Maximum pitch value
     private Animator anim;
 
     public float duration;
@@ -68,31 +65,12 @@ public class MovePlatform : MonoBehaviour
         //if the moving bool is true, then move
         if (moving)
         {
-            if (!audioSource.isPlaying)
-            {
-                // Randomize the pitch
-                audioSource.pitch = Random.Range(minPitch, maxPitch);
-
-                // Play the sound
-                audioSource.Play();
-            }
-            else if (audioSource.time >= audioSource.clip.length*duration)
-            {
-                // Check if the sound has finished playing, then randomize pitch and play again
-                audioSource.pitch = Random.Range(minPitch, maxPitch);
-                audioSource.Play();
-            }
 
             anim.enabled = true;
             transform.position = Vector2.MoveTowards(transform.position, waypoints[nextWaypointIndex], speed * Time.deltaTime);
         }
         else
         {
-            if (audioSource.isPlaying)
-            {
-                // Stop playing the sound immediately if not moving
-                audioSource.Stop();
-            }
 
             anim.enabled = false;
         }
@@ -108,7 +86,6 @@ public class MovePlatform : MonoBehaviour
         float volume = Mathf.Clamp01(0.55f - (distance / maxDistance));
 
         // Set the audio source's volume
-        audioSource.volume = volume;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

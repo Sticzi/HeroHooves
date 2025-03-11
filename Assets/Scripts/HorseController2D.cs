@@ -206,18 +206,22 @@ public class HorseController2D : MonoBehaviour
 
     #region Knight Interaction
 
-    public void DropAndSwapKnight()
-    {
-        KnightDropOfF();
-        spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
-    }
+    //public void DropAndSwapKnight()
+    //{
+    //    KnightDropOfF();
+    //    spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
+    //}
 
-    public void KnightPickUp()
+    public void KnightPickUp(bool playSound)
     {
         KnightPickedUp = true;
         movement.currentSpeed = movement.walkSpeed;
         anim.SetBool("CaryingKnight", true);
-        FindObjectOfType<AudioManager>().Play("Equip");
+        if(playSound)
+        {
+            FindObjectOfType<AudioManager>().Play("Equip");
+        }
+        
 
         //tu gdzieœ by wypada³oby tego knighta pierwszego usun¹æ
         if (spawnedKnight != null)
@@ -239,7 +243,12 @@ public class HorseController2D : MonoBehaviour
         spawnedKnight = Instantiate(knightPrefab, transform.position, Quaternion.identity);
         spawnedKnight.GetComponent<KnightController2D>().horse = this.gameObject;
         spawnedKnight.GetComponent<KnightMovement>().CanSwap = movement.canSpawnedKnightSwap;
-        spawnedKnight.GetComponent<KnightMovement>().CanAttack = movement.canSpawnedKnightAttack;
+        spawnedKnight.GetComponent<KnightMovement>().CanAttack = movement.canSpawnedKnightAttack;        
+        if (transform.localScale.x == -1)
+        {
+            spawnedKnight.GetComponent<KnightController2D>().Flip();
+        }
+
         FindObjectOfType<AudioManager>().Play("Equip");
     }
     #endregion

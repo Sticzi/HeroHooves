@@ -34,7 +34,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
-				"customFields" : {}
+				"customFields": {
+					"jumpPower": 15
+				}
 			},
 			{
 				"id": "JumpPad",
@@ -45,7 +47,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
-				"customFields" : {}
+				"customFields": {
+					"jumpPower": 15
+				}
 			},
 			{
 				"id": "JumpPad",
@@ -56,7 +60,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
-				"customFields" : {}
+				"customFields": {
+					"jumpPower": 15
+				}
 			}
 		],
 		"Falling_rocks": [

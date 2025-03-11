@@ -1,21 +1,37 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public static bool isPaused;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Input Settings")]
+    [SerializeField] private InputActionReference pauseAction;
+
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (IsGamePaused())
-                ResumeGame();
-            else
-                PauseGame();
-        }
+        pauseAction.action.Enable();
+        pauseAction.action.performed += OnPauseInput;
+    }
+
+    private void OnDestroy()
+    {
+        pauseAction.action.performed -= OnPauseInput;
+    }
+
+    private void OnPauseInput(InputAction.CallbackContext context)
+    {
+        TogglePause();
+    }
+
+    private void TogglePause()
+    {
+        if (isPaused)
+            ResumeGame();
+        else
+            PauseGame();
     }
 
     public void ResumeGame()
@@ -25,31 +41,27 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
-    void PauseGame()
+    private void PauseGame()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
 
-    public bool IsGamePaused()
-    {
-        return pauseMenuUI.activeSelf;
-    }
+    public bool IsGamePaused() => isPaused;
 
     public void QuitToMainMenu()
     {
-        Time.timeScale = 1f; // Ensure time scale is set back to normal
-        SceneManager.LoadScene("MainMenu 1"); // Replace "MainMenu" with the name of your main menu scene
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu 1");
     }
+
     public void QuitGame()
     {
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
-                    Application.Quit();
-        #endif
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
-
-
 }

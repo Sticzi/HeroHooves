@@ -35,7 +35,7 @@
 				"height": 16,
 				"color": 6539085,
 				"customFields": {
-					"turnedRight": false
+					"facingRight": false
 				}
 			},
 			{
@@ -48,7 +48,7 @@
 				"height": 16,
 				"color": 6539085,
 				"customFields": {
-					"turnedRight": false
+					"facingRight": false
 				}
 			}
 		],
