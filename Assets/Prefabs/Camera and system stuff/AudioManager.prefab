@@ -59,12 +59,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SpringJump
     clip: {fileID: 8300000, guid: c953d5aea4523f74c8586951c79f60e0, type: 3}
-    volume: 0.39
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
     source: {fileID: 0}
   - name: Hit
     clip: {fileID: 8300000, guid: 55a99acdc8794b34a9a9410c4373cf6c, type: 3}
@@ -88,9 +89,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FallingPlatform
     clip: {fileID: 8300000, guid: c990913989934a04d8750d9f9b2cf3a8, type: 3}
-    volume: 0.25
+    volume: 0.2
     volumeVariance: 0.1
-    pitch: 1.15
+    pitch: 1.1
     pitchVariance: 0.1
     loop: 0
     mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
@@ -108,10 +109,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: DoubleJump
     clip: {fileID: 8300000, guid: 3b754522699ea0646a63e91653754b08, type: 3}
-    volume: 0.809
-    volumeVariance: 0.116
-    pitch: 1
-    pitchVariance: 0.149
+    volume: 0.5
+    volumeVariance: 0.1
+    pitch: 1.3
+    pitchVariance: 0.1
     loop: 0
     mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
@@ -131,16 +132,16 @@ MonoBehaviour:
     volume: 0.809
     volumeVariance: 0.116
     pitch: 1
-    pitchVariance: 0.149
+    pitchVariance: 0.1
     loop: 1
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
     source: {fileID: 0}
   - name: charSound
     clip: {fileID: 8300000, guid: 33891357cb944d046b7ac1f192b5f184, type: 3}
-    volume: 0.05
+    volume: 0.045
     volumeVariance: 0
-    pitch: 0.7
+    pitch: 0.6
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
@@ -166,12 +167,32 @@ MonoBehaviour:
     mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
     source: {fileID: 0}
-  - name: knightStep4
-    clip: {fileID: 8300000, guid: d2279956907f2174b8d7329e379105cd, type: 3}
-    volume: 0.442
+  - name: horseStep
+    clip: {fileID: 8300000, guid: 41d6e83956246f74098ce6b880f36e72, type: 3}
+    volume: 0.4
     volumeVariance: 0.07
-    pitch: 0.69
+    pitch: 1
     pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
+    source: {fileID: 0}
+  - name: knightStep
+    clip: {fileID: 8300000, guid: d2279956907f2174b8d7329e379105cd, type: 3}
+    volume: 0.4
+    volumeVariance: 0.07
+    pitch: 1
+    pitchVariance: 0.05
+    loop: 0
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
+    source: {fileID: 0}
+  - name: LadderStep
+    clip: {fileID: 8300000, guid: fda9caffb0e5b824ea73719fe2ded5a7, type: 3}
+    volume: 0.35
+    volumeVariance: 0.05
+    pitch: 1.4
+    pitchVariance: 0.04
     loop: 0
     mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}

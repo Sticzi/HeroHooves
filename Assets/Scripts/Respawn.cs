@@ -85,7 +85,7 @@ public class Respawn : MonoBehaviour
         {            
             Transform checkpoint = FindCheckpoint(gameMaster.horseSavedRoom);
             transform.position = checkpoint.position;            
-            horseController.KnightPickUp();
+            horseController.KnightPickUp(false);
         }
         else
         {

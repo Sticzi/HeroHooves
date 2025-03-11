@@ -168,7 +168,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
-				"customFields" : {}
+				"customFields": {
+					"jumpPower": 17
+				}
 			},
 			{
 				"id": "JumpPad",
@@ -179,7 +181,9 @@
 				"width": 16,
 				"height": 16,
 				"color": 7552569,
-				"customFields" : {}
+				"customFields": {
+					"jumpPower": 15
+				}
 			}
 		],
 		"Platform2Left": [

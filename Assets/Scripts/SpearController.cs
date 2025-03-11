@@ -4,7 +4,7 @@ public class SpearController : MonoBehaviour
 {
     [SerializeField] [Range(1f, 20f)] private float knockbackForce = 10f;
     [SerializeField] [Range(1f, 20f)] private float upwardKnockbackForce = 5f;
-    [SerializeField] private bool isFacingLeft = true;
+    public bool isFacingLeft = true;
 
     private HorseController2D horseController;
     private HorseMovement horseMovement;

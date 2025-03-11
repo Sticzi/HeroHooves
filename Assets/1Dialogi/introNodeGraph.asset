@@ -16,12 +16,12 @@ MonoBehaviour:
   nodeGraph: {fileID: 11400000}
   rect:
     serializedVersion: 2
-    x: -42
-    y: 194
+    x: 44
+    y: 201
     width: 190
     height: 155
   isDragging: 0
-  isSelected: 0
+  isSelected: 1
   sentence:
     characterName: siema
     text: 'Knight: Get back here you villain!'

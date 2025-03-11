@@ -98,7 +98,7 @@ public class KnightController2D : MonoBehaviour
 
     private void PlayFootstepSound()
     {
-        FindObjectOfType<AudioManager>().Play("knightStep4");
+        FindObjectOfType<AudioManager>().Play("knightStep");
     }
     #endregion
 
@@ -160,7 +160,7 @@ public class KnightController2D : MonoBehaviour
         DOVirtual.DelayedCall(0.35f, () => FindObjectOfType<AudioManager>().Play("Attack"));
     }
     #endregion
-
+    
     #region Utilities
     private void HandleGroundCheck()
     {
@@ -196,7 +196,7 @@ public class KnightController2D : MonoBehaviour
     }
 
     // Naprawione: Lepsza implementacja odwracania postaci
-    private void Flip()
+    public void Flip()
     {
         m_FacingRight = !m_FacingRight;
         Vector3 scale = transform.localScale;
@@ -212,7 +212,9 @@ public class KnightController2D : MonoBehaviour
         {
             isClimbing = true;
             anim.SetTrigger("Climb");
+
         }
+        FindObjectOfType<AudioManager>().Play("LadderStep");
         transform.Translate(Vector3.up * distance);
         anim.SetTrigger("Climb");
     }

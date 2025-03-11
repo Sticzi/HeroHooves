@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LDtkUnity;
 
 public class JumpPad : MonoBehaviour
 {
-    public float bounce = 20f;
+    public float bounce;
 
     private Animator anim;
     private void Start()
     {
         anim = GetComponent<Animator>();
+        bounce = GetComponent<LDtkFields>().GetFloat("jumpPower");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

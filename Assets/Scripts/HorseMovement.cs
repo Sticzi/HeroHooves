@@ -262,7 +262,7 @@ public class HorseMovement : MonoBehaviour
         }
         else if (controller.IsInRangeOfKnight&&CanPickUp)
         {
-            controller.KnightPickUp();
+            controller.KnightPickUp(true);
         }
     }
     #endregion
