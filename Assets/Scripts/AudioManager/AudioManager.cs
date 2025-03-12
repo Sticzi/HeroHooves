@@ -1,7 +1,9 @@
 using UnityEngine.Audio;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixerGroup mixerGroup;
     public Sound[] sounds;
+    private List<AudioSource> activeSources = new List<AudioSource>();
 
     void Awake()
     {
@@ -75,10 +78,40 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-        s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+        if (s.allowMultiple)
+        {
+            AudioSource newSource = gameObject.AddComponent<AudioSource>();
+            newSource.clip = s.clip;
+            newSource.loop = s.loop;
+            newSource.outputAudioMixerGroup = s.mixerGroup;
+            newSource.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+            newSource.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+            newSource.time = s.startTime; // Set playback position
+            newSource.Play();
 
-        s.source.Play();
+            activeSources.Add(newSource);
+
+            if (s.duration > 0f)
+            {
+                DOVirtual.DelayedCall(s.duration, () => {
+                    newSource.Stop();
+                    activeSources.Remove(newSource);
+                    Destroy(newSource);
+                });
+            }
+        }
+        else
+        {
+            s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+            s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+            s.source.time = s.startTime; // Set playback position
+            s.source.Play();
+
+            if (s.duration > 0f)
+            {
+                DOVirtual.DelayedCall(s.duration, () => s.source.Stop());
+            }
+        }
     }
 
     public void Stop(string sound)
@@ -90,6 +123,28 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        s.source.Stop();
+        if (s.allowMultiple)
+        {
+            // Usuniêcie wszystkich aktywnych instancji tego dŸwiêku
+            for (int i = activeSources.Count - 1; i >= 0; i--)
+            {
+                if (activeSources[i].clip == s.clip)
+                {
+                    activeSources[i].Stop();
+                    Destroy(activeSources[i]);
+                    activeSources.RemoveAt(i);
+                }
+            }
+        }
+        else
+        {
+            // Zatrzymanie pojedynczego Ÿród³a dŸwiêku
+            if (s.source != null)
+            {
+                s.source.Stop();
+                s.source.time = 0f; // Resetowanie pozycji odtwarzania
+            }
+        }
     }
+
 }

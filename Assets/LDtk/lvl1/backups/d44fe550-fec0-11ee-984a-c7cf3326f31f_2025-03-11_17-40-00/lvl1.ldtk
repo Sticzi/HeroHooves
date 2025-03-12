@@ -4128,19 +4128,19 @@
 						"entityInstances": [
 							{
 								"__identifier": "Checkpoint",
-								"__grid": [5,13],
+								"__grid": [6,22],
 								"__pivot": [0,0],
 								"__tags": [],
 								"__tile": null,
 								"__smartColor": "#FFFFFF",
-								"iid": "1d12d5c0-e920-11ef-a95e-ef1eff5c40b8",
+								"iid": "199eda00-fec0-11ee-b8ab-679922e83ab5",
 								"width": 16,
 								"height": 16,
 								"defUid": 253,
-								"px": [80,208],
+								"px": [96,352],
 								"fieldInstances": [],
-								"__worldX": 400,
-								"__worldY": -80
+								"__worldX": 416,
+								"__worldY": 64
 							}
 						]
 					},
