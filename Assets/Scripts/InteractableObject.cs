@@ -73,6 +73,7 @@ public class InteractableObject : MonoBehaviour
     }
 
     public bool canBeTriggered = true;
+    private bool canInteract = false;
     public bool CanBeTriggered 
     {
         get { return canBeTriggered; }
@@ -108,11 +109,14 @@ public class InteractableObject : MonoBehaviour
             
             OnProximityEnable.Invoke();
             EnableMechanic();  // Call the mechanic activation
+            canInteract = true;
             
-            if (interactAction != null && interactAction.action.triggered)
-            {
-                OnInteract.Invoke();
-            }
+            
+        }
+
+        if (interactAction != null && interactAction.action.triggered && canInteract)
+        {
+            OnInteract.Invoke();
         }
     }
 

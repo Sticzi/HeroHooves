@@ -10,11 +10,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Level0"); // Load your first level scene
     }
 
-    public void NewStartGame()
-    {
-
-    }
-
     public void QuitGame()
     {
         #if UNITY_EDITOR

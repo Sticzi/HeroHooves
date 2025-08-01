@@ -35,7 +35,7 @@ public class SpearController : MonoBehaviour
         {
            // collision.GetComponent<HorseController2D>().m_AirControl = false; // the air control is returned when he lands and when he double jumps;
             collision.GetComponent<BetterJump>().isTossed = true;
-            collision.GetComponent<HorseController2D>().isKnockedback = true;
+            collision.GetComponent<HorseController2D>().IsKnockedback = true;
         }
 
         if (collision.CompareTag("Knight"))

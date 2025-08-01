@@ -6,21 +6,18 @@ public class AttackTrigger : MonoBehaviour
 {
     public Animator anim;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Horse"))
+        if (collision.CompareTag("Horse") || collision.CompareTag("Knight") && anim.GetCurrentAnimatorStateInfo(0).IsName("goblin"))
         {
-            if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("goblin"))
-            {
-                anim.SetTrigger("Attack");
-            }
-        }
-        if (collision.gameObject.CompareTag("Knight"))
-        {
-            if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("goblin"))
-            {
-                anim.SetTrigger("Attack");
-            }
+            Attack();
         }
     }
+
+
+    private void Attack()
+    {
+        anim.SetTrigger("Attack");
+    }
 }
+
