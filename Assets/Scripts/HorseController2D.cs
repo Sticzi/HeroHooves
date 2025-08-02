@@ -1,4 +1,4 @@
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -127,7 +127,15 @@ public class HorseController2D : MonoBehaviour
     }
     public void Move(float move)
     {
-        _move = move > 0 ? Mathf.Ceil(move) : Mathf.Floor(move);
+        if (move > 0)
+        {
+            _move = Mathf.Ceil(move); // zaokrąglenie w górę, np. 2.3 → 3
+        }
+        else
+        {
+            _move = Mathf.Floor(move); // zaokrąglenie w dół, np. -2.3 → -3
+        }
+
     }
 
     // New method to handle external velocity
@@ -253,7 +261,7 @@ public class HorseController2D : MonoBehaviour
         }
         
 
-        //tu gdzie� by wypada�oby tego knighta pierwszego usun��
+        //tu gdzieś by wypadałoby tego knighta pierwszego usunąć
         if (spawnedKnight != null)
         {
             if(!movement.IsHorseControlled)

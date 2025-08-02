@@ -172,7 +172,11 @@ public class HorseMovement : MonoBehaviour
     #region Core Logic
     private void HandleMovement()
     {
-        if (!IsHorseControlled) return;
+        if (!IsHorseControlled)
+        {
+            controller.Move(0);
+            return;
+        }
 
         float moveInput = move.ReadValue<float>();
 

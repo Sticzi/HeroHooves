@@ -16,7 +16,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private HorseMovement horseMovement;
     private KnightMovement knightMovement;
 
-    public enum BoolType { Swap, Jump, DoubleJump, Pickup, Drop, Attack }
+    public enum BoolType { Swap, Jump, DoubleJump, Pickup, Drop, Attack, Null }
     [SerializeField] private BoolType _boolToUse;
 
     public bool TargetBool
@@ -110,14 +110,21 @@ public class InteractableObject : MonoBehaviour
             OnProximityEnable.Invoke();
             EnableMechanic();  // Call the mechanic activation
             canInteract = true;
-            
-            
+
+            if (interactAction != null && interactAction.action.triggered && canInteract)
+            {
+                Debug.Log("siema");
+                OnInteract.Invoke();
+            }
+
         }
 
-        if (interactAction != null && interactAction.action.triggered && canInteract)
-        {
-            OnInteract.Invoke();
-        }
+        
+    }
+
+    public void Delete()
+    {
+        Destroy(gameObject, 1.5f);
     }
 
 }
