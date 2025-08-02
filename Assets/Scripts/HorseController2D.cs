@@ -1,4 +1,4 @@
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -13,7 +13,14 @@ public class HorseController2D : MonoBehaviour
     public bool m_AirControl = false;
     public float m_JumpForce = 400f;
     public float maxFallSpeed = -20f;
+    public float movementSpeed;
+    public float movementSpeedWithKnight;
+    private float currentMovementSpeed;
 
+    [Header("Launch Settings")]
+    public float airResistance = 0.9f;
+    public Vector2 externalVelocity;
+    private Vector2 unCappedExternalVelocity;
 
     [Header("References")]
     public GameObject jumpCloud;
@@ -30,10 +37,10 @@ public class HorseController2D : MonoBehaviour
     public bool IsGrounded => rb.IsTouching(groundContactFilter);
     public bool KnightPickedUp { get; set; }
     public bool IsInRangeOfKnight { get; set; }
-    public bool isFrozen { get; set; }
-    public bool isLookingDown { get; set; }
-    public bool isKnockedback { get; set; }
-    public bool doubleJumpReady { get; set; }
+    public bool IsFrozen { get; set; }
+    public bool IsLookingDown { get; set; }
+    public bool IsKnockedback { get; set; }
+    public bool DoubleJumpReady { get; set; }
     //public bool isJumping { get; set; }
     public bool canJump = false;
 
@@ -51,11 +58,14 @@ public class HorseController2D : MonoBehaviour
     private float stepTimer = 0f;
     private bool wasGrounded;
 
+    private float _move;
+
     [Header("Events")]
     public UnityEvent OnLandEvent;
 
     private void Awake()
     {
+        currentMovementSpeed = movementSpeed;
         movement = GetComponent<HorseMovement>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -80,6 +90,7 @@ public class HorseController2D : MonoBehaviour
         HandleFallSpeed();
         HandleGroundCheck();
         HandleJumping();
+        HandleMovement();
     }
 
     #region Core Mechanics
@@ -99,19 +110,46 @@ public class HorseController2D : MonoBehaviour
     #endregion
 
     #region Movement
+
+    public void HandleMovement()
+    {
+        if ((IsGrounded || m_AirControl) && !IsKnockedback)
+        {
+            HandleFootsteps(_move);
+            ApplyMovement(_move);
+            HandleFlipping(_move);
+        }
+
+        // Apply air resistance to external velocity or lerp to 0 velocity if grounded
+        if (!IsGrounded) externalVelocity *= airResistance;
+        //unCappedExternalVelocity += airResistance;
+        else externalVelocity = Vector2.Lerp(externalVelocity, Vector2.zero, 0.1f);
+    }
     public void Move(float move)
     {
-        if ((IsGrounded || m_AirControl) && !isKnockedback)
+        if (move > 0)
         {
-            HandleFootsteps(move);
-            ApplyMovement(move);
-            HandleFlipping(move);
+            _move = Mathf.Ceil(move); // zaokrąglenie w górę, np. 2.3 → 3
         }
+        else
+        {
+            _move = Mathf.Floor(move); // zaokrąglenie w dół, np. -2.3 → -3
+        }
+
     }
 
+    // New method to handle external velocity
+    public void ApplyExternalVelocity(Vector2 velocity)
+    {
+        GetComponent<BetterJump>().isTossed = true;
+        externalVelocity += velocity;
+        //externalVelocity = Vector2.ClampMagnitude(externalVelocity, 50f);
+    }
+
+    // Modified ApplyMovement
     private void ApplyMovement(float move)
     {
-        Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
+        Vector3 targetVelocity = new Vector2(move * currentMovementSpeed + externalVelocity.x, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
 
@@ -147,7 +185,7 @@ public class HorseController2D : MonoBehaviour
 
     public void Jump(bool jumpInput)
     {       
-        if (movement.CanDoubleJump && jumpInput && doubleJumpReady && !KnightPickedUp && (movement.hangCounter <= 0 || canJump == false))
+        if (movement.CanDoubleJump && jumpInput && DoubleJumpReady && !KnightPickedUp && (movement.hangCounter <= 0 || canJump == false))
             DoubleJump();
     }
 
@@ -155,7 +193,7 @@ public class HorseController2D : MonoBehaviour
     {
         betterJump.jump = true;
         anim.SetBool("IsJumping", true);
-        rb.velocity = new Vector2(rb.velocity.x, m_JumpForce);
+        rb.velocity = new Vector2(rb.velocity.x, m_JumpForce + externalVelocity.y);
         movement.hangCounter = 0;
         movement.jumpBufferCounter = 0;
         FindObjectOfType<AudioManager>().Play("Jump");
@@ -165,9 +203,9 @@ public class HorseController2D : MonoBehaviour
     {
         GameObject cloud = Instantiate(jumpCloud, transform.position + Vector3.down * jumpCloudOffset, Quaternion.identity);
         Destroy(cloud, 1);
-        doubleJumpReady = false;
+        DoubleJumpReady = false;
         m_AirControl = true;
-        isKnockedback = false;
+        IsKnockedback = false;
         betterJump.jump = true;
         rb.velocity = new Vector2(rb.velocity.x, m_JumpForce);
         FindObjectOfType<AudioManager>().Play("DoubleJump");
@@ -215,7 +253,7 @@ public class HorseController2D : MonoBehaviour
     public void KnightPickUp(bool playSound)
     {
         KnightPickedUp = true;
-        movement.currentSpeed = movement.walkSpeed;
+        currentMovementSpeed = movementSpeedWithKnight;
         anim.SetBool("CaryingKnight", true);
         if(playSound)
         {
@@ -223,7 +261,7 @@ public class HorseController2D : MonoBehaviour
         }
         
 
-        //tu gdzie� by wypada�oby tego knighta pierwszego usun��
+        //tu gdzieś by wypadałoby tego knighta pierwszego usunąć
         if (spawnedKnight != null)
         {
             if(!movement.IsHorseControlled)
@@ -238,7 +276,7 @@ public class HorseController2D : MonoBehaviour
     public void KnightDropOfF()
     {
         KnightPickedUp = false;
-        movement.currentSpeed = movement.runSpeed;
+        currentMovementSpeed = movementSpeed;
         anim.SetBool("CaryingKnight", false);
         spawnedKnight = Instantiate(knightPrefab, transform.position, Quaternion.identity);
         spawnedKnight.GetComponent<KnightController2D>().horse = this.gameObject;
@@ -256,26 +294,26 @@ public class HorseController2D : MonoBehaviour
     #region Freeze System
     public void PlayerFreeze()
     {
-        if (isFrozen) return;
+        if (IsFrozen) return;
 
         //foreach (Transform child in background)
         //    child.GetComponent<Paralax>().cameraLerp = true;
 
         rb.bodyType = RigidbodyType2D.Static;
         ToggleComponents(false);
-        isFrozen = true;
+        IsFrozen = true;
     }
 
     public void PlayerUnfreeze()
     {
-        if (!isFrozen) return;
+        if (!IsFrozen) return;
 
         //foreach (Transform child in background)
         //    child.GetComponent<Paralax>().cameraLerp = false;
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         ToggleComponents(true);
-        isFrozen = false;
+        IsFrozen = false;
     }
 
     private void ToggleComponents(bool state)

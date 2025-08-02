@@ -2,6 +2,8 @@ using UnityEngine;
 using Cinemachine;
 using System.Threading.Tasks;
 using DG.Tweening;
+using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -55,36 +57,32 @@ public class PlayerCamera : MonoBehaviour
         }        
     }
 
-    public void SavePlayerSpawnPoint(GameObject room)
-    {
-        Transform parentOfParent = room.transform.parent?.parent;
-        int levelNumber = 0;
-        
-
-        // Get the name of the parent of the parent GameObject
-        string parentName = parentOfParent.name;
-
-        // Extract the level number from the name (assuming the format is "Level_X" where X is the number)
-        if (parentName.StartsWith("Level_"))
-        {
-            string levelString = parentName.Substring(6, parentName.Length - 11); // Extract the part after "Level_"
-            if (int.TryParse(levelString, out levelNumber))
-            {
-                //Debug.Log("Level number extracted: " + levelNumber +gameObject.name);
-            }
-        }
     
 
-        if(this!= null)
+    private int ExtractLevelNumber(string input)
+    {
+        Match match = Regex.Match(input, @"Level_(\d+)");
+        return match.Success ? int.Parse(match.Groups[1].Value) : 1;
+    }
+
+    public void SavePlayerSpawnPoint(GameObject room)
+    {
+        // Always set world to current scene
+        gameMaster.savedLevelName = SceneManager.GetActiveScene().name;
+
+        // Use regex parsing
+        Transform levelTransform = room.transform.parent.parent;
+        int levelNumber = ExtractLevelNumber(levelTransform.name);
+
+
+        if (this!= null)
         {
             if (CompareTag("Knight"))
             {
-                gameMaster.knightSavedRoom = levelNumber;
-                gameMaster.horseSavedRoom = levelNumber;
+
             }
             else
             {
-                //gameMaster.horseSavedRoom = levelNumber;
                 if (GetComponent<HorseController2D>().KnightPickedUp)
                 {
                     gameMaster.knightSavedRoom = levelNumber;
@@ -92,6 +90,8 @@ public class PlayerCamera : MonoBehaviour
                 }
             }
         }
+
+        gameMaster.Save(); // Explicit save
     }
 
     private void CheckPlayerRoom()
@@ -118,18 +118,6 @@ public class PlayerCamera : MonoBehaviour
             CameraTransition(checkedRoomCameraBound, currentConfinerComponent);
         }
     }
-
-    //public void SaveBackgroundParalaxPos()
-    //{
-    //    int childCount = background.childCount;
-    //    gameMaster.savedBackgroundPos = new Vector2[childCount];
-
-    //    for (int i = 0; i < childCount; i++)
-    //    {
-    //        gameMaster.savedBackgroundPos[i] = background.GetChild(i).position;
-    //    }
-    //}
-
     private void PlayerFreeze()
     {
         horse.GetComponent<HorseController2D>().PlayerFreeze();
@@ -170,15 +158,6 @@ public class PlayerCamera : MonoBehaviour
             PlayerFreeze();
         }
 
-        
-
-        //tu by³o przedtem save paralaxy ale chyba niepotrzebnie
-        //je¿eli wchodzi od do³u
-        //if (tossForce > 0)
-        //{
-        //    horse.GetComponent<BetterJump>().isTossed = true;
-        //}
-
         confiner.m_Damping = damping;
         confiner.m_BoundingShape2D = roomCameraBound;
         
@@ -197,7 +176,6 @@ public class PlayerCamera : MonoBehaviour
         PlayerUnfreeze();
 
         SavePlayerSpawnPoint(roomCameraBound.gameObject);
-        /*SaveBackgroundParalaxPos()*/;
 
         confiner.m_Damping = 0;
         await Task.Yield();

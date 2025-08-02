@@ -1,0 +1,37 @@
+{
+	"identifier": "Level_1MainMenu",
+	"uniqueIdentifer": "a534fef0-e920-11ef-898f-9924d360c5c3",
+	"x": 320,
+	"y": -288,
+	"width": 256,
+	"height": 272,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "32ecb960-fec0-11ee-b72e-5de3f3f605da",
+			"dir": "w"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "e21d6880-e920-11ef-898f-95c67817bec1",
+				"layer": "Entities",
+				"x": 48,
+				"y": 208,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		]
+	}
+}

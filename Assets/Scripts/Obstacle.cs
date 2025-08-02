@@ -16,6 +16,11 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    public void AttackSound()
+    {
+        FindObjectOfType<AudioManager>().Play("goblinAttack");
+    }
+
     public void Start()
     {
         facingRight = GetComponent<LDtkFields>().GetBool("facingRight");

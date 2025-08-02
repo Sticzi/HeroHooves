@@ -255,6 +255,19 @@ MonoBehaviour:
     mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
     source: {fileID: 0}
+  - name: goblinAttack
+    clip: {fileID: 8300000, guid: 7d51c55534609fa4e9964a20978d1820, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1.6
+    pitchVariance: 0
+    startTime: 0
+    duration: 0
+    loop: 0
+    allowMultiple: 0
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
+    source: {fileID: 0}
 --- !u!114 &1739566409565822613
 MonoBehaviour:
   m_ObjectHideFlags: 0

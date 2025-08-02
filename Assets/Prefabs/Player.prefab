@@ -204,6 +204,10 @@ MonoBehaviour:
   m_AirControl: 1
   m_JumpForce: 9.5
   maxFallSpeed: -15
+  movementSpeed: 7
+  movementSpeedWithKnight: 4
+  airResistance: 0.96
+  externalVelocity: {x: 0, y: 0}
   jumpCloud: {fileID: 6153084693915907904, guid: 1797c20ed4e71d04bb1edbd048705830,
     type: 3}
   jumpCloudOffset: 1
@@ -253,9 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efa3382b9ad3004883ee1cc6d62c90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 30
-  walkSpeed: 20
-  currentSpeed: 0
   jumpBufferTime: 0.1
   coyoteTime: 0.1
   jumpBufferCounter: 0

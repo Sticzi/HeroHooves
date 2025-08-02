@@ -1,0 +1,121 @@
+{
+	"identifier": "Level_13World",
+	"uniqueIdentifer": "9dc02550-4ce0-11ef-b774-db724ddefb7b",
+	"x": 6576,
+	"y": -368,
+	"width": 480,
+	"height": 480,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "d2b128a0-4ce0-11ef-b774-d73a26dcb1e4",
+			"dir": "w"
+		},
+		{
+			"levelIid": "b1489d40-4ce0-11ef-a82e-3d044494009d",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Goblin": [
+			{
+				"id": "Goblin",
+				"iid": "47941140-4ce0-11ef-a82e-5b5a8c68aec4",
+				"layer": "Entities",
+				"x": 240,
+				"y": 240,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields": {
+					"facingRight": false
+				}
+			},
+			{
+				"id": "Goblin",
+				"iid": "54041e70-4ce0-11ef-a82e-056f58388e89",
+				"layer": "Entities",
+				"x": 448,
+				"y": 208,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields": {
+					"facingRight": false
+				}
+			}
+		],
+		"Platform3Both": [
+			{
+				"id": "Platform3Both",
+				"iid": "56832830-4ce0-11ef-a82e-ebbd553fe14c",
+				"layer": "Entities",
+				"x": 384,
+				"y": 224,
+				"width": 48,
+				"height": 16,
+				"color": 15389866,
+				"customFields" : {}
+			}
+		],
+		"Falling_rocks": [
+			{
+				"id": "Falling_rocks",
+				"iid": "c340d580-4ce0-11ef-a82e-5bad7174bae1",
+				"layer": "Entities",
+				"x": 344,
+				"y": 152,
+				"width": 16,
+				"height": 16,
+				"color": 3818598,
+				"customFields" : {}
+			},
+			{
+				"id": "Falling_rocks",
+				"iid": "c55f21a0-4ce0-11ef-a82e-bb9ca15a09fd",
+				"layer": "Entities",
+				"x": 376,
+				"y": 104,
+				"width": 16,
+				"height": 16,
+				"color": 3818598,
+				"customFields" : {}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "d40441d0-4ce0-11ef-a82e-9f695cc2d82b",
+				"layer": "Entities",
+				"x": 48,
+				"y": 400,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "77a3f130-4ce0-11ef-a82e-e16084cc57e2",
+				"layer": "Box",
+				"x": 120,
+				"y": 104,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"canMoveInAir": false
+				}
+			}
+		]
+	}
+}

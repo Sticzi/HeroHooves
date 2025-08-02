@@ -1,0 +1,97 @@
+{
+	"identifier": "Level_10World",
+	"uniqueIdentifer": "1a78a650-4ce0-11ef-b774-d930510cefd4",
+	"x": 5136,
+	"y": -128,
+	"width": 448,
+	"height": 272,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "cdbde300-4ce0-11ef-b774-67b3d0eb110f",
+			"dir": "w"
+		},
+		{
+			"levelIid": "17274de0-4ce0-11ef-b774-d15226be76ed",
+			"dir": "n"
+		},
+		{
+			"levelIid": "bce643b0-4ce0-11ef-b774-d35c56c61b18",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"Foreground_Collision.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Goblin": [
+			{
+				"id": "Goblin",
+				"iid": "1a6fd740-4ce0-11ef-b774-117b462a7ece",
+				"layer": "Entities",
+				"x": 176,
+				"y": 96,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields": {
+					"facingRight": false
+				}
+			},
+			{
+				"id": "Goblin",
+				"iid": "332c7300-4ce0-11ef-b774-2525f1432576",
+				"layer": "Entities",
+				"x": 304,
+				"y": 160,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields": {
+					"facingRight": true
+				}
+			}
+		],
+		"Platform1Right": [
+			{
+				"id": "Platform1Right",
+				"iid": "3f96cbf0-4ce0-11ef-b774-2189ef251fae",
+				"layer": "Entities",
+				"x": 64,
+				"y": 48,
+				"width": 16,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			},
+			{
+				"id": "Platform1Right",
+				"iid": "423a74b0-4ce0-11ef-b774-47f4e8b52fb2",
+				"layer": "Entities",
+				"x": 80,
+				"y": 112,
+				"width": 16,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "0b61fd60-4ce0-11ef-a82e-178d14387e42",
+				"layer": "Entities",
+				"x": 48,
+				"y": 32,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		]
+	}
+}

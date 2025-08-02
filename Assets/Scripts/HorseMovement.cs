@@ -5,12 +5,7 @@ public class HorseMovement : MonoBehaviour
 {
     private HorseController2D controller;
     private Animator animator;
-    private Rigidbody2D rb;
-
-    [Header("Movement Settings")]
-    public float runSpeed = 36f;
-    public float walkSpeed = 24f;
-    [HideInInspector] public float currentSpeed;
+    private Rigidbody2D rb;    
 
     [Header("Jump Settings")]
     public float jumpBufferTime = 0.2f;
@@ -82,7 +77,6 @@ public class HorseMovement : MonoBehaviour
         controller = GetComponent<HorseController2D>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        currentSpeed = runSpeed;
         playerInput = new PlayerInputActions();
     }
 
@@ -178,7 +172,11 @@ public class HorseMovement : MonoBehaviour
     #region Core Logic
     private void HandleMovement()
     {
-        if (!IsHorseControlled) return;
+        if (!IsHorseControlled)
+        {
+            controller.Move(0);
+            return;
+        }
 
         float moveInput = move.ReadValue<float>();
 
@@ -192,7 +190,7 @@ public class HorseMovement : MonoBehaviour
         {
             moveInput = Mathf.Sign(moveInput);  // Use sign to get -1 or 1
         }
-        float horizontalMove = moveInput * currentSpeed;
+        float horizontalMove = moveInput;
         controller.Move(horizontalMove * Time.fixedDeltaTime);
     }
 
@@ -238,17 +236,17 @@ public class HorseMovement : MonoBehaviour
         if (lookDownInput < 0)
         {
             timer += Time.deltaTime;
-            if (timer >= lookDownHoldTime && !controller.isLookingDown)
+            if (timer >= lookDownHoldTime && !controller.IsLookingDown)
             {
-                controller.isLookingDown = true;
+                controller.IsLookingDown = true;
             }
         }
         else
         {
             timer = 0f;
-            if (controller.isLookingDown)
+            if (controller.IsLookingDown)
             {
-                controller.isLookingDown = false;
+                controller.IsLookingDown = false;
                 controller.StopLookingDown();
             }
         }
@@ -277,7 +275,7 @@ public class HorseMovement : MonoBehaviour
     private void HandleSliding()
     {
         if (!IsHorseControlled && controller.IsGrounded &&
-            rb.velocity.x != 0 && !controller.isKnockedback)
+            rb.velocity.x != 0 && !controller.IsKnockedback)
         {
             rb.velocity = new Vector2(rb.velocity.x / 10, rb.velocity.y);
         }
@@ -285,13 +283,12 @@ public class HorseMovement : MonoBehaviour
 
     public void OnLanding()
     {
-        Debug.Log("siema");
-        controller.doubleJumpReady = true;
+        controller.DoubleJumpReady = true;
         controller.canJump = true;
         //if (controller.IsGrounded && rb.velocity.y <= 0f)
         //{
             
-            controller.isKnockedback = false;
+            controller.IsKnockedback = false;
         GetComponent<BetterJump>().isTossed = false;
             animator.SetBool("IsJumping", false);
             controller.m_AirControl = true;

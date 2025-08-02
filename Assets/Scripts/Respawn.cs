@@ -21,22 +21,23 @@ public class Respawn : MonoBehaviour
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         horseController = GetComponent<HorseController2D>();
         movement = GetComponent<HorseMovement>();
-        knightPrefab = horseController.knightPrefab;
-
-
-                  
+        knightPrefab = horseController.knightPrefab;                          
     }
 
     private Transform FindLevel(int levelNumber)
     {
-        
-        Transform world = GameObject.FindGameObjectWithTag(gameMaster.savedWorldName).transform;
-        foreach (Transform level in world)
+        GameObject world = GameObject.FindGameObjectWithTag(gameMaster.savedWorldName);
+        if (world == null)
         {
-            if (level.name == ("Level_" + levelNumber + world.name))
-            {
-                return level;
-            }
+            Debug.LogError($"World {gameMaster.savedWorldName} not found!");
+            return null;
+        }
+
+        string expectedName = $"Level_{levelNumber}";
+        foreach (Transform child in world.transform)
+        {
+            if (child.name.StartsWith(expectedName))
+                return child;
         }
         return null;
     }
@@ -53,8 +54,12 @@ public class Respawn : MonoBehaviour
         return null;
     }
     private Transform FindCheckpoint(int levelNumber)
-    {        
-        return FindChildWithTag(FindLevel(levelNumber).Find("Entities"), "Checkpoint");
+    {
+        Transform level = FindLevel(levelNumber);
+        if (level == null) return null;
+
+        Transform entities = level.Find("Entities");
+        return entities == null ? null : FindChildWithTag(entities, "Checkpoint");
     }
 
     public void Spawning()
