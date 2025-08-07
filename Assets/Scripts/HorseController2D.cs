@@ -19,7 +19,7 @@ public class HorseController2D : MonoBehaviour
 
     [Header("Launch Settings")]
     public float airResistance = 0.9f;
-    public Vector2 externalVelocity;
+    private Vector2 externalVelocity;
     private Vector2 unCappedExternalVelocity;
 
     [Header("References")]

@@ -300,8 +300,6 @@ MonoBehaviour:
   canSwap: 0
   canAttack: 0
   whoIsControlled: horse
-  runSpeed: 15
-  currentSpeed: 0
   whatIsHorse:
     serializedVersion: 2
     m_Bits: 512
@@ -327,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovementSmoothing: 0
   m_AirControl: 1
+  movementSpeed: 4
   horse: {fileID: 0}
   virtualCameraKnight: {fileID: 0}
   controlIndicator: {fileID: 7559269965993952478}
@@ -344,6 +343,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  airResistance: 0.975
   stepInterval: 0.35
   anim: {fileID: 0}
 --- !u!114 &545192195289469413

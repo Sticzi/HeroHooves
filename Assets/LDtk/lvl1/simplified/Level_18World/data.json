@@ -2,9 +2,9 @@
 	"identifier": "Level_18World",
 	"uniqueIdentifer": "94b43730-4ce0-11ef-9823-b7fb0d6e8573",
 	"x": 8960,
-	"y": -448,
+	"y": -608,
 	"width": 448,
-	"height": 416,
+	"height": 576,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -30,7 +30,18 @@
 				"iid": "55b3b780-4ce0-11ef-9823-c187912733d5",
 				"layer": "Entities",
 				"x": 208,
-				"y": 272,
+				"y": 432,
+				"width": 48,
+				"height": 16,
+				"color": 15389866,
+				"customFields" : {}
+			},
+			{
+				"id": "Platform3Both",
+				"iid": "16bac480-5e50-11f0-8e14-49a9a23dd512",
+				"layer": "Entities",
+				"x": 240,
+				"y": 128,
 				"width": 48,
 				"height": 16,
 				"color": 15389866,
@@ -43,11 +54,31 @@
 				"iid": "c43a4880-4ce0-11ef-9823-c9e085b50366",
 				"layer": "Entities",
 				"x": 48,
-				"y": 160,
+				"y": 320,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,
 				"customFields" : {}
+			}
+		],
+		"MovingPlatform": [
+			{
+				"id": "MovingPlatform",
+				"iid": "5ad2ddb0-5e50-11f0-8e14-11d3f5936787",
+				"layer": "Entities",
+				"x": 264,
+				"y": 328,
+				"width": 48,
+				"height": 16,
+				"color": 4098376,
+				"customFields": {
+					"active": true,
+					"targetPosition": {
+						"cx": 16,
+						"cy": 13
+					},
+					"launchBoostForce": 5
+				}
 			}
 		],
 		"Box2x2": [
@@ -55,8 +86,8 @@
 				"id": "Box2x2",
 				"iid": "7871c280-4ce0-11ef-9823-17e8e8f9b321",
 				"layer": "Box",
-				"x": 312,
-				"y": 88,
+				"x": 184,
+				"y": 104,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,

@@ -3,25 +3,31 @@ using UnityEngine.InputSystem;
 using DG.Tweening;
 using System;
 using Cysharp.Threading.Tasks;
+using LDtkUnity;
 
 [RequireComponent(typeof(Collider2D))]
 public class LaunchingPlatform : MonoBehaviour
 {
-    public Transform targetPosition;
+    
     public float launchDuration = 0.2f;
-    public float launchBoostForce = 10f;
-    public float jumpDetectionWindow = 0.2f;
+    public float jumpDetectionWindow = 0.15f;
     public ContactFilter2D filter;
     public InputActionReference jumpAction;
+    public LDtkFields ldtkValues;
+    
+    public bool isActive;
 
     [Header("Shake Settings")]
     public float shakeDuration = 0.1f;
     public float shakeStrength = 0.2f;
     public int shakeVibrato = 10;
 
+    private Vector3 targetPosition;
+    private float launchBoostForce = 10f;
+
     private bool hasLaunched = false;
     private Collider2D platformCollider;
-    private HorseController2D playerController;
+    private GameObject launchedObject;
     private Vector2 launchDirection;
     private Vector2 originalPosition;
     private bool wasTouching = false;
@@ -29,28 +35,36 @@ public class LaunchingPlatform : MonoBehaviour
 
     private void Start()
     {
-        launchDirection = (targetPosition.position - transform.position).normalized;
+        ldtkValues = transform.parent.GetComponent<LDtkFields>();
+
+        isActive = ldtkValues.GetBool("active");
+        launchBoostForce = ldtkValues.GetFloat("launchBoostForce");
+        targetPosition = ldtkValues.GetPoint("targetPosition");
+
+        launchDirection = (targetPosition - transform.position).normalized;
         platformCollider = GetComponent<Collider2D>();
         originalPosition = transform.position;
     }
 
     private void FixedUpdate()
     {
-        //tu jakieœ sphaghetti ¿eby silnik unity nie myœla³ za szybko ¿e schodzimy z platformy
+        if(isActive)
+        HandleLaunching();
+    }
+
+    private void HandleLaunching()
+    {
+        //tu jakieœ sphaghetti ¿eby unity nie myœla³o za szybko ¿e schodzimy z platformy
         if (release && !wasTouching && !platformCollider.IsTouching(filter))
         {
             ReleasePlayer();
-            Debug.Log("seiam");
         }
 
         if (wasTouching && !platformCollider.IsTouching(filter))
-        {               
+        {
             wasTouching = false;
             release = true;
-            Debug.Log("seiam2");
-        }       
-
-
+        }
 
         Collider2D[] results = new Collider2D[2];
         int count = Physics2D.OverlapCollider(platformCollider, filter, results);
@@ -59,8 +73,8 @@ public class LaunchingPlatform : MonoBehaviour
         {
             if (platformCollider.IsTouching(results[i]))
             {
-                playerController = results[i].GetComponent<HorseController2D>();
-                playerController.transform.SetParent(transform);
+                launchedObject = results[i].gameObject;
+                launchedObject.transform.SetParent(transform);
                 wasTouching = true;
                 if (hasLaunched) return;
                 hasLaunched = true;
@@ -68,20 +82,16 @@ public class LaunchingPlatform : MonoBehaviour
                 break;
             }
         }
-
-        
     }
 
     private async UniTaskVoid LaunchSequence()
-    {
-        
-
+    {     
 
         transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato);
 
         // Start movement
-        var moveTween = transform.DOMove(targetPosition.position, launchDuration)
-            .SetEase(Ease.InQuad);
+        var moveTween = transform.DOMove(targetPosition, launchDuration)
+            .SetEase(Ease.InQuart);
 
         var moveTask = moveTween.AsyncWaitForCompletion().AsUniTask();
 
@@ -89,13 +99,21 @@ public class LaunchingPlatform : MonoBehaviour
         await UniTask.Delay(TimeSpan.FromSeconds(launchDuration - 0.2f));
 
 
-        if (playerController != null && playerController.transform.IsChildOf(transform))
+        if (launchedObject != null && launchedObject.transform.IsChildOf(transform))
         {
+            
             HandleJumpWindow();
+            
         }
 
         // Wait for move to fully complete if not already done
         await moveTask;
+
+        if (launchedObject.GetComponent<KnightController2D>() != null)
+        {
+            Debug.Log("knightLaunch");
+            launchedObject.GetComponent<KnightController2D>().ApplyExternalVelocity(launchDirection * launchBoostForce);
+        }
 
         await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
 
@@ -129,17 +147,18 @@ public class LaunchingPlatform : MonoBehaviour
 
     private void ReleasePlayer()
     {
-        if (playerController == null) return;
-        playerController.transform.SetParent(null);
+        if (launchedObject == null) return;
+        launchedObject.transform.SetParent(null);
         release = false;
         //ApplyLaunchBoost();
     }
 
     private void ApplyLaunchBoost()
     {
-        if (playerController != null)
+        if (launchedObject.GetComponent<HorseController2D>() != null)
         {
-            playerController.ApplyExternalVelocity(launchDirection * launchBoostForce);
+            launchedObject.GetComponent<HorseController2D>().ApplyExternalVelocity(launchDirection * launchBoostForce);
         }
+        
     }
 }

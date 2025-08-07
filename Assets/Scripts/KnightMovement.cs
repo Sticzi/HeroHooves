@@ -26,9 +26,7 @@ public class KnightMovement : MonoBehaviour
     }
 
     public string whoIsControlled = "horse";
-    public float runSpeed;
 
-    [SerializeField] private float currentSpeed;
     [SerializeField] private LayerMask whatIsHorse;
     [SerializeField] private LayerMask whatIsLadder;
     [SerializeField] private float verticalLadderDetectionOffset;
@@ -48,7 +46,6 @@ public class KnightMovement : MonoBehaviour
 
     public void Awake()
     {
-        currentSpeed = runSpeed;
         controller = GetComponent<KnightController2D>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -89,6 +86,11 @@ public class KnightMovement : MonoBehaviour
             HandleMovement();
             HandleLadderClimbing();
         }
+        else
+        {
+            controller.Move(0);
+            return;
+        }
     }
 
     #region Input Handlers
@@ -126,7 +128,7 @@ public class KnightMovement : MonoBehaviour
 
         if (climbedOnLadder == null)
         {
-            float horizontalMove = moveInput * currentSpeed;
+            float horizontalMove = moveInput;
             controller.Move(horizontalMove * Time.fixedDeltaTime);
         }           
     }

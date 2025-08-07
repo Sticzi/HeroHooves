@@ -1,4 +1,4 @@
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
@@ -8,6 +8,8 @@ public class KnightController2D : MonoBehaviour
     [Header("Movement Settings")]
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = 0.05f;
     public bool m_AirControl = false;
+    public float movementSpeed;
+    private float _move;
 
     [Header("References")]
     public GameObject horse;
@@ -15,8 +17,13 @@ public class KnightController2D : MonoBehaviour
     public GameObject controlIndicator;
     public ContactFilter2D groundContactFilter;
 
+    [Header("Launch Settings")]
+    private Vector2 externalVelocity;
+    public float airResistance = 0.99f;
+
     [Header("Audio")]    
     public float stepInterval = 0.5f;
+
 
     // Component references
     private Rigidbody2D rb;
@@ -48,22 +55,49 @@ public class KnightController2D : MonoBehaviour
         HandleGroundCheck();
         UpdateAnimator();
         HandleSliding();
+        HandleMovement();
     }
 
     #region Movement
+
     public void Move(float move)
+    {
+        if (move > 0)
+        {
+            _move = Mathf.Ceil(move); // zaokrąglenie w górę, np. 2.3 → 3
+        }
+        else
+        {
+            _move = Mathf.Floor(move); // zaokrąglenie w dół, np. -2.3 → -3
+        }
+    }
+
+    private void HandleMovement()
     {
         if ((IsGrounded || m_AirControl) && !isKnockedback)
         {
-            HandleFootsteps(move);
-            ApplyMovement(move);
-            HandleFlipping(move); // Naprawione: metoda jest teraz zdefiniowana
+            HandleFootsteps(_move);
+            ApplyMovement(_move);
+            HandleFlipping(_move); // Naprawione: metoda jest teraz zdefiniowana
         }
+        // Apply air resistance to external velocity or lerp to 0 velocity if grounded
+        if (!IsGrounded) externalVelocity *= airResistance;
+        //unCappedExternalVelocity += airResistance;
+        else externalVelocity = Vector2.Lerp(externalVelocity, Vector2.zero, 0.2f);
+    }
+
+    public void ApplyExternalVelocity(Vector2 velocity)
+    {
+        GetComponent<BetterJump>().isTossed = true;
+        externalVelocity += velocity;
+        rb.velocity = new Vector2(rb.velocity.x, externalVelocity.y);
+        //externalVelocity = Vector2.ClampMagnitude(externalVelocity, 50f);
     }
 
     private void ApplyMovement(float move)
     {
-        Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
+        Vector3 targetVelocity = new Vector2(move * movementSpeed + externalVelocity.x, rb.velocity.y);//tu sie akumuluje y velocity na kazdej klatce osobno to trzeba
+
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
     #endregion

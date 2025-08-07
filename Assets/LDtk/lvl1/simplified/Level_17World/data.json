@@ -36,6 +36,39 @@
 				"color": 16777215,
 				"customFields" : {}
 			}
+		],
+		"MovingPlatform": [
+			{
+				"id": "MovingPlatform",
+				"iid": "4d8ee2e0-5e50-11f0-99f8-872b7ae4b6e8",
+				"layer": "Entities",
+				"x": 136,
+				"y": 200,
+				"width": 48,
+				"height": 16,
+				"color": 4098376,
+				"customFields": {
+					"active": true,
+					"targetPosition": {
+						"cx": 19,
+						"cy": 12
+					},
+					"launchBoostForce": 15
+				}
+			}
+		],
+		"Platform2Right": [
+			{
+				"id": "Platform2Right",
+				"iid": "ddc45170-5e50-11f0-8e14-0f1c21a7d503",
+				"layer": "Entities",
+				"x": 272,
+				"y": 160,
+				"width": 32,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			}
 		]
 	}
 }

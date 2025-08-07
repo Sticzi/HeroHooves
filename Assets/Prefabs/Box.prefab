@@ -218,7 +218,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 256
+      m_Bits: 16640
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 89
