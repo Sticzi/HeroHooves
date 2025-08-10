@@ -102,6 +102,19 @@
 				"customFields" : {}
 			}
 		],
+		"Platform1Left": [
+			{
+				"id": "Platform1Left",
+				"iid": "a27560a0-5e50-11f0-9377-717e5f597181",
+				"layer": "Entities",
+				"x": 416,
+				"y": 288,
+				"width": 16,
+				"height": 16,
+				"color": 14120515,
+				"customFields" : {}
+			}
+		],
 		"Box2x2": [
 			{
 				"id": "Box2x2",

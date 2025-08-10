@@ -2,9 +2,9 @@
 	"identifier": "Level_17World",
 	"uniqueIdentifer": "1314ed50-4ce0-11ef-9823-1dca358901f2",
 	"x": 8512,
-	"y": -432,
+	"y": -608,
 	"width": 448,
-	"height": 416,
+	"height": 592,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -30,7 +30,7 @@
 				"iid": "8f42ef80-4ce0-11ef-9823-f934390f433d",
 				"layer": "Entities",
 				"x": 16,
-				"y": 128,
+				"y": 304,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,
@@ -43,7 +43,7 @@
 				"iid": "4d8ee2e0-5e50-11f0-99f8-872b7ae4b6e8",
 				"layer": "Entities",
 				"x": 136,
-				"y": 200,
+				"y": 376,
 				"width": 48,
 				"height": 16,
 				"color": 4098376,
@@ -51,7 +51,7 @@
 					"active": true,
 					"targetPosition": {
 						"cx": 19,
-						"cy": 12
+						"cy": 23
 					},
 					"launchBoostForce": 15
 				}
@@ -63,7 +63,7 @@
 				"iid": "ddc45170-5e50-11f0-8e14-0f1c21a7d503",
 				"layer": "Entities",
 				"x": 272,
-				"y": 160,
+				"y": 336,
 				"width": 32,
 				"height": 16,
 				"color": 16690740,

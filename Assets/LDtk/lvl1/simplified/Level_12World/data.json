@@ -138,6 +138,21 @@
 				"customFields" : {}
 			}
 		],
+		"Goblin": [
+			{
+				"id": "Goblin",
+				"iid": "a658ea50-5e50-11f0-9377-bfb912189490",
+				"layer": "Entities",
+				"x": 448,
+				"y": 304,
+				"width": 16,
+				"height": 16,
+				"color": 6539085,
+				"customFields": {
+					"facingRight": false
+				}
+			}
+		],
 		"Box2x2": [
 			{
 				"id": "Box2x2",

@@ -254,7 +254,7 @@ public class StartDialogue : MonoBehaviour
         landTween = DOVirtual.Float(0, 1, duration, _ =>
         {
             runningKnight.GetComponent<Animator>().SetFloat("speed", Mathf.Abs(runningKnight.GetComponent<Rigidbody2D>().velocity.x));
-            runningKnight.GetComponent<KnightController2D>().Move(15); // Call knightMove() every frame
+            runningKnight.GetComponent<KnightController2D>().Move(1); // Call knightMove() every frame
 
             if (runningKnight.GetComponent<Rigidbody2D>().IsTouching(WallFilter))
             {
