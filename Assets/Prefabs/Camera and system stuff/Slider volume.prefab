@@ -165,7 +165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1630321388623678449}
   - component: {fileID: 1630321388623678448}
-  - component: {fileID: 4229745731937887501}
   - component: {fileID: 8282321661093904433}
   m_Layer: 5
   m_Name: Slider volume
@@ -259,18 +258,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4229745731937887501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630321388623678450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315a79bd6542d84da0ea20aab96241d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8282321661093904433
 MonoBehaviour:
   m_ObjectHideFlags: 0
