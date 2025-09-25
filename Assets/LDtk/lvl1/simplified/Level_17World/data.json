@@ -24,27 +24,6 @@
 		"Spikes.png"
 	],
 	"entities": {
-		"MovingPlatform": [
-			{
-				"id": "MovingPlatform",
-				"iid": "4bc96040-4ce0-11ef-9823-f50916e62d44",
-				"layer": "Entities",
-				"x": 344,
-				"y": 216,
-				"width": 48,
-				"height": 16,
-				"color": 4098376,
-				"customFields": {
-					"Position": [
-						{
-							"cx": 8,
-							"cy": 13
-						}
-					],
-					"Active": true
-				}
-			}
-		],
 		"Checkpoint": [
 			{
 				"id": "Checkpoint",

@@ -3,17 +3,13 @@
 	"uniqueIdentifer": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
 	"x": 9408,
 	"y": -448,
-	"width": 448,
+	"width": 512,
 	"height": 352,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "94b43730-4ce0-11ef-9823-b7fb0d6e8573",
 			"dir": "w"
-		},
-		{
-			"levelIid": "1f0fd050-4ce0-11ef-a59b-cbfb31be55f6",
-			"dir": "e"
 		}
 	],
 	"customFields" : {},

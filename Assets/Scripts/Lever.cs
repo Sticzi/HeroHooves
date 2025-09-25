@@ -31,14 +31,14 @@ public class Lever : MonoBehaviour
     {
         if(isLeverRight)
         {
-            movingPlatform.moving = false;
+            //movingPlatform.moving = false;
             leverRenderer.sprite = leverLeftSprite;
             isLeverRight = false;
         }
         else
         {
             isLeverRight = true;
-            movingPlatform.moving = true;
+            //movingPlatform.moving = true;
             leverRenderer.sprite = leverRightSprite;
         }
         

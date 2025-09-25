@@ -10,8 +10,8 @@ public class OptionsMenu : MonoBehaviour
 
     public Dropdown resolutionDropdown;
     public Slider generalVolumeSlider;
-    public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
+    public Slider musicVolumeSlider;
     public Resolution[] resolutions;
 
     void Start()
@@ -59,17 +59,23 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetGeneralVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        float normalized = volume / 10;   
+        float dB = (normalized > 0) ? Mathf.Lerp(-50f, 0f, normalized) : -80f;
+        audioMixer.SetFloat("volume", dB);
     }
 
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("music", volume);
+        float normalized = volume / 10;
+        float dB = (normalized > 0) ? Mathf.Lerp(-50f, 0f, normalized) : -80f;
+        audioMixer.SetFloat("music", dB);
     }
 
     public void SetSFXVolume(float volume)
     {
-        audioMixer.SetFloat("sfx", volume);
+        float normalized = volume / 10;
+        float dB = (normalized > 0) ? Mathf.Lerp(-50f, 0f, normalized) : -80f;
+        audioMixer.SetFloat("sfx", dB);
     }
 
     public void SetFullscreen(bool isFullscreen)

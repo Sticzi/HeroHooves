@@ -30,7 +30,6 @@ public class BetterJump : MonoBehaviour
             minimalJumpCounter = minimalJumpTime;
             jump = false;
         }
-
         else if(minimalJumpCounter > 0)
         {
             minimalJumpCounter -= Time.deltaTime;
@@ -39,16 +38,17 @@ public class BetterJump : MonoBehaviour
 
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;            
+            rb.velocity += (fallMultiplier - 1) * Physics2D.gravity.y * Time.deltaTime * Vector2.up;            
         }
-
-        if(horseMovement == null && rb.velocity.y > 0 && !isTossed)
+        //that's for other stuff
+        if(!horseMovement && rb.velocity.y > 0 && !isTossed)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.velocity += (lowJumpMultiplier - 1) * Physics2D.gravity.y * Time.deltaTime * Vector2.up;
         }
-        else if(horseMovement!= null && rb.velocity.y > 0 && !horseMovement.jump.IsPressed() && minimalJumpCounter <= 0 && !isTossed)
+        //that's for horse
+        else if(horseMovement && rb.velocity.y > 0 && !horseMovement.jump.IsPressed() && minimalJumpCounter <= 0 && !isTossed)
         {            
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.velocity += (lowJumpMultiplier - 1) * Physics2D.gravity.y * Time.deltaTime * Vector2.up;
         }
 
         //if(Input.GetButtonUp("Jump") && rb.velocity.y > 0)

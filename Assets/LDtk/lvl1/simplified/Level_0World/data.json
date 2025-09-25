@@ -23,10 +23,10 @@
 		"Checkpoint": [
 			{
 				"id": "Checkpoint",
-				"iid": "199eda00-fec0-11ee-b8ab-679922e83ab5",
+				"iid": "1d12d5c0-e920-11ef-a95e-ef1eff5c40b8",
 				"layer": "Entities",
-				"x": 96,
-				"y": 352,
+				"x": 80,
+				"y": 208,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,

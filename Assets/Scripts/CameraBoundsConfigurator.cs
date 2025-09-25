@@ -33,7 +33,7 @@ public class CameraBoundsConfigurator : MonoBehaviour
                         compositeCollider.geometryType = CompositeCollider2D.GeometryType.Polygons;
                         compositeCollider.isTrigger = true;
 
-                        Debug.Log($"Updated CompositeCollider2D in {level.name}/CameraBound.");
+                        //Debug.Log($"Updated CompositeCollider2D in {level.name}/CameraBound.");
                     }
                     else
                     {

@@ -16,6 +16,11 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    public void AttackSound()
+    {
+        FindObjectOfType<AudioManager>().Play("goblinAttack");
+    }
+
     public void Start()
     {
         facingRight = GetComponent<LDtkFields>().GetBool("facingRight");
@@ -30,7 +35,7 @@ public class Obstacle : MonoBehaviour
         anim.SetTrigger("Death");
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
-
+        FindObjectOfType<AudioManager>().Play("goblinDeath");
         Destroy(this.gameObject, 1.5f);
     }
 }

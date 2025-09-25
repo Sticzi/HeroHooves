@@ -10,6 +10,7 @@ public class NextLevel : MonoBehaviour
 
     public int nextRoom;
     public string nextWorld;
+    public string nextLevel;
 
     public bool isOn = false;
 
@@ -17,6 +18,7 @@ public class NextLevel : MonoBehaviour
     {
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,10 +29,24 @@ public class NextLevel : MonoBehaviour
                 gameMaster.knightSavedRoom = nextRoom;
                 gameMaster.horseSavedRoom = nextRoom;
                 gameMaster.savedWorldName = nextWorld;
+                gameMaster.savedLevelName = nextLevel;
 
-                //gameMaster.savedBackgroundPos[1] = BackGroundPos;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                gameMaster.Save();
+
+                TransitionToNewWorld();
             }
         }
+    }
+
+    private void TransitionToNewWorld()
+    {
+        SceneManager.LoadSceneAsync(nextLevel).completed += _ =>
+        {
+            // Reinitialize game elements in new scene
+            if (gameMaster != null)
+            {
+                gameMaster.Load();
+            }
+        };
     }
 }

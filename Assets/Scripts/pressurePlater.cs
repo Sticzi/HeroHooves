@@ -1,63 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using LDtkUnity;
 
-public class pressurePlater : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class PressurePlate : MonoBehaviour
 {
+    [Header("Detection Settings")]
+    [SerializeField] private ContactFilter2D _contactFilter;
+    [SerializeField] private float _checkInterval = 0.1f;
 
-    public ContactFilter2D ContactFilterPlayer;
-    public Rigidbody2D rb;
-    public bool IsPressed => rb.IsTouching(ContactFilterPlayer);
-    private MovePlatform movingPlatform;
-    public SpriteRenderer spriteRenderer;
-    public Sprite clickedPlate;
-    public Sprite defaultPlate;
-    public AudioSource clickSound;
-    public AudioSource clickOffSound;
+    [Header("Platform Control")]
+    [SerializeField] private MovePlatform _targetPlatform;
 
-    private bool wasPressed = false;
-    
-    void Start()
+    private Rigidbody2D _rb;
+    private bool _isPressed;
+    private float _lastCheckTime;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        movingPlatform = GetComponent<LDtkFields>().GetEntityReference("MovingPlatform").GetEntity().gameObject.transform.GetChild(0).GetComponent<MovePlatform>();        
+        _rb = GetComponent<Rigidbody2D>();
+        InitializePlatformReference();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void InitializePlatformReference()
     {
-        if(IsPressed)
+        if (_targetPlatform != null) return;
+
+        var entityRef = GetComponent<LDtkFields>().GetEntityReference("MovingPlatform");
+        if (entityRef != null)
         {
-            Click();
-        }
-        else 
-        {
-            if (wasPressed)
-                ClickOff();
+            _targetPlatform = entityRef.GetEntity().GetComponentInChildren<MovePlatform>();
         }
     }
 
-    public void Click()
+    private void FixedUpdate()
     {
-        movingPlatform.moving = true;
-        spriteRenderer.sprite = clickedPlate;
-        if(wasPressed == false)
-        {
-            clickSound.Play();
-        }        
-        wasPressed = true;
+        if (Time.time - _lastCheckTime < _checkInterval) return;
 
+        _lastCheckTime = Time.time;
+        bool currentState = _rb.IsTouching(_contactFilter);
+
+        if (currentState != _isPressed)
+        {
+            _isPressed = currentState;
+            UpdatePlatformState();
+        }
     }
 
-    public void ClickOff()
+    private void UpdatePlatformState()
     {
-        movingPlatform.moving = false;
-        spriteRenderer.sprite = defaultPlate;
-        if(wasPressed == true)
+        if (_targetPlatform == null)
         {
-            clickOffSound.Play();
-        }        
-        wasPressed = false;
+            Debug.LogWarning("No platform assigned to pressure plate!", this);
+            return;
+        }
+
+        _targetPlatform.ToggleMovement(_isPressed);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_targetPlatform != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, _targetPlatform.transform.position);
+        }
     }
 }
