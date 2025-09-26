@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -17,21 +17,48 @@ public class OptionsMenu : MonoBehaviour
     void Start()
     {
         // Set the sliders to match the current mixer values
-        float generalVolume, musicVolume, sfxVolume;
+        float volume;
 
-        if (audioMixer.GetFloat("volume", out generalVolume))
+        if (audioMixer.GetFloat("volume", out float dB))
         {
-            generalVolumeSlider.value = generalVolume;
+            if (dB <= -79f)
+            {
+                volume = 0;
+            }
+            else
+            {
+                float normalized = Mathf.InverseLerp(-50f, 0f, dB); // maps dB to 0..1
+                volume = Mathf.RoundToInt(normalized * 10f);        // maps 0..1 → 0..10
+            }
+            generalVolumeSlider.value = volume;
         }
 
-        if (audioMixer.GetFloat("music", out musicVolume))
+        if (audioMixer.GetFloat("music", out dB))
         {
-            musicVolumeSlider.value = musicVolume;
+            if (dB <= -79f)
+            {
+                volume = 0;
+            }
+            else
+            {
+                float normalized = Mathf.InverseLerp(-50f, 0f, dB); // maps dB to 0..1
+                volume = Mathf.RoundToInt(normalized * 10f);        // maps 0..1 → 0..10
+            }
+            musicVolumeSlider.value = volume;
         }
 
-        if (audioMixer.GetFloat("sfx", out sfxVolume))
+        if (audioMixer.GetFloat("sfx", out dB))
         {
-            sfxVolumeSlider.value = sfxVolume;
+            if (dB <= -79f)
+            {
+                volume = 0;
+            }
+            else
+            {
+                float normalized = Mathf.InverseLerp(-50f, 0f, dB); // maps dB to 0..1
+                volume = Mathf.RoundToInt(normalized * 10f);        // maps 0..1 → 0..10
+            }
+            sfxVolumeSlider.value = volume;
         }
 
         // Set up resolution dropdown options
