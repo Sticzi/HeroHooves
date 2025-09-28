@@ -38,12 +38,15 @@ public class StartDialogue : MonoBehaviour
 
     public void IntroCutscene()
     {
+        FindObjectOfType<AudioManager>().Stop("MainMenuMusic");
+        FindObjectOfType<AudioManager>().Play("Intro");
         actualKnight = GameObject.FindGameObjectWithTag("Knight");
 
         var impulseSource = GetComponent<CinemachineImpulseSource>();
         MaineMenuVirtualCamera.Priority = 0;
         DOVirtual.DelayedCall(10f, () =>
         {
+            FindObjectOfType<AudioManager>().Stop("Intro");
             FindObjectOfType<AudioManager>().Play("Hit");
             impulseSource.GenerateImpulse();            
             //DialogueVirtualCamera.Priority = 15;
@@ -163,6 +166,10 @@ public class StartDialogue : MonoBehaviour
 
     private void Running(GameObject runner, float speed, float distance, System.Action onStopCallback = null)
     {
+        if (runner == null)
+        {
+            return;
+        }
         Rigidbody2D runnerRb = runner.GetComponent<Rigidbody2D>();
         Animator runnerAnimator = runner.GetComponent<Animator>();
         float runDuration = distance / speed; // Calculate how long the run should last
@@ -188,6 +195,10 @@ public class StartDialogue : MonoBehaviour
 
     private void GoblinJump(GameObject jumper, float jumpHeight, float jumpDistance, float jumpDuration, System.Action onLandCallback = null)
     {
+        if (jumper == null)
+        {
+            return;
+        }
         Rigidbody2D jumperRb = jumper.GetComponent<Rigidbody2D>();
         Animator jumperAnimator = jumper.GetComponent<Animator>();
 
@@ -249,6 +260,8 @@ public class StartDialogue : MonoBehaviour
 
     private void StartKnightMovement(float duration)
     {
+        FindObjectOfType<AudioManager>().Stop("GoblinEscape");
+        FindObjectOfType<AudioManager>().Play("LevelMusic");
         bool siema = false;
         // Use a dummy tween as a timer
         landTween = DOVirtual.Float(0, 1, duration, _ =>
@@ -262,7 +275,9 @@ public class StartDialogue : MonoBehaviour
                 
                 if(siema == false)
                 {
+                    FindObjectOfType<AudioManager>().Stop("LevelMusic");
                     FindObjectOfType<AudioManager>().Play("bump");
+
                     runningKnight.GetComponent<Animator>().enabled = false;
                     runningKnight.GetComponent<SpriteRenderer>().sprite = KnightIdle;
                     siema = true;
@@ -299,6 +314,8 @@ public class StartDialogue : MonoBehaviour
 
     public void GoblinStartRun()
     {
+        Destroy(goblin, 7);
+        FindObjectOfType<AudioManager>().Play("GoblinEscape");
         // First run
         Running(goblin, initialRunSpeed, initialRunDistance, () =>
         {
@@ -311,10 +328,7 @@ public class StartDialogue : MonoBehaviour
                     // Second jump
                     GoblinJump(goblin, secondJumpHeight, secondJumpDistance, secondJumpDuration, () =>
                     {
-                        Running(goblin, initialRunSpeed, initialRunDistance, () =>
-                        {
-                            Destroy(goblin);
-                        });
+                        Running(goblin, initialRunSpeed, initialRunDistance);
                     });
                 });
             });

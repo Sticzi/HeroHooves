@@ -139,6 +139,7 @@ public class KnightController2D : MonoBehaviour
     #region Character Control
     public async void SwapCharacter(string whoIsControlled)
     {
+        Debug.Log("bingh0");
         CinemachineVirtualCamera knightCamera = virtualCameraKnight.GetComponent<CinemachineVirtualCamera>();
         CinemachineVirtualCamera horseCamera = GameObject.FindGameObjectWithTag("VirtualCameraHorse").GetComponent<CinemachineVirtualCamera>();
 

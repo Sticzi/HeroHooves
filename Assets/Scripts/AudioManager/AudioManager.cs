@@ -47,6 +47,11 @@ public class AudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        //StartMusic();
+    }
+
+    private void Start()
+    {
         StartMusic();
     }
 
@@ -65,7 +70,7 @@ public class AudioManager : MonoBehaviour
         else if (targetSceneIndex == 1) // Assuming 1 is the Level
         {
             Debug.Log("Playing LevelMusic");
-            Play("LevelMusic");
+            Play("LevelMusic2");
         }
     }
 

@@ -101,7 +101,7 @@ public class OptionsMenu : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         float normalized = volume / 10;
-        float dB = (normalized > 0) ? Mathf.Lerp(-50f, 0f, normalized) : -80f;
+        float dB = (normalized > 0) ? Mathf.Lerp(-50f, 15f, normalized) : -80f;
         audioMixer.SetFloat("sfx", dB);
     }
 

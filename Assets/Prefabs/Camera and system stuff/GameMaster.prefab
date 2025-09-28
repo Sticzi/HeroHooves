@@ -187,7 +187,6 @@ GameObject:
   - component: {fileID: 6033189527466410153}
   - component: {fileID: 4527284004094821671}
   - component: {fileID: 3456719483789286954}
-  - component: {fileID: 1389859728853784590}
   - component: {fileID: 7870410114943160825}
   m_Layer: 0
   m_Name: GameMaster
@@ -226,9 +225,8 @@ MonoBehaviour:
   player: {fileID: 0}
   knightSavedRoom: 4
   horseSavedRoom: 4
-  savedBackgroundPos: []
-  playerPositionTesting: {fileID: 0}
-  levelOfFirstSpawnPoint: {fileID: 0}
+  savedWorldName: 
+  savedLevelName: 
 --- !u!114 &4527284004094821671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +246,6 @@ MonoBehaviour:
   doors: {fileID: 0}
   goblin: {fileID: 0}
   runningKnight: {fileID: 0}
-  actualKnight: {fileID: 0}
   player: {fileID: 0}
   WallFilter:
     useTriggers: 0
@@ -336,19 +333,6 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 1000
     m_PropagationSpeed: 343
---- !u!114 &1389859728853784590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033189527466410155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75da228f7fa490944b407fc7c65ce278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  world: {fileID: 0}
 --- !u!114 &7870410114943160825
 MonoBehaviour:
   m_ObjectHideFlags: 0

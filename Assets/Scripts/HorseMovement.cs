@@ -63,6 +63,7 @@ public class HorseMovement : MonoBehaviour
         set { canPickUp = value; }
     }
     public bool IsHorseControlled { get; set; } = true;
+    public bool IsHorsePaused { get; set; } = false;
 
     // Input System
     public PlayerInputActions playerInput; 
@@ -124,6 +125,7 @@ public class HorseMovement : MonoBehaviour
 
         HandleMovement();
         HandleJumpBuffer();
+          
 
         HandleCoyoteTime();
         HandleLookDown();
@@ -133,7 +135,7 @@ public class HorseMovement : MonoBehaviour
     #region Input Handlers
     private void OnJumpPerformed(InputAction.CallbackContext context)
     {
-        if (IsHorseControlled&& canJump)
+        if (IsHorseControlled&& canJump && !IsHorsePaused)
         {
             jumpBufferCounter = jumpBufferTime;
             controller.Jump(true);
@@ -172,7 +174,7 @@ public class HorseMovement : MonoBehaviour
     #region Core Logic
     private void HandleMovement()
     {
-        if (!IsHorseControlled)
+        if (!IsHorseControlled || IsHorsePaused)
         {
             controller.Move(0);
             return;

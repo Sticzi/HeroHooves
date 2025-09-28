@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Finished Levels/actuall main menu chyba 1.unity
+    path: Assets/Scenes/Finished Levels/MainMenuFinal.unity
     guid: 6b8f2eed36510a64da41bdba8e40f665
   - enabled: 1
     path: Assets/Scenes/WorkInProgress/faktyczne levelki.unity

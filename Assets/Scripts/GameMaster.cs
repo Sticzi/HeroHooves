@@ -63,10 +63,10 @@ public class GameMaster : MonoBehaviour
             knightSavedRoom = 1;
             horseSavedRoom = 1;
             savedWorldName = "World";
-            savedLevelName = "actuall main menu chyba 1";
+            savedLevelName = "MainMenuFinal";
         }
 
-        SceneManager.LoadSceneAsync(savedLevelName);
+        //SceneManager.LoadSceneAsync(savedLevelName);
 
     }
 
@@ -81,7 +81,7 @@ public class GameMaster : MonoBehaviour
         knightSavedRoom = 1;
         horseSavedRoom = 1;
         savedWorldName = "World";
-        savedLevelName = "actuall main menu chyba 1";
+        savedLevelName = "MainMenuFinal";
         Save();
     }
 

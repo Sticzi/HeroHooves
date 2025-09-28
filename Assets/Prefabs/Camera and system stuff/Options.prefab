@@ -62,8 +62,8 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 1d66f10ad9ec29246bbf15b334692043, type: 2}
   resolutionDropdown: {fileID: 4571554431045106648}
   generalVolumeSlider: {fileID: 4571554431813607417}
-  sfxVolumeSlider: {fileID: 0}
-  musicVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 3091691858235609449}
+  musicVolumeSlider: {fileID: 5605221156873095295}
 --- !u!1 &2948108848702658674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,7 +3336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GENERAL SOUND
+  m_text: VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84909ceb69229744580728b3ef19c461, type: 2}
   m_sharedMaterial: {fileID: 4197591600973059663, guid: 84909ceb69229744580728b3ef19c461,
@@ -3472,7 +3472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GENERAL SOUND
+  m_text: VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84909ceb69229744580728b3ef19c461, type: 2}
   m_sharedMaterial: {fileID: 4197591600973059663, guid: 84909ceb69229744580728b3ef19c461,
@@ -3608,7 +3608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GENERAL SOUND
+  m_text: MUSIC VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84909ceb69229744580728b3ef19c461, type: 2}
   m_sharedMaterial: {fileID: 4197591600973059663, guid: 84909ceb69229744580728b3ef19c461,
@@ -3744,7 +3744,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GENERAL SOUND
+  m_text: 'EFFECT VOLUME
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84909ceb69229744580728b3ef19c461, type: 2}
   m_sharedMaterial: {fileID: 4197591600973059663, guid: 84909ceb69229744580728b3ef19c461,
@@ -3879,7 +3881,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GENERAL SOUND
+  m_text: MUSIC VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84909ceb69229744580728b3ef19c461, type: 2}
   m_sharedMaterial: {fileID: 4197591600973059663, guid: 84909ceb69229744580728b3ef19c461,
@@ -4014,7 +4016,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GENERAL SOUND
+  m_text: 'EFFECT VOLUME
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84909ceb69229744580728b3ef19c461, type: 2}
   m_sharedMaterial: {fileID: 4197591600973059663, guid: 84909ceb69229744580728b3ef19c461,
@@ -4235,15 +4239,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &4571554431813607416 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1630321388623678449, guid: c406017c0e9f9384ca48669a4acc801b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3013326113796396041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4571554431813607419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1630321388623678450, guid: c406017c0e9f9384ca48669a4acc801b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3013326113796396041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4571554431813607416 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1630321388623678449, guid: c406017c0e9f9384ca48669a4acc801b,
     type: 3}
   m_PrefabInstance: {fileID: 3013326113796396041}
   m_PrefabAsset: {fileID: 0}
@@ -4291,6 +4295,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1573077200802435070}
+    - target: {fileID: 1630321388623678448, guid: c406017c0e9f9384ca48669a4acc801b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 1630321388623678449, guid: c406017c0e9f9384ca48669a4acc801b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4414,6 +4423,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4343710807158889113}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3091691858235609449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630321388623678448, guid: c406017c0e9f9384ca48669a4acc801b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4343710807158889113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6586987638023914383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4428,9 +4449,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630321388623678448, guid: c406017c0e9f9384ca48669a4acc801b,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630321388623678448, guid: c406017c0e9f9384ca48669a4acc801b,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1573077200802435070}
+    - target: {fileID: 1630321388623678448, guid: c406017c0e9f9384ca48669a4acc801b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 1630321388623678449, guid: c406017c0e9f9384ca48669a4acc801b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4554,3 +4585,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6586987638023914383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5605221156873095295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630321388623678448, guid: c406017c0e9f9384ca48669a4acc801b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6586987638023914383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
