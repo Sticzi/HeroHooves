@@ -21,9 +21,13 @@ public class Sound
     public float startTime = 0f;
     public float duration = 0f;
     public bool loop = false;
-    public bool allowMultiple = false; // Dodajemy tę opcję tutaj, żeby nie zmieniać AudioManagera
+    public bool allowMultiple = false;
 
     public AudioMixerGroup mixerGroup;
+
+    [Header("Fade Settings")]
+    public float fadeInSeconds = 0;
+    public float fadeOutTime = 0;
 
     [HideInInspector]
     public AudioSource source;

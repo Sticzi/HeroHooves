@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class AudioManager : MonoBehaviour
 {
-    public int targetSceneIndex; // The scene index that triggers the music    
+    public int targetSceneIndex;
     public static AudioManager instance;
 
     public AudioMixerGroup mixerGroup;
@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.loop = s.loop;
             s.source.outputAudioMixerGroup = s.mixerGroup;
+            s.source.volume = 0f; // start always silent (for fade in)
         }
     }
 
@@ -62,12 +63,12 @@ public class AudioManager : MonoBehaviour
         Stop("LevelMusic");
         Stop("MainMenuMusic");
 
-        if (targetSceneIndex == 0) // Assuming 0 is Main Menu
+        if (targetSceneIndex == 0)
         {
             Debug.Log("Playing MainMenuMusic");
             Play("MainMenuMusic");
         }
-        else if (targetSceneIndex == 1) // Assuming 1 is the Level
+        else if (targetSceneIndex == 1)
         {
             Debug.Log("Playing LevelMusic");
             Play("LevelMusic2");
@@ -83,38 +84,48 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        float targetVolume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+
         if (s.allowMultiple)
         {
             AudioSource newSource = gameObject.AddComponent<AudioSource>();
             newSource.clip = s.clip;
             newSource.loop = s.loop;
             newSource.outputAudioMixerGroup = s.mixerGroup;
-            newSource.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+            newSource.volume = 0f;
             newSource.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-            newSource.time = s.startTime; // Set playback position
+            newSource.time = s.startTime;
             newSource.Play();
+
+            // fade in
+            newSource.DOFade(targetVolume, s.fadeInSeconds);
 
             activeSources.Add(newSource);
 
             if (s.duration > 0f)
             {
-                DOVirtual.DelayedCall(s.duration, () => {
-                    newSource.Stop();
-                    activeSources.Remove(newSource);
-                    Destroy(newSource);
+                DOVirtual.DelayedCall(s.duration, () =>
+                {
+                    StopWithFade(newSource, s.fadeOutTime);
                 });
             }
         }
         else
         {
-            s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+            s.source.volume = 0f;
             s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-            s.source.time = s.startTime; // Set playback position
+            s.source.time = s.startTime;
             s.source.Play();
+
+            // fade in
+            s.source.DOFade(targetVolume, s.fadeInSeconds);
 
             if (s.duration > 0f)
             {
-                DOVirtual.DelayedCall(s.duration, () => s.source.Stop());
+                DOVirtual.DelayedCall(s.duration, () =>
+                {
+                    Stop(sound);
+                });
             }
         }
     }
@@ -130,26 +141,36 @@ public class AudioManager : MonoBehaviour
 
         if (s.allowMultiple)
         {
-            // Usuniêcie wszystkich aktywnych instancji tego dŸwiêku
             for (int i = activeSources.Count - 1; i >= 0; i--)
             {
                 if (activeSources[i].clip == s.clip)
                 {
-                    activeSources[i].Stop();
-                    Destroy(activeSources[i]);
+                    StopWithFade(activeSources[i], s.fadeOutTime);
                     activeSources.RemoveAt(i);
                 }
             }
         }
         else
         {
-            // Zatrzymanie pojedynczego Ÿród³a dŸwiêku
-            if (s.source != null)
+            if (s.source != null && s.source.isPlaying)
             {
-                s.source.Stop();
-                s.source.time = 0f; // Resetowanie pozycji odtwarzania
+                s.source.DOFade(0f, s.fadeOutTime).OnComplete(() =>
+                {
+                    s.source.Stop();
+                    s.source.time = 0f;
+                });
             }
         }
     }
 
+    private void StopWithFade(AudioSource source, float fadeOutTime)
+    {
+        if (source == null) return;
+
+        source.DOFade(0f, fadeOutTime).OnComplete(() =>
+        {
+            source.Stop();
+            Destroy(source);
+        });
+    }
 }

@@ -39,7 +39,11 @@ public class StartDialogue : MonoBehaviour
     public void IntroCutscene()
     {
         FindObjectOfType<AudioManager>().Stop("MainMenuMusic");
-        FindObjectOfType<AudioManager>().Play("Intro");
+        DOVirtual.DelayedCall(2f, () =>
+        {
+            FindObjectOfType<AudioManager>().Play("Intro");
+        });
+        
         actualKnight = GameObject.FindGameObjectWithTag("Knight");
 
         var impulseSource = GetComponent<CinemachineImpulseSource>();
@@ -50,7 +54,7 @@ public class StartDialogue : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Hit");
             impulseSource.GenerateImpulse();            
             //DialogueVirtualCamera.Priority = 15;
-            DOVirtual.DelayedCall(1.5f, () =>
+            DOVirtual.DelayedCall(1.2f, () =>
             {
                 FindObjectOfType<AudioManager>().Play("Hit");
                 impulseSource.GenerateImpulse();
