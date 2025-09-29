@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneIndex: 0
-  mixerGroup: {fileID: 24300002, guid: 1d66f10ad9ec29246bbf15b334692043, type: 2}
+  poolSize: 50
+  defaultMixerGroup: {fileID: 24300002, guid: 1d66f10ad9ec29246bbf15b334692043, type: 2}
   sounds:
   - name: LevelMusic
     clip: {fileID: 8300000, guid: a3fd5094aff2bda41a8022fa46393adc, type: 3}
@@ -55,12 +56,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 1
-    allowMultiple: 0
+    isMusic: 0
+    fadeInSeconds: 0.4
+    fadeOutTime: 0
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
-    fadeInSeconds: 0.5
-    fadeOutTime: 0
-    source: {fileID: 0}
   - name: LevelMusic2
     clip: {fileID: 8300000, guid: 31ced7c1d5d2c8b4293d837f34cf27b8, type: 3}
     volume: 0.5
@@ -70,27 +70,25 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 1
-    allowMultiple: 0
-    mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: Intro
     clip: {fileID: 8300000, guid: d67b1c27d7c84024e90a20b07e11e8b9, type: 3}
-    volume: 0.5
+    volume: 0.425
     volumeVariance: 0
     pitch: 0.85
     pitchVariance: 0
     startTime: 0
     duration: 0
     loop: 1
-    allowMultiple: 0
-    mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 1.2
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: GoblinEscape
     clip: {fileID: 8300000, guid: cee528f4de7f64946a844aef3ae191d2, type: 3}
     volume: 0.5
@@ -100,12 +98,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 1
-    allowMultiple: 0
+    isMusic: 0
+    fadeInSeconds: 0
+    fadeOutTime: 0.5
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
-    fadeInSeconds: 0.5
-    fadeOutTime: 0.5
-    source: {fileID: 0}
   - name: MainMenuMusic
     clip: {fileID: 8300000, guid: 9391429170ae86b4c923f4b0e650b599, type: 3}
     volume: 0.7
@@ -115,12 +112,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 1
-    allowMultiple: 0
+    isMusic: 0
+    fadeInSeconds: 0
+    fadeOutTime: 0.5
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
-    fadeInSeconds: 0.25
-    fadeOutTime: 0.5
-    source: {fileID: 0}
   - name: SpringJump
     clip: {fileID: 8300000, guid: c953d5aea4523f74c8586951c79f60e0, type: 3}
     volume: 0.7
@@ -130,12 +126,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: Hit
     clip: {fileID: 8300000, guid: 55a99acdc8794b34a9a9410c4373cf6c, type: 3}
     volume: 0.5
@@ -145,12 +140,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: Equip
     clip: {fileID: 8300000, guid: 2acdb0b1e896ee84690c62d9a23bde3a, type: 3}
     volume: 0.5
@@ -160,12 +154,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: FallingPlatform
     clip: {fileID: 8300000, guid: c990913989934a04d8750d9f9b2cf3a8, type: 3}
     volume: 0.3
@@ -175,12 +168,11 @@ MonoBehaviour:
     startTime: 0.5
     duration: 1.25
     loop: 0
-    allowMultiple: 1
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: Jump
     clip: {fileID: 8300000, guid: 3b754522699ea0646a63e91653754b08, type: 3}
     volume: 0.7
@@ -190,12 +182,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: DoubleJump
     clip: {fileID: 8300000, guid: 3b754522699ea0646a63e91653754b08, type: 3}
     volume: 0.75
@@ -205,12 +196,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: Attack
     clip: {fileID: 8300000, guid: 4950b66e0659fc5419e89f58e8dadbfc, type: 3}
     volume: 0.5
@@ -220,57 +210,53 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: charSound
     clip: {fileID: 8300000, guid: 33891357cb944d046b7ac1f192b5f184, type: 3}
     volume: 0.12
     volumeVariance: 0
-    pitch: 0.7
+    pitch: 0.75
     pitchVariance: 0
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
-  - name: bump
-    clip: {fileID: 8300000, guid: 66e8bfdce5eb44c40ad2039f107c7d9e, type: 3}
-    volume: 0.6
-    volumeVariance: 0.07
-    pitch: 0.69
-    pitchVariance: 0.05
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
+  - name: click
+    clip: {fileID: 8300000, guid: b825e721ba189a242aa9223eca2a3cd6, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 0.9
+    pitchVariance: 0
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
-  - name: OUCHY
-    clip: {fileID: 8300000, guid: 66e8bfdce5eb44c40ad2039f107c7d9e, type: 3}
-    volume: 0.7
-    volumeVariance: 0.07
-    pitch: 0.69
-    pitchVariance: 0.05
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
+  - name: click2
+    clip: {fileID: 8300000, guid: 74699536442cbdd4c8d0934d51d2c2ce, type: 3}
+    volume: 0.12
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: horseStep
     clip: {fileID: 8300000, guid: 41d6e83956246f74098ce6b880f36e72, type: 3}
     volume: 1
@@ -280,12 +266,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: knightStep
     clip: {fileID: 8300000, guid: d2279956907f2174b8d7329e379105cd, type: 3}
     volume: 0.95
@@ -295,12 +280,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: LadderStep
     clip: {fileID: 8300000, guid: fda9caffb0e5b824ea73719fe2ded5a7, type: 3}
     volume: 0.4
@@ -310,12 +294,11 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: goblinDeath
     clip: {fileID: 8300000, guid: e1e8ab55a86a57641b29c93fbf47c2fc, type: 3}
     volume: 0.5
@@ -325,12 +308,11 @@ MonoBehaviour:
     startTime: 0.5
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
   - name: goblinAttack
     clip: {fileID: 8300000, guid: 7d51c55534609fa4e9964a20978d1820, type: 3}
     volume: 0.45
@@ -340,9 +322,8 @@ MonoBehaviour:
     startTime: 0
     duration: 0
     loop: 0
-    allowMultiple: 0
-    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
-      type: 2}
+    isMusic: 0
     fadeInSeconds: 0
     fadeOutTime: 0
-    source: {fileID: 0}
+    mixerGroup: {fileID: -4621237532544510349, guid: 1d66f10ad9ec29246bbf15b334692043,
+      type: 2}
