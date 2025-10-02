@@ -16,6 +16,7 @@ public class EventSensitiveScrollRect : MonoBehaviour, IUpdateSelectedHandler
 
 	public void OnUpdateSelected(BaseEventData eventData)
 	{
+		Debug.Log("eventsens");
 		// helper vars
 		float contentHeight = sr.content.rect.height;
 		float viewportHeight = sr.viewport.rect.height;
