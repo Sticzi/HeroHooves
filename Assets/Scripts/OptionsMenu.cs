@@ -90,50 +90,7 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = resolutions.Length - currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-    }
-
-    //public void ScrollStep()
-    //{
-    //    number = resolutionDropdown.value;
-    //    if (EventSystem.current.currentSelectedGameObject != null)
-    //    {
-    //        string goName = EventSystem.current.currentSelectedGameObject.name;
-    //        // "Item 19: 720x480 75Hz"
-
-    //        string[] parts = goName.Split(' ');
-    //        // ["Item", "19:", "720x480", "75Hz"]
-
-    //        // remove ":" and parse to int
-    //        string numberText = parts[1].TrimEnd(':');
-    //        number = int.Parse(numberText);            
-    //    }
-    //    Scrollbar scrollbar = GetComponentInChildren<Scrollbar>();
-
-    //    if (previousNumber < number)
-    //    {
-    //        if (number > 3)
-    //        {
-    //            float length = resolutions.Length;
-    //            float offset = 1 / (length - 4f);
-    //            float step = 1 - (offset * (number - 3));
-
-    //            scrollbar.value = step;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (number > 2)
-    //        {
-    //            float length = resolutions.Length;
-    //            float offset = 1 / (length - 4f);
-    //            float step = 1 - (offset * (number - 3));
-
-    //            scrollbar.value = step;
-    //        }
-    //    }
-
-    //    previousNumber = number;
-    //}
+    }    
 
     public void SetGeneralVolume(float volume)
     {

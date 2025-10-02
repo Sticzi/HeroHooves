@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public static bool isPaused;
+    private GameObject gameMaster;
 
     [Header("Input Settings")]
     [SerializeField] private InputActionReference pauseAction;
@@ -14,6 +15,11 @@ public class PauseMenu : MonoBehaviour
     {
         pauseAction.action.Enable();
         pauseAction.action.performed += OnPauseInput;
+    }
+
+    public void Start()
+    {
+        gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>().gameObject;
     }
 
     private void OnDestroy()
@@ -53,7 +59,8 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu 1");
+        Destroy(gameMaster);
+        SceneManager.LoadScene("MainMenuFinal");
     }
 
     public void QuitGame()

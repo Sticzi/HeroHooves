@@ -30,22 +30,22 @@ public class NextLevel : MonoBehaviour
                 gameMaster.horseSavedRoom = nextRoom;
                 gameMaster.savedWorldName = nextWorld;
                 gameMaster.savedLevelName = nextLevel;
-
                 gameMaster.Save();
-
                 TransitionToNewWorld();
             }
         }
     }
 
-    private void TransitionToNewWorld()
+    public void TransitionToNewWorld()
     {
         SceneManager.LoadSceneAsync(nextLevel).completed += _ =>
         {
             // Reinitialize game elements in new scene
             if (gameMaster != null)
-            {
+            {                
+                
                 gameMaster.Load();
+
             }
         };
     }
