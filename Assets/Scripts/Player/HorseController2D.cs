@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
+using System.Threading.Tasks;
+
+
 
 public class HorseController2D : MonoBehaviour
 {
@@ -138,13 +141,43 @@ public class HorseController2D : MonoBehaviour
 
     }
 
+    private async void SpawnJumpCloudWaveAsync(int count = 2, float spread = 0.1f, float lifetime = 3f, int delayMs = 50)
+    {
+        await Task.Delay(delayMs);
+        Debug.Log("siemaa");
+
+        // Determine the direction for rotation based on external velocity
+        Vector2 dir = externalVelocity.normalized;
+
+        // Fallback if velocity is zero
+        if (dir == Vector2.zero) dir = Vector2.up;
+
+        // Calculate rotation angle so cloud is perpendicular to velocity
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f; // -90 because sprite is already perpendicular to (0,1)
+
+        for (int i = 0; i < count; i++)
+        {
+            // Slight random scatter
+            Vector3 offset = new Vector3(Random.Range(-spread, spread), -jumpCloudOffset, 0f);
+
+            // Instantiate cloud with rotation aligned to velocity
+            GameObject cloud = Instantiate(jumpCloud, transform.position + offset, Quaternion.Euler(0f, 0f, angle));
+            Destroy(cloud, lifetime);
+
+            await Task.Delay(delayMs); // delay between each cloud
+        }
+    }
+
     // New method to handle external velocity
     public void ApplyExternalVelocity(Vector2 velocity)
     {
         GetComponent<BetterJump>().isTossed = true;
         externalVelocity += velocity;
-        //externalVelocity = Vector2.ClampMagnitude(externalVelocity, 50f);
+
+        if (jumpCloud != null)
+            SpawnJumpCloudWaveAsync(count: 5, spread: 0, lifetime: 3f, delayMs: 50);
     }
+
 
     // Modified ApplyMovement
     private void ApplyMovement(float move)

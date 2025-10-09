@@ -17,7 +17,6 @@ public class LaunchingPlatform : MonoBehaviour
     
     public bool isActive;
 
-    [Header("Shake Settings")]
     public float shakeDuration = 0.1f;
     public float shakeStrength = 0.2f;
     public int shakeVibrato = 10;
