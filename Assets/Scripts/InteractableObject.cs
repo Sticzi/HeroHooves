@@ -113,7 +113,6 @@ public class InteractableObject : MonoBehaviour
 
             if (interactAction != null && interactAction.action.triggered && canInteract)
             {
-                Debug.Log("siema");
                 OnInteract.Invoke();
             }
 

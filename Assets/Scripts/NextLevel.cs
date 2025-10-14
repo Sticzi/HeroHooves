@@ -42,8 +42,7 @@ public class NextLevel : MonoBehaviour
         {
             // Reinitialize game elements in new scene
             if (gameMaster != null)
-            {                
-                
+            {   
                 gameMaster.Load();
 
             }

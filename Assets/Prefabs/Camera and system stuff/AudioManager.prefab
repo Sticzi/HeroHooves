@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneIndex: 0
-  poolSize: 50
+  poolSize: 80
   defaultMixerGroup: {fileID: 24300002, guid: 1d66f10ad9ec29246bbf15b334692043, type: 2}
   sounds:
   - name: LevelMusic

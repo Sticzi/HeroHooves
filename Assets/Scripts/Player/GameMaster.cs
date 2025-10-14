@@ -57,32 +57,6 @@ public class GameMaster : MonoBehaviour
             savedWorldName = data.worldName;
             savedLevelName = data.levelName;
         }
-        else
-        {
-            // Default starting values (adjust as needed)
-            knightSavedRoom = 1;
-            horseSavedRoom = 1;
-            savedWorldName = "World";
-            savedLevelName = "MainMenuFinal";
-        }
-
-        //SceneManager.LoadSceneAsync(savedLevelName);
-
-    }
-
-    private void OnApplicationQuit()
-    {
-        Save();
-    }
-
-    // Call this when starting a new game
-    public void ResetSave()
-    {
-        knightSavedRoom = 1;
-        horseSavedRoom = 1;
-        savedWorldName = "World";
-        savedLevelName = "MainMenuFinal";
-        Save();
     }
 
     [System.Serializable]
