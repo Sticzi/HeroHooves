@@ -40,6 +40,8 @@ public class AudioManager : MonoBehaviour
         musicSource.loop = true;
         musicSource.playOnAwake = false;
         musicSource.outputAudioMixerGroup = defaultMixerGroup;
+
+        StartMusic();
     }
 
     // Pobranie wolnego AudioSource z puli
@@ -68,17 +70,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartMusic();
-    }
 
     public void StartMusic()
     {
         targetSceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Active Scene Index: " + targetSceneIndex);
-        Stop("LevelMusic");
-        Stop("MainMenuMusic");
+        FindObjectOfType<AudioManager>().Stop("LevelMusic");
+        FindObjectOfType<AudioManager>().Stop("MainMenuMusic");
 
         if (targetSceneIndex == 0)
         {
