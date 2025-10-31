@@ -1,10 +1,10 @@
 {
 	"identifier": "Level_18World",
-	"uniqueIdentifer": "94b43730-4ce0-11ef-9823-b7fb0d6e8573",
+	"uniqueIdentifer": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
 	"x": 8960,
-	"y": -608,
-	"width": 448,
-	"height": 576,
+	"y": -560,
+	"width": 544,
+	"height": 432,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -12,7 +12,7 @@
 			"dir": "w"
 		},
 		{
-			"levelIid": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
+			"levelIid": "94b43730-4ce0-11ef-9823-b7fb0d6e8573",
 			"dir": "e"
 		}
 	],
@@ -20,79 +20,63 @@
 	"layers": [
 		"CameraBound.png",
 		"Background.png",
+		"BackgroundPretties2.png",
 		"Foreground_Collision.png",
+		"BackgroundPretties.png",
 		"Spikes.png"
 	],
 	"entities": {
-		"Platform3Both": [
+		"MovingPlatform": [
 			{
-				"id": "Platform3Both",
-				"iid": "55b3b780-4ce0-11ef-9823-c187912733d5",
+				"id": "MovingPlatform",
+				"iid": "afe250f0-4ce0-11ef-a59b-9fdd20a174f3",
 				"layer": "Entities",
-				"x": 208,
-				"y": 432,
+				"x": 168,
+				"y": 376,
 				"width": 48,
 				"height": 16,
-				"color": 15389866,
-				"customFields" : {}
-			},
-			{
-				"id": "Platform3Both",
-				"iid": "16bac480-5e50-11f0-8e14-49a9a23dd512",
-				"layer": "Entities",
-				"x": 240,
-				"y": 128,
-				"width": 48,
-				"height": 16,
-				"color": 15389866,
-				"customFields" : {}
+				"color": 4098376,
+				"customFields": {
+					"active": false,
+					"targetPosition": {
+						"cx": 16,
+						"cy": 16
+					},
+					"launchBoostForce": 12,
+					"speed": 1
+				}
 			}
 		],
 		"Checkpoint": [
 			{
 				"id": "Checkpoint",
-				"iid": "c43a4880-4ce0-11ef-9823-c9e085b50366",
+				"iid": "0a373470-4ce0-11ef-a59b-cfcb5e50f2e1",
 				"layer": "Entities",
-				"x": 48,
-				"y": 320,
+				"x": 16,
+				"y": 304,
 				"width": 16,
 				"height": 16,
 				"color": 16777215,
 				"customFields" : {}
 			}
 		],
-		"MovingPlatform": [
+		"PressurePlate": [
 			{
-				"id": "MovingPlatform",
-				"iid": "5ad2ddb0-5e50-11f0-8e14-11d3f5936787",
+				"id": "PressurePlate",
+				"iid": "02398ae0-5e50-11f0-8e14-578e31b15338",
 				"layer": "Entities",
-				"x": 264,
-				"y": 328,
-				"width": 48,
+				"x": 232,
+				"y": 136,
+				"width": 16,
 				"height": 16,
-				"color": 4098376,
+				"color": 16705377,
 				"customFields": {
-					"active": true,
-					"targetPosition": {
-						"cx": 16,
-						"cy": 13
-					},
-					"launchBoostForce": 5
-				}
-			}
-		],
-		"Box2x2": [
-			{
-				"id": "Box2x2",
-				"iid": "7871c280-4ce0-11ef-9823-17e8e8f9b321",
-				"layer": "Box",
-				"x": 184,
-				"y": 104,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"canMoveInAir": true
+					"LaunchingPlatform": {
+						"entityIid": "afe250f0-4ce0-11ef-a59b-9fdd20a174f3",
+						"layerIid": "1e27f0a2-4ce0-11ef-9823-c1a8f27ff287",
+						"levelIid": "1e27f0a0-4ce0-11ef-9823-092d39a7f232",
+						"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
+					}
 				}
 			}
 		]

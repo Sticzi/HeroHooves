@@ -4,7 +4,7 @@
 	"x": 4624,
 	"y": -416,
 	"width": 512,
-	"height": 400,
+	"height": 560,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -24,7 +24,9 @@
 	"layers": [
 		"CameraBound.png",
 		"Background.png",
+		"BackgroundPretties2.png",
 		"Foreground_Collision.png",
+		"BackgroundPretties.png",
 		"Spikes.png"
 	],
 	"entities": {

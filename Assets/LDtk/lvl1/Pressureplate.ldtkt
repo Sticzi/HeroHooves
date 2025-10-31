@@ -8,11 +8,11 @@
     }
   ],
   "Def": {
-    "__cHei": 1,
+    "__cHei": 3,
     "__cWid": 1,
     "cachedPixelData": {
-      "opaqueTiles": "0",
-      "averageColors": "2666"
+      "opaqueTiles": "000",
+      "averageColors": "000038891933"
     },
     "customData": [
 
@@ -23,7 +23,7 @@
     ],
     "identifier": "Pressureplate",
     "padding": 0,
-    "pxHei": 16,
+    "pxHei": 48,
     "pxWid": 16,
     "relPath": "../Sprites/Unassigned/pressureplate1.png",
     "savedSelections": [

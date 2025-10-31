@@ -224,7 +224,7 @@ public class KnightMovement : MonoBehaviour
                 transform.position.z
             );
         }
-
+        controller.isClimbing = false;
         climbedOnLadder = null;
     }
     #endregion

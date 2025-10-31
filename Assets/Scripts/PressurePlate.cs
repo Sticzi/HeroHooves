@@ -11,14 +11,23 @@ public class PressurePlate : MonoBehaviour
     [Header("Platform Control")]
     [SerializeField] private LaunchingPlatform _targetPlatform;
 
+    [Header("Visuals")]
+    [SerializeField] private Sprite activatedSprite;
+    [SerializeField] private Sprite deactivatedSprite;
+
     private Rigidbody2D _rb;
     private bool _isPressed;
     private float _lastCheckTime;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         InitializePlatformReference();
+        // Set initial sprite
+        if (_spriteRenderer != null && deactivatedSprite != null)
+            _spriteRenderer.sprite = deactivatedSprite;
     }
 
     private void InitializePlatformReference()
@@ -26,7 +35,6 @@ public class PressurePlate : MonoBehaviour
         if (_targetPlatform != null) return;
 
         _targetPlatform = GetComponent<LDtkFields>().GetEntityReference("LaunchingPlatform").GetEntity().GetComponentInChildren<LaunchingPlatform>();
-        
     }
 
     private void FixedUpdate()
@@ -40,6 +48,7 @@ public class PressurePlate : MonoBehaviour
         {
             _isPressed = currentState;
             UpdatePlatformState();
+            UpdateVisualsAndSound();
         }
     }
 
@@ -51,13 +60,22 @@ public class PressurePlate : MonoBehaviour
             return;
         }
 
-        if (_targetPlatform.isActive)
+        _targetPlatform.isActive = !_targetPlatform.isActive;
+    }
+
+    private void UpdateVisualsAndSound()
+    {
+        // Play sound
+        var audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null)
         {
-            _targetPlatform.isActive = false;
+            audioManager.Play(_isPressed ? "buttonOn" : "buttonOff");
         }
-        else
+
+        // Change sprite
+        if (_spriteRenderer != null)
         {
-            _targetPlatform.isActive = true;
+            _spriteRenderer.sprite = _isPressed && activatedSprite != null ? activatedSprite : deactivatedSprite;
         }
     }
 

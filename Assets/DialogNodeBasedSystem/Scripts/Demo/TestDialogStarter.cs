@@ -11,6 +11,7 @@ public class TestDialogStarter : MonoBehaviour
         dialogBehaviour.BindExternalFunction("Test", DebugExternal);
 
         dialogBehaviour.StartDialog(dialogGraph);
+        Debug.Log("haloo");
     }
 
     private void DebugExternal()

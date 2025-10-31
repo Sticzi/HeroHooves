@@ -1,0 +1,39 @@
+{
+	"identifier": "Level_24World",
+	"uniqueIdentifer": "0a1c3ca0-ac70-11f0-91a1-97d43830a743",
+	"x": 12352,
+	"y": -224,
+	"width": 448,
+	"height": 432,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "b07ed660-ac70-11f0-91a1-51506b36d923",
+			"dir": "w"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"BackgroundPretties2.png",
+		"Foreground_Collision.png",
+		"BackgroundPretties.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "ae29bcb0-ac70-11f0-a624-fd394c307e44",
+				"layer": "Entities",
+				"x": 16,
+				"y": 192,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		]
+	}
+}

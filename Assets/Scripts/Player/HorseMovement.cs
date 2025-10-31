@@ -10,6 +10,7 @@ public class HorseMovement : MonoBehaviour
     [Header("Jump Settings")]
     public float jumpBufferTime = 0.2f;
     public float coyoteTime = 0.15f;
+    [SerializeField] private GameObject LandingCloud;
 
     [HideInInspector] public float jumpBufferCounter;
     public float hangCounter;
@@ -20,8 +21,11 @@ public class HorseMovement : MonoBehaviour
     [SerializeField] private Vector2 offset;
 
     [Header("Other Settings")]
-    [SerializeField] private float lookDownHoldTime = 1f;
-    private float timer = 0f;
+    [SerializeField] private float lookHoldTime = 1f;
+    // replaced single-purpose timer with a look-specific timer and state
+    private float lookTimer = 0f;
+    private int currentLookDir = 0; // -1 down, 0 neutral, 1 up
+    private bool isLooking = false;
 
     [SerializeField] private bool canDrop = true;
     [SerializeField] private bool canJump = true;
@@ -86,7 +90,7 @@ public class HorseMovement : MonoBehaviour
         // Konfiguracja akcji
         move = playerInput.HorseActionMap.Move;
         jump = playerInput.HorseActionMap.Jump;
-        lookDown = playerInput.HorseActionMap.LookDown;
+        lookDown = playerInput.HorseActionMap.Look;
         pickDropKnight = playerInput.HorseActionMap.PickDropKnight;
         swap = playerInput.KnightActionMap.Swap; 
 
@@ -128,7 +132,7 @@ public class HorseMovement : MonoBehaviour
           
 
         HandleCoyoteTime();
-        HandleLookDown();
+        HandleLook();
         HandleSliding();
     }
 
@@ -145,7 +149,7 @@ public class HorseMovement : MonoBehaviour
 
     public void DropSwap()
     {
-        if (CanSpawnedKnightSwap)
+        if (CanSpawnedKnightSwap && IsHorseControlled && controller.spawnedKnight == null)
         {            
             HandlePickDropKnight();
             controller.spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("horse");
@@ -154,10 +158,7 @@ public class HorseMovement : MonoBehaviour
 
     private void OnSwapPerformed(InputAction.CallbackContext context)
     {
-        if (CanSpawnedKnightSwap && IsHorseControlled&&controller.spawnedKnight == null)
-        {
-            DropSwap();
-        }
+        DropSwap();
     }
 
     private void OnJumpCanceled(InputAction.CallbackContext context)
@@ -230,26 +231,53 @@ public class HorseMovement : MonoBehaviour
         else controller.OutOfRangeOfKnight();
     }
 
-    private void HandleLookDown()
+    private void HandleLook()
     {
-        if (!IsHorseControlled) return;
+        // Fast-exit when not controllable or action missing
+        if (!IsHorseControlled || lookDown == null) return;
 
-        float lookDownInput = lookDown.ReadValue<float>();
-        if (lookDownInput < 0)
+        // Read input once
+        float raw = lookDown.ReadValue<float>();
+
+        // Deadzone to avoid accidental slight axis values
+        const float deadzone = 0.2f;
+        int dir = 0;
+        if (raw > deadzone) dir = 1;       // look up
+        else if (raw < -deadzone) dir = -1; // look down
+
+        // If direction changed, reset timer and stop any active look
+        if (dir != currentLookDir)
         {
-            timer += Time.deltaTime;
-            if (timer >= lookDownHoldTime && !controller.IsLookingDown)
+            currentLookDir = dir;
+            lookTimer = 0f;
+            if (isLooking)
             {
-                controller.IsLookingDown = true;
+                controller.StopLooking();
+                controller.IsLookingDown = false;
+                isLooking = false;
+            }
+        }
+
+        if (dir != 0)
+        {
+            lookTimer += Time.deltaTime;
+            if (lookTimer >= lookHoldTime && !isLooking)
+            {
+                // mark controller state for down-specific logic and call Look with direction
+                controller.IsLookingDown = (dir < 0);
+                controller.Look(dir);
+                isLooking = true;
             }
         }
         else
         {
-            timer = 0f;
-            if (controller.IsLookingDown)
+            // neutral input: ensure we stop looking
+            lookTimer = 0f;
+            if (isLooking)
             {
+                controller.StopLooking();
                 controller.IsLookingDown = false;
-                controller.StopLookingDown();
+                isLooking = false;
             }
         }
     }
@@ -285,11 +313,14 @@ public class HorseMovement : MonoBehaviour
 
     public void OnLanding()
     {
+        GameObject dust = Instantiate(LandingCloud, transform.position, transform.rotation);
+        dust.transform.localScale = transform.localScale;
+        Destroy(dust, 1f);
         controller.DoubleJumpReady = true;
         controller.canJump = true;
         //if (controller.IsGrounded && rb.velocity.y <= 0f)
         //{
-            
+
             controller.IsKnockedback = false;
         GetComponent<BetterJump>().isTossed = false;
             animator.SetBool("IsJumping", false);
@@ -304,6 +335,33 @@ public class HorseMovement : MonoBehaviour
             new Vector2(transform.position.x - offset.x, transform.position.y - offset.y),
             Radius
         );
+    }
+
+    public void EnableCharacterControls()
+    {
+        IsHorseControlled = true;
+        if (controller.spawnedKnight != null)
+            controller.spawnedKnight.GetComponent<KnightMovement>().enabled = false;
+
+    }
+
+    public void DisableCharacterControls()
+    {
+        PauseHorseControls(0.1f);
+    }
+    public async void PauseHorseControls(float duration)
+    {
+        if (controller.spawnedKnight != null)
+            controller.spawnedKnight.GetComponent<KnightMovement>().isKnightControlled = false;
+        IsHorseControlled = false;
+        await System.Threading.Tasks.Task.Delay((int)(duration * 1000));
+        this.enabled = false;
+        if (controller.spawnedKnight != null)
+        {
+            controller.spawnedKnight.GetComponent<KnightController2D>().SwapCharacter("knight");
+            controller.spawnedKnight.GetComponent<KnightMovement>().enabled = false;
+        }
+        
     }
     #endregion
 }

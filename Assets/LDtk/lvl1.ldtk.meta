@@ -34,6 +34,10 @@ ScriptedImporter:
     _asset: {fileID: 11400000, guid: 4bb6fe06fd9408c47b9b739341898c48, type: 2}
   - _key: Background_1
     _asset: {fileID: 11400000, guid: 93c015ef7a71369478f325624b82aa6f, type: 2}
+  - _key: Water_1
+    _asset: {fileID: 11400000, guid: b37a22e4e62b8a944b02cb4c910da9e7, type: 2}
+  - _key: Water_2
+    _asset: {fileID: 11400000, guid: 1559ec46248b94349bf2f513b8bbc4ac, type: 2}
   - _key: CameraBound_1
     _asset: {fileID: 11400000, guid: 48e054aa1c551834c9dac24c1220fed3, type: 2}
   _entities:
@@ -78,6 +82,9 @@ ScriptedImporter:
       type: 3}
   - _key: MovingPlatform
     _asset: {fileID: 8786481445620111759, guid: cab74fe668926df498f8f761c3382c54,
+      type: 3}
+  - _key: MovingPlatform2
+    _asset: {fileID: 8786481445620111759, guid: 94254cc2219a10549892da83b3d342c1,
       type: 3}
   - _key: Lever
     _asset: {fileID: 8729832026787640679, guid: 0f615f8f3fbc4e048aeb96dd3b79cfda,

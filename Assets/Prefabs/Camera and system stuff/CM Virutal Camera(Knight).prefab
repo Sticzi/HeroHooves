@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 970390379019507580}
   - component: {fileID: 970390379019507577}
   - component: {fileID: 970390379019507582}
+  - component: {fileID: 7880141799623738312}
   m_Layer: 0
   m_Name: CM Virutal Camera(Knight)
   m_TagString: VirtualCameraKnight
@@ -56,7 +57,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7.875
+    OrthographicSize: 8.4375
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -98,6 +99,21 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &7880141799623738312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970390379019507581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 0.85
+  m_Use2DDistance: 1
 --- !u!1 &970390380036656427
 GameObject:
   m_ObjectHideFlags: 0

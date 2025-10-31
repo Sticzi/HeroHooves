@@ -321,7 +321,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "LookDown",
+                    "name": "Look",
                     "type": "Button",
                     "id": "4a85c1df-30e0-4979-8a2a-d040c84dce37",
                     "expectedControlType": "Button",
@@ -462,59 +462,70 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "e8cec942-b772-44d0-b769-6fefe4e47d95",
+                    "name": "1D Axis",
+                    "id": "1fac6d42-1a12-401f-b609-9fbd5b3ccf22",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "AxisDeadzone(min=0.5)",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5426b3ba-f788-4b45-83b1-85297c390231",
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "LookDown",
+                    "action": "Look",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "6af0cfa7-802e-4dca-afa2-03c2d20067d6",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "LookDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fe17b1a5-7226-4fcc-a961-6dbecf9dbf04",
-                    "path": "<Touchscreen>/primaryTouch/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Touch",
-                    "action": "LookDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cd71d40e-c7da-4fdd-ad8c-e3f186115975",
-                    "path": "<XRController>/{PrimaryAction}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR",
-                    "action": "LookDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7a8bfc16-f796-43ad-abdd-90aa5afe74b7",
-                    "path": "<Gamepad>/dpad/down",
+                    "name": "positive",
+                    "id": "75876799-710a-42e3-98dc-08caa3bea473",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "LookDown",
+                    "action": "Look",
                     "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "8c1c1722-9509-4c1e-9628-a38212e29e37",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "27d7910e-5ef6-4eeb-84e9-bb87814a22e3",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "f50683cc-6934-40ec-9730-93937f526e07",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "WASD",

@@ -12,8 +12,11 @@ public class Respawn : MonoBehaviour
     private CinemachineConfiner horseCameraConfinerComponent;
     private CinemachineConfiner knightCameraConfinerComponent;
     private HorseMovement movement;
-    
-        
+    [SerializeField]private GameObject tooltipSwap;
+    [SerializeField]private GameObject tooltipAttack;
+    [SerializeField]private GameObject tooltipDrop;
+
+
     public void Awake()
     {
         horseCameraConfinerComponent = GameObject.FindGameObjectWithTag("VirtualCameraHorse").GetComponent<CinemachineConfiner>();
@@ -64,6 +67,7 @@ public class Respawn : MonoBehaviour
 
     public void Spawning()
     {
+
         if (gameMaster.savedWorldName == "MainMenu")
         {
             movement.CanDoubleJump = false;
@@ -76,17 +80,27 @@ public class Respawn : MonoBehaviour
         if (gameMaster.horseSavedRoom < 5 && gameMaster.savedWorldName == "World")
         {
             movement.CanDoubleJump = false;
-            if(gameMaster.horseSavedRoom< 4)
+            
+            if (gameMaster.horseSavedRoom < 4)
             {
                 movement.CanDrop = false;
                 movement.CanSpawnedKnightSwap = false;
                 movement.canSpawnedKnightAttack = false;
+                tooltipAttack.SetActive(false);
+                tooltipDrop.SetActive(false);
+                tooltipSwap.SetActive(false);
             }
+        }
+        if (gameMaster.horseSavedRoom >= 4 && gameMaster.savedWorldName == "World")
+        {
+            tooltipAttack.SetActive(true);
+            tooltipDrop.SetActive(true);
+            tooltipSwap.SetActive(true);
         }
 
 
 
-        if (gameMaster.horseSavedRoom == gameMaster.knightSavedRoom)
+            if (gameMaster.horseSavedRoom == gameMaster.knightSavedRoom)
         {            
             Transform checkpoint = FindCheckpoint(gameMaster.horseSavedRoom);
             transform.position = checkpoint.position;            
