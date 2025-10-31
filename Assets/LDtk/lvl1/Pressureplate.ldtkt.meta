@@ -19,10 +19,40 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 32
       width: 16
       height: 16
     spriteID: e2bd847a7bfb7ac4799d08ec36956c03
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Pressureplate_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: c6bbe665d30dd1948b02d76a4222dff1
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Pressureplate_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: aed5ad664663d944395a0f3d6f7063de
     internalID: 0
     spriteOutline: []
     tessellationDetail: 0

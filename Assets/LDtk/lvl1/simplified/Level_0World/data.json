@@ -16,7 +16,9 @@
 	"layers": [
 		"CameraBound.png",
 		"Background.png",
+		"BackgroundPretties2.png",
 		"Foreground_Collision.png",
+		"BackgroundPretties.png",
 		"Spikes.png"
 	],
 	"entities": {

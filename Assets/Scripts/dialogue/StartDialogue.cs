@@ -5,6 +5,7 @@ using DG.Tweening;  // Make sure DOTween is installed
 using Cinemachine;
 using System.Threading.Tasks;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class StartDialogue : MonoBehaviour
 {
@@ -48,22 +49,25 @@ public class StartDialogue : MonoBehaviour
 
         var impulseSource = GetComponent<CinemachineImpulseSource>();
         MaineMenuVirtualCamera.Priority = 0;
-        DOVirtual.DelayedCall(10f, () =>
+        DOVirtual.DelayedCall(12f, () =>
         {
             FindObjectOfType<AudioManager>().Stop("Intro");
             FindObjectOfType<AudioManager>().Play("Hit");
-            impulseSource.GenerateImpulse();            
+            impulseSource.GenerateImpulse();
+            StartCoroutine(VibrateController(0.7f, 0.3f, 0.3f));
             //DialogueVirtualCamera.Priority = 15;
-            DOVirtual.DelayedCall(1.2f, () =>
+            DOVirtual.DelayedCall(2f, () =>
             {
                 FindObjectOfType<AudioManager>().Play("Hit");
                 impulseSource.GenerateImpulse();
-                DOVirtual.DelayedCall(1.5f, () =>
+                StartCoroutine(VibrateController(0.7f, 0.3f, 0.3f));
+                DOVirtual.DelayedCall(2f, () =>
                 {
                     FindObjectOfType<AudioManager>().Play("Attack");
                     impulseSource.GenerateImpulse();
+                    StartCoroutine(VibrateController(0.9f, 0.5f, 0.5f));
                     doors.Kick(); // Call the Kick method after the delay
-                    DOVirtual.DelayedCall(1.5f, () =>
+                    DOVirtual.DelayedCall(2f, () =>
                     {
 
                         StartPrefabDialogue();
@@ -75,7 +79,15 @@ public class StartDialogue : MonoBehaviour
         });
     }
 
-
+    private IEnumerator VibrateController(float lowFreq, float highFreq, float duration)
+    {
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(lowFreq, highFreq);
+            yield return new WaitForSeconds(duration);
+            Gamepad.current.SetMotorSpeeds(0f, 0f); // stop vibration
+        }
+    }
 
     // aight for some reason nie dzia³a function w pierwszym nodzie aleee to mo¿na daæ do tego dziadostwa on dialogue start
     public void StartPrefabDialogue()
@@ -94,9 +106,13 @@ public class StartDialogue : MonoBehaviour
 
     public void StartKnightBumpDialogue()
     {
-        dialogBehaviour.StartDialog(dialogGraphKnightBump);
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            dialogBehaviour.StartDialog(dialogGraphKnightBump);
 
-        dialogBehaviour.BindExternalFunction("JumpToolTip", EnableToolTipBool);
+            dialogBehaviour.BindExternalFunction("JumpToolTip", EnableToolTipBool);
+        });
+        
     }
 
     private bool canActivateToolTip = false;

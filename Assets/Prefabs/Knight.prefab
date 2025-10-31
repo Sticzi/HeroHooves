@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 545192195289469413}
   - component: {fileID: 5315699476864629243}
   - component: {fileID: 4404756666437947721}
+  - component: {fileID: 7821341871791708529}
   m_Layer: 11
   m_Name: Knight
   m_TagString: Knight
@@ -249,7 +250,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &719058146891630051
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -262,10 +263,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &1184753792685456350
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -325,7 +328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovementSmoothing: 0
   m_AirControl: 1
-  movementSpeed: 4
+  movementSpeed: 3.25
+  maxFallSpeed: -20
+  jumpCloud: {fileID: 6153084693915907904, guid: 1797c20ed4e71d04bb1edbd048705830,
+    type: 3}
   horse: {fileID: 0}
   virtualCameraKnight: {fileID: 0}
   controlIndicator: {fileID: 7559269965993952478}
@@ -477,6 +483,48 @@ MonoBehaviour:
     m_Bits: 32768
   damping: 1
   transitionDuration: 0.75
+--- !u!114 &7821341871791708529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118010984519073365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2
+    m_FrequencyGain: 3
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.1
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 1000
 --- !u!1 &5069246376240431926
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +581,7 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
+  m_Mesh: {fileID: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

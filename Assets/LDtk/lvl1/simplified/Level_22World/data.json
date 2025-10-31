@@ -1,0 +1,265 @@
+{
+	"identifier": "Level_22World",
+	"uniqueIdentifer": "af2f5450-ac70-11f0-91a1-11ff7603e1ec",
+	"x": 11120,
+	"y": -592,
+	"width": 736,
+	"height": 784,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "1986c9a0-8560-11f0-86f4-537ae936d6d8",
+			"dir": "w"
+		},
+		{
+			"levelIid": "b07ed660-ac70-11f0-91a1-51506b36d923",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"BackgroundPretties2.png",
+		"Foreground_Collision.png",
+		"BackgroundPretties.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Ladder": [
+			{
+				"id": "Ladder",
+				"iid": "6e143c90-ac70-11f0-91a1-4da8ac43f6c0",
+				"layer": "Ladders",
+				"x": 56,
+				"y": 232,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6e4d26e0-ac70-11f0-91a1-c57108b7dd66",
+				"layer": "Ladders",
+				"x": 56,
+				"y": 248,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6e841560-ac70-11f0-91a1-2b431d230ca8",
+				"layer": "Ladders",
+				"x": 56,
+				"y": 264,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6eb70c40-ac70-11f0-91a1-478b48ec5af3",
+				"layer": "Ladders",
+				"x": 56,
+				"y": 280,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6efc2b90-ac70-11f0-91a1-0fa2673640c1",
+				"layer": "Ladders",
+				"x": 56,
+				"y": 296,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6f334120-ac70-11f0-91a1-ef8d50d7916f",
+				"layer": "Ladders",
+				"x": 56,
+				"y": 312,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6fcdd370-ac70-11f0-91a1-6fe21d68d0e5",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 120,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "6ff69120-ac70-11f0-91a1-c96507e1a6d2",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 136,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "701f75e0-ac70-11f0-91a1-5f3a7ea2c5cb",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 152,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "70480c80-ac70-11f0-91a1-89361a767c20",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 168,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "70976500-ac70-11f0-91a1-ad1ae22afd59",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 200,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "70dc8450-ac70-11f0-91a1-27863e2a8a94",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 184,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "712ffb80-ac70-11f0-91a1-915202b7ad6a",
+				"layer": "Ladders",
+				"x": 104,
+				"y": 216,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			}
+		],
+		"PressurePlate": [
+			{
+				"id": "PressurePlate",
+				"iid": "e6149040-ac70-11f0-8946-c3739aa1815c",
+				"layer": "Entities",
+				"x": 536,
+				"y": 248,
+				"width": 16,
+				"height": 16,
+				"color": 16705377,
+				"customFields": {
+					"LaunchingPlatform": {
+						"entityIid": "b2ca0010-ac70-11f0-8946-dd5c0520fec9",
+						"layerIid": "af2f5452-ac70-11f0-91a1-a17f2d0b3c99",
+						"levelIid": "af2f5450-ac70-11f0-91a1-11ff7603e1ec",
+						"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
+					}
+				}
+			}
+		],
+		"MovingPlatform2": [
+			{
+				"id": "MovingPlatform2",
+				"iid": "8edc4eb0-ac70-11f0-8946-2fbab8c6c515",
+				"layer": "Entities",
+				"x": 296,
+				"y": 376,
+				"width": 48,
+				"height": 16,
+				"color": 4098376,
+				"customFields": {
+					"active": false,
+					"targetPosition": {
+						"cx": 22,
+						"cy": 20
+					},
+					"launchBoostForce": 7.5,
+					"speed": 0.8
+				}
+			}
+		],
+		"MovingPlatform": [
+			{
+				"id": "MovingPlatform",
+				"iid": "b2ca0010-ac70-11f0-8946-dd5c0520fec9",
+				"layer": "Entities",
+				"x": 360,
+				"y": 200,
+				"width": 48,
+				"height": 16,
+				"color": 4098376,
+				"customFields": {
+					"active": false,
+					"targetPosition": {
+						"cx": 26,
+						"cy": 10
+					},
+					"launchBoostForce": 12.5,
+					"speed": 0.6
+				}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "8bcd5530-ac70-11f0-b06f-0d1eda116d58",
+				"layer": "Entities",
+				"x": 16,
+				"y": 304,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		],
+		"Box2x2": [
+			{
+				"id": "Box2x2",
+				"iid": "ef0ffb00-ac70-11f0-8946-e19324a30e46",
+				"layer": "Box",
+				"x": 136,
+				"y": 200,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"canMoveInAir": false
+				}
+			}
+		]
+	}
+}

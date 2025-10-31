@@ -1,0 +1,97 @@
+{
+	"identifier": "Level_23World",
+	"uniqueIdentifer": "b07ed660-ac70-11f0-91a1-51506b36d923",
+	"x": 11856,
+	"y": -656,
+	"width": 496,
+	"height": 864,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "af2f5450-ac70-11f0-91a1-11ff7603e1ec",
+			"dir": "w"
+		},
+		{
+			"levelIid": "0a1c3ca0-ac70-11f0-91a1-97d43830a743",
+			"dir": "e"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"CameraBound.png",
+		"Background.png",
+		"BackgroundPretties2.png",
+		"Foreground_Collision.png",
+		"BackgroundPretties.png",
+		"Spikes.png"
+	],
+	"entities": {
+		"Platform2Right": [
+			{
+				"id": "Platform2Right",
+				"iid": "0d0caf60-ac70-11f0-91a1-ed5b1b61c952",
+				"layer": "Entities",
+				"x": 240,
+				"y": 400,
+				"width": 32,
+				"height": 16,
+				"color": 16690740,
+				"customFields" : {}
+			}
+		],
+		"PressurePlate": [
+			{
+				"id": "PressurePlate",
+				"iid": "1d6122b0-ac70-11f0-91a1-e9a2205873eb",
+				"layer": "Entities",
+				"x": 168,
+				"y": 552,
+				"width": 16,
+				"height": 16,
+				"color": 16705377,
+				"customFields": {
+					"LaunchingPlatform": {
+						"entityIid": "c4d7c580-ac70-11f0-91a1-f99e1e101380",
+						"layerIid": "b07ed662-ac70-11f0-91a1-651814c0302d",
+						"levelIid": "b07ed660-ac70-11f0-91a1-51506b36d923",
+						"worldIid": "d44fe551-fec0-11ee-984a-db73f98c3dad"
+					}
+				}
+			}
+		],
+		"MovingPlatform": [
+			{
+				"id": "MovingPlatform",
+				"iid": "c4d7c580-ac70-11f0-91a1-f99e1e101380",
+				"layer": "Entities",
+				"x": 408,
+				"y": 648,
+				"width": 48,
+				"height": 16,
+				"color": 4098376,
+				"customFields": {
+					"active": false,
+					"targetPosition": {
+						"cx": 5,
+						"cy": 40
+					},
+					"launchBoostForce": 0,
+					"speed": 1
+				}
+			}
+		],
+		"Checkpoint": [
+			{
+				"id": "Checkpoint",
+				"iid": "df273c70-ac70-11f0-91a1-e1648dee84b0",
+				"layer": "Entities",
+				"x": 16,
+				"y": 352,
+				"width": 16,
+				"height": 16,
+				"color": 16777215,
+				"customFields" : {}
+			}
+		]
+	}
+}

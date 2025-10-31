@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 2,
+    "__cWid": 1,
+    "cachedPixelData": {
+      "opaqueTiles": "01",
+      "averageColors": "3bbcf07a"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Waterfall1",
+    "padding": 0,
+    "pxHei": 32,
+    "pxWid": 16,
+    "relPath": "../Sprites/TileSets/waterfall/waterfall1.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 16,
+    "uid": 559
+  }
+}

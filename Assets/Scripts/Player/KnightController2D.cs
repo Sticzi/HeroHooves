@@ -1,7 +1,9 @@
 ﻿using Cinemachine;
-using UnityEngine;
-using System.Threading.Tasks;
 using DG.Tweening;
+using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using System.Collections;
 
 public class KnightController2D : MonoBehaviour
 {
@@ -11,7 +13,11 @@ public class KnightController2D : MonoBehaviour
     public float movementSpeed;
     private float _move;
 
+    // Copied from HorseController2D: terminal fall speed (negative)
+    public float maxFallSpeed = -20f;
+
     [Header("References")]
+    public GameObject jumpCloud;
     public GameObject horse;
     public GameObject virtualCameraKnight;
     public GameObject controlIndicator;
@@ -29,6 +35,7 @@ public class KnightController2D : MonoBehaviour
     private Rigidbody2D rb;
     public Animator anim;
     private KnightMovement movement;
+    private CinemachineImpulseSource impulseSource;
 
     // State variables
     [HideInInspector] public bool IsGrounded => rb.IsTouching(groundContactFilter);
@@ -46,16 +53,21 @@ public class KnightController2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         movement = GetComponent<KnightMovement>();
-
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         virtualCameraKnight = GameObject.FindGameObjectWithTag("VirtualCameraKnight");       
     }
 
     private void FixedUpdate()
     {
-        HandleGroundCheck();
-        UpdateAnimator();
-        HandleSliding();
-        HandleMovement();
+        if (!isClimbing)
+        {
+            HandleFallSpeed();
+            HandleGroundCheck();
+            UpdateAnimator();
+            HandleSliding();
+            HandleMovement();
+        }
+        
     }
 
     #region Movement
@@ -91,7 +103,33 @@ public class KnightController2D : MonoBehaviour
         GetComponent<BetterJump>().isTossed = true;
         externalVelocity += velocity;
         rb.velocity = new Vector2(rb.velocity.x, externalVelocity.y);
+        if (jumpCloud != null)
+            SpawnJumpCloudWaveAsync(count: 3, spread: 0, lifetime: 3f, delayMs: 100, firstDelayMs: 75);
         //externalVelocity = Vector2.ClampMagnitude(externalVelocity, 50f);
+    }
+
+    private async void SpawnJumpCloudWaveAsync(int count = 2, float spread = 0.1f, float lifetime = 3f, int delayMs = 50, int firstDelayMs = 100)
+    {
+        await Task.Delay(firstDelayMs);
+
+        // Determine the direction for rotation based on external velocity
+        Vector2 dir = externalVelocity.normalized;
+
+        // Fallback if velocity is zero
+        if (dir == Vector2.zero) dir = Vector2.up;
+
+        // Calculate rotation angle so cloud is perpendicular to velocity
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f; // -90 because sprite is already perpendicular to (0,1)
+
+        for (int i = 0; i < count; i++)
+        {
+
+            // Instantiate cloud with rotation aligned to velocity
+            GameObject cloud = Instantiate(jumpCloud, transform.position, Quaternion.Euler(0f, 0f, angle));
+            Destroy(cloud, lifetime);
+
+            await Task.Delay(delayMs); // delay between each cloud
+        }
     }
 
     private void ApplyMovement(float move)
@@ -191,10 +229,28 @@ public class KnightController2D : MonoBehaviour
     {
         anim.SetTrigger("attack");
         rb.velocity = new Vector2(0, rb.velocity.y);
-        DOVirtual.DelayedCall(0.35f, () => FindObjectOfType<AudioManager>().Play("Attack"));
+        DOVirtual.DelayedCall(0.4f, () => HammerSlam());
+    }
+
+    private void HammerSlam()
+    {
+        FindObjectOfType<AudioManager>().Play("Attack");
+        StartCoroutine(VibrateController(0.5f, 0.2f, 0.2f));
+        impulseSource.GenerateImpulse();
+    }
+
+    private IEnumerator VibrateController(float lowFreq, float highFreq, float duration)
+    {
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(lowFreq, highFreq);
+            yield return new WaitForSeconds(duration);
+            Gamepad.current.SetMotorSpeeds(0f, 0f); // stop vibration
+        }
+        
     }
     #endregion
-    
+
     #region Utilities
     private void HandleGroundCheck()
     {
@@ -208,6 +264,13 @@ public class KnightController2D : MonoBehaviour
             
         }
         wasGrounded = IsGrounded;
+    }
+
+    // Copied behavior from HorseController2D: clamp downward velocity to a maximum (terminal) fall speed
+    private void HandleFallSpeed()
+    {
+        if (rb.velocity.y < maxFallSpeed)
+            rb.velocity = new Vector2(rb.velocity.x, maxFallSpeed);
     }
 
     private void ToggleControlIndicator(bool showKnightControl)
@@ -246,11 +309,31 @@ public class KnightController2D : MonoBehaviour
         {
             isClimbing = true;
             anim.SetTrigger("Climb");
-
         }
         FindObjectOfType<AudioManager>().Play("LadderStep");
         transform.Translate(Vector3.up * distance);
         anim.SetTrigger("Climb");
+    }
+    #endregion
+
+    #region Collision pickup - falling onto horse
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider == null) return;
+
+        if (!collider.gameObject.TryGetComponent<HorseController2D>(out var otherHorse)) return;
+
+        // only trigger pickup when knight is falling fast enough and roughly above the horse
+        if (rb == null) return;
+        if (rb.velocity.y >= -10f) return; // not falling fast enough
+
+        // ensure knight is above the horse at collision moment
+        if (transform.position.y <= otherHorse.transform.position.y) return;
+
+        // hand-off to the horse to accept the falling knight
+        otherHorse.StartDropCooldown();
+        otherHorse.KnightPickUp(playSound: true);
+        
     }
     #endregion
 }

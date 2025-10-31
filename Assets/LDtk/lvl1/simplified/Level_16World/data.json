@@ -20,7 +20,9 @@
 	"layers": [
 		"CameraBound.png",
 		"Background.png",
+		"BackgroundPretties2.png",
 		"Foreground_Collision.png",
+		"BackgroundPretties.png",
 		"Spikes.png"
 	],
 	"entities": {
@@ -82,72 +84,6 @@
 			},
 			{
 				"id": "Ladder",
-				"iid": "a826ba80-4ce0-11ef-bc8f-ad4a09fac991",
-				"layer": "Ladders",
-				"x": 216,
-				"y": 200,
-				"width": 16,
-				"height": 16,
-				"color": 14984818,
-				"customFields" : {}
-			},
-			{
-				"id": "Ladder",
-				"iid": "a8517400-4ce0-11ef-bc8f-ff40a0fa58ff",
-				"layer": "Ladders",
-				"x": 216,
-				"y": 184,
-				"width": 16,
-				"height": 16,
-				"color": 14984818,
-				"customFields" : {}
-			},
-			{
-				"id": "Ladder",
-				"iid": "a8888990-4ce0-11ef-bc8f-511ef10b1b15",
-				"layer": "Ladders",
-				"x": 216,
-				"y": 168,
-				"width": 16,
-				"height": 16,
-				"color": 14984818,
-				"customFields" : {}
-			},
-			{
-				"id": "Ladder",
-				"iid": "a8b34310-4ce0-11ef-bc8f-258a38eb00a8",
-				"layer": "Ladders",
-				"x": 216,
-				"y": 152,
-				"width": 16,
-				"height": 16,
-				"color": 14984818,
-				"customFields" : {}
-			},
-			{
-				"id": "Ladder",
-				"iid": "a8fe7ce0-4ce0-11ef-bc8f-1b2b50b87d0f",
-				"layer": "Ladders",
-				"x": 216,
-				"y": 136,
-				"width": 16,
-				"height": 16,
-				"color": 14984818,
-				"customFields" : {}
-			},
-			{
-				"id": "Ladder",
-				"iid": "ab56ebd0-4ce0-11ef-bc8f-a357046201f2",
-				"layer": "Ladders",
-				"x": 216,
-				"y": 120,
-				"width": 16,
-				"height": 16,
-				"color": 14984818,
-				"customFields" : {}
-			},
-			{
-				"id": "Ladder",
 				"iid": "815e0420-5e50-11f0-9377-d1c8c2442410",
 				"layer": "Ladders",
 				"x": 56,
@@ -167,6 +103,72 @@
 				"height": 16,
 				"color": 14984818,
 				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "63108840-ac70-11f0-91a1-d7f21782acae",
+				"layer": "Ladders",
+				"x": 200,
+				"y": 120,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "63435810-ac70-11f0-91a1-8bcba4637875",
+				"layer": "Ladders",
+				"x": 200,
+				"y": 136,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "638ce430-ac70-11f0-91a1-13d45eb81242",
+				"layer": "Ladders",
+				"x": 200,
+				"y": 152,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "63f0af10-ac70-11f0-91a1-2d5f0db8fc08",
+				"layer": "Ladders",
+				"x": 200,
+				"y": 168,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "645208f0-ac70-11f0-91a1-0330387806bb",
+				"layer": "Ladders",
+				"x": 200,
+				"y": 184,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
+			},
+			{
+				"id": "Ladder",
+				"iid": "648722b0-ac70-11f0-91a1-0fdce898f3bf",
+				"layer": "Ladders",
+				"x": 200,
+				"y": 200,
+				"width": 16,
+				"height": 16,
+				"color": 14984818,
+				"customFields" : {}
 			}
 		],
 		"JumpPad": [
@@ -174,7 +176,7 @@
 				"id": "JumpPad",
 				"iid": "81a92c30-4ce0-11ef-9823-631605de0ce5",
 				"layer": "Entities",
-				"x": 104,
+				"x": 120,
 				"y": 216,
 				"width": 16,
 				"height": 16,
@@ -187,7 +189,7 @@
 				"id": "JumpPad",
 				"iid": "804a5820-4ce0-11ef-9823-2f26c9d88766",
 				"layer": "Entities",
-				"x": 408,
+				"x": 440,
 				"y": 136,
 				"width": 16,
 				"height": 16,
@@ -195,43 +197,6 @@
 				"customFields": {
 					"jumpPower": 15
 				}
-			}
-		],
-		"Platform2Left": [
-			{
-				"id": "Platform2Left",
-				"iid": "a39f24e0-4ce0-11ef-9823-1b441b61bd23",
-				"layer": "Entities",
-				"x": 464,
-				"y": 144,
-				"width": 32,
-				"height": 16,
-				"color": 14120515,
-				"customFields" : {}
-			}
-		],
-		"Falling_rocks": [
-			{
-				"id": "Falling_rocks",
-				"iid": "b6cc0c90-4ce0-11ef-9823-913ef8768c18",
-				"layer": "Entities",
-				"x": 472,
-				"y": 216,
-				"width": 16,
-				"height": 16,
-				"color": 3818598,
-				"customFields" : {}
-			},
-			{
-				"id": "Falling_rocks",
-				"iid": "b9f62360-4ce0-11ef-9823-05710448cdee",
-				"layer": "Entities",
-				"x": 456,
-				"y": 216,
-				"width": 16,
-				"height": 16,
-				"color": 3818598,
-				"customFields" : {}
 			}
 		],
 		"Checkpoint": [

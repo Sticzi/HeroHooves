@@ -1,0 +1,44 @@
+fileFormatVersion: 2
+guid: 0aac3209e4116114b81483416b9ffd18
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _sprites:
+  - name: Waterfall1_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: a5e945eedc3d423419b004ae063d9d7a
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Waterfall1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: dfb148a6f40c2be45b5b031c2105b497
+    internalID: 0
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []

@@ -98,14 +98,19 @@ public class AudioManager : MonoBehaviour
         src.clip = s.clip;
         src.loop = s.loop;
         src.pitch = s.GetRandomPitch();
-        src.volume = 0f; // start silent
+        src.volume = s.volume; // start silent
         src.outputAudioMixerGroup = s.mixerGroup != null ? s.mixerGroup : defaultMixerGroup;
 
         src.time = s.startTime;
         src.Play();
 
         // fade in
-        src.DOFade(s.GetRandomVolume(), s.fadeInSeconds);
+        if (s.fadeInSeconds > 0f)
+        {
+            src.volume = 0f;
+            src.DOFade(s.GetRandomVolume(), s.fadeInSeconds);
+        }
+            
 
         if (s.duration > 0f)
         {
@@ -154,7 +159,10 @@ public class AudioManager : MonoBehaviour
             {
                 if (src.isPlaying && src.clip == s.clip)
                 {
-                    StopWithFade(src, s.fadeOutTime);
+                    if (s.fadeOutTime <= 0f)
+                        src.Stop();
+                    else
+                        StopWithFade(src, s.fadeOutTime);
                 }
             }
         }
