@@ -1,10 +1,12 @@
+using Cinemachine;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using LDtkUnity;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using DG.Tweening;
-using System;
-using Cysharp.Threading.Tasks;
-using LDtkUnity;
 
 [RequireComponent(typeof(Collider2D))]
 public class LaunchingPlatform : MonoBehaviour
@@ -30,6 +32,8 @@ public class LaunchingPlatform : MonoBehaviour
     private Vector2 launchDirection;
     private Vector2 originalPosition;
     private float speed = 1f;
+
+    private CinemachineImpulseSource impulseSource;
 
 
     private HashSet<GameObject> objectsOnPlatform = new HashSet<GameObject>();
@@ -58,6 +62,8 @@ public class LaunchingPlatform : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.speed = 0f;
         originalPosition = transform.position;
+
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     private void Update()
@@ -179,6 +185,8 @@ public class LaunchingPlatform : MonoBehaviour
         moveTween.onComplete += () =>
         {
             shakeTween = transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato);
+            PlatformSlam();
+            FindObjectOfType<AudioManager>().Play("platformBump");
             if (animator != null)
                 animator.speed = 0f;
             foreach (GameObject obj in new List<GameObject>(objectsOnPlatform))
@@ -193,7 +201,7 @@ public class LaunchingPlatform : MonoBehaviour
             }
         };
 
-        var launchSoundOffset = 0.28f;
+        var launchSoundOffset = 0.2f;
         await UniTask.Delay(TimeSpan.FromSeconds(launchSoundOffset));
         FindObjectOfType<AudioManager>().Play("launch");
 
@@ -228,7 +236,9 @@ public class LaunchingPlatform : MonoBehaviour
             }
 
             await returnTween.AsyncWaitForCompletion().AsUniTask();
-
+            PlatformSlam();
+            FindObjectOfType<AudioManager>().Stop("reset");
+            FindObjectOfType<AudioManager>().Play("platformBump");
             if (animator != null)
             {
                 animator.speed = 0f;
@@ -237,6 +247,24 @@ public class LaunchingPlatform : MonoBehaviour
 
         await UniTask.Delay(TimeSpan.FromSeconds(0.2f));
         hasLaunched = false;
+    }
+
+
+    private void PlatformSlam()
+    {
+        StartCoroutine(VibrateController(0.75f, 0.35f, 0.2f));
+        impulseSource.GenerateImpulse();
+    }
+
+    private IEnumerator VibrateController(float lowFreq, float highFreq, float duration)
+    {
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(lowFreq, highFreq);
+            yield return new WaitForSeconds(duration);
+            Gamepad.current.SetMotorSpeeds(0f, 0f); // stop vibration
+        }
+
     }
 
     private async UniTask HandleJumpWindow(GameObject targetObject)

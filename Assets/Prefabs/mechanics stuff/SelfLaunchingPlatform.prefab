@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 8163278194185829814}
   - component: {fileID: 4442674547973799224}
   - component: {fileID: 9194568982169589499}
+  - component: {fileID: 8222312724679343433}
   m_Layer: 8
   m_Name: Platform
   m_TagString: MovingPlatform
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchDuration: 0.9
-  jumpDetectionWindow: 0.3
+  jumpDetectionWindow: 0.35
   filter:
     useTriggers: 0
     useLayerMask: 1
@@ -221,6 +222,48 @@ MonoBehaviour:
   shakeStrength: 0.1
   shakeVibrato: 55
   releaseFrameThreshold: 2
+--- !u!114 &8222312724679343433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669699866939630171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2
+    m_FrequencyGain: 3
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.15
+      m_DecayTime: 0.2
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 1000
 --- !u!1 &8786481445620111759
 GameObject:
   m_ObjectHideFlags: 0

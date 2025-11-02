@@ -200,7 +200,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   offset: {x: 0, y: 0.5}
-  lookHoldTime: 0.5
+  lookHoldTime: 0.2
   canDrop: 1
   canJump: 1
   canDoubleJump: 1

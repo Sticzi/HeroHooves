@@ -46,7 +46,7 @@ public class KnightController2D : MonoBehaviour
     private bool m_FacingRight = true;
     private Vector3 m_Velocity = Vector3.zero;
     private float stepTimer = 0f;
-    private bool wasGrounded;
+    private bool wasGrounded = true;
 
     private void Awake()
     {
@@ -235,7 +235,7 @@ public class KnightController2D : MonoBehaviour
     private void HammerSlam()
     {
         FindObjectOfType<AudioManager>().Play("Attack");
-        StartCoroutine(VibrateController(0.5f, 0.2f, 0.2f));
+        StartCoroutine(VibrateController(0.65f, 0.25f, 0.2f));
         impulseSource.GenerateImpulse();
     }
 
@@ -256,6 +256,7 @@ public class KnightController2D : MonoBehaviour
     {
         if (!wasGrounded && IsGrounded)
         {
+            FindObjectOfType<AudioManager>().Play("knightLand");
             isKnockedback = false;
             if (GetComponent<BetterJump>() != null)
             {

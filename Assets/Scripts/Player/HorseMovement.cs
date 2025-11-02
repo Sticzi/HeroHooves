@@ -315,6 +315,7 @@ public class HorseMovement : MonoBehaviour
     {
         GameObject dust = Instantiate(LandingCloud, transform.position, transform.rotation);
         dust.transform.localScale = transform.localScale;
+        FindObjectOfType<AudioManager>().Play("horseLand");
         Destroy(dust, 1f);
         controller.DoubleJumpReady = true;
         controller.canJump = true;
@@ -322,7 +323,7 @@ public class HorseMovement : MonoBehaviour
         //{
 
             controller.IsKnockedback = false;
-        GetComponent<BetterJump>().isTossed = false;
+            GetComponent<BetterJump>().isTossed = false;
             animator.SetBool("IsJumping", false);
             controller.m_AirControl = true;
         //}
