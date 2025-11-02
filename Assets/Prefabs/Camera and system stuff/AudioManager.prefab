@@ -48,7 +48,7 @@ MonoBehaviour:
   defaultMixerGroup: {fileID: 24300002, guid: 1d66f10ad9ec29246bbf15b334692043, type: 2}
   sounds:
   - name: LevelMusic
-    clip: {fileID: 8300000, guid: a3fd5094aff2bda41a8022fa46393adc, type: 3}
+    clip: {fileID: 8300000, guid: a4d152bfbfe9e1848ac44abad32bbf62, type: 3}
     volume: 0.45
     volumeVariance: 0
     pitch: 0.9
@@ -62,7 +62,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
   - name: LevelMusic2
-    clip: {fileID: 8300000, guid: 31ced7c1d5d2c8b4293d837f34cf27b8, type: 3}
+    clip: {fileID: 8300000, guid: a992d14b46661c0449e153efee8810b3, type: 3}
     volume: 0.35
     volumeVariance: 0
     pitch: 0.88
@@ -76,7 +76,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
   - name: Intro
-    clip: {fileID: 8300000, guid: d67b1c27d7c84024e90a20b07e11e8b9, type: 3}
+    clip: {fileID: 8300000, guid: 96d6b41fc2d55244fbb4c1938de9c6bc, type: 3}
     volume: 0.425
     volumeVariance: 0
     pitch: 0.85
@@ -90,7 +90,7 @@ MonoBehaviour:
     mixerGroup: {fileID: -6622611929594281110, guid: 1d66f10ad9ec29246bbf15b334692043,
       type: 2}
   - name: GoblinEscape
-    clip: {fileID: 8300000, guid: cee528f4de7f64946a844aef3ae191d2, type: 3}
+    clip: {fileID: 8300000, guid: caf0a5d0f537586438ba75c25979f516, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 0.804
